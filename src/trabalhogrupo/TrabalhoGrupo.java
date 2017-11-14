@@ -23,6 +23,9 @@ public class TrabalhoGrupo extends Application {
         
         Scene scene = new Scene(root);
         
+        System.out.println("teste");
+        
+        
         stage.setScene(scene);
         stage.show();
     }
