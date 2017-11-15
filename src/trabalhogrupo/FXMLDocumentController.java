@@ -11,6 +11,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import trabalhogrupo.ConnectDB.Connect;
 
 /**
  *
@@ -18,18 +19,19 @@ import javafx.scene.control.Label;
  */
 public class FXMLDocumentController implements Initializable {
     
-    @FXML
-    private Label label;
+    
+    Connect con;
     
     @FXML
     private void handleButtonAction(ActionEvent event) {
-        System.out.println("You clicked me!");
-        label.setText("Hello World!");
+        
+       
+        con.conexion();
     }
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
+        con=new Connect();    }    
+
     
 }
