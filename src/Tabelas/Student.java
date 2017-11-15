@@ -7,25 +7,25 @@ package Tabelas;
 
 /**
  *
- * @author Joao Saraiva
+ * @author smf_1
  */
-public class Member {
-    private int idMember;
+public class Student {
+    private int idStudent;
     private String FirstName;
     private String LastName;
 
-    public Member(int idMember, String FirstName, String LastName) {
-        this.idMember = idMember;
+    public Student(int idStudent, String FirstName, String LastName) {
+        this.idStudent = idStudent;
         this.FirstName = FirstName;
         this.LastName = LastName;
     }
 
-    public int getIdMember() {
-        return idMember;
+    public int getIdStudent() {
+        return idStudent;
     }
 
-    public void setIdMember(int idMember) {
-        this.idMember = idMember;
+    public void setIdStudent(int idStudent) {
+        this.idStudent = idStudent;
     }
 
     public String getFirstName() {
