@@ -5,12 +5,13 @@
  */
 package trabalhogrupo;
 
+import dbinteraction.Query;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
 import trabalhogrupo.ConnectDB.Connect;
 
 /**
@@ -23,10 +24,16 @@ public class FXMLDocumentController implements Initializable {
     Connect con;
     
     @FXML
-    private void handleButtonAction(ActionEvent event) {
+    private void handleButtonAction(ActionEvent event) throws SQLException {
         
        
         con.conexion();
+        
+        Query q = new Query();
+        
+        q.teste();
+        
+        
     }
     
     @Override
