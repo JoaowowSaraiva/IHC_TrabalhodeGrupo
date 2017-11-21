@@ -10,24 +10,24 @@ package Tabelas;
  * @author smf_1
  */
 public class Vehicles {
-    private int idVehicles;
+    private int IdVehicles;
     private String NumberPlate;
-    private int idMember;
+    private int IdMember;
     private int Part;
 
-    public Vehicles(int idVehicles, String NumberPlate, int idMember, int Part) {
-        this.idVehicles = idVehicles;
+    public Vehicles(int IdVehicles, String NumberPlate, int IdMember, int Part) {
+        this.IdVehicles = IdVehicles;
         this.NumberPlate = NumberPlate;
-        this.idMember = idMember;
+        this.IdMember = IdMember;
         this.Part = Part;
     }
 
     public int getIdVehicles() {
-        return idVehicles;
+        return IdVehicles;
     }
 
-    public void setIdVehicles(int idVehicles) {
-        this.idVehicles = idVehicles;
+    public void setIdVehicles(int IdVehicles) {
+        this.IdVehicles = IdVehicles;
     }
 
     public String getNumberPlate() {
@@ -39,11 +39,11 @@ public class Vehicles {
     }
 
     public int getIdMember() {
-        return idMember;
+        return IdMember;
     }
 
-    public void setIdMember(int idMember) {
-        this.idMember = idMember;
+    public void setIdMember(int IdMember) {
+        this.IdMember = IdMember;
     }
 
     public int getPart() {
@@ -54,4 +54,6 @@ public class Vehicles {
         this.Part = Part;
     }
     
+
+
 }

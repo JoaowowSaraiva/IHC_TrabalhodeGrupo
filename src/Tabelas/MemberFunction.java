@@ -10,28 +10,28 @@ package Tabelas;
  * @author smf_1
  */
 public class MemberFunction {
-    private int idFunction;
-    private int idMember;
+    private int IdFunction;
+    private int IdMember;
 
     public MemberFunction(int idFunction, int idMember) {
-        this.idFunction = idFunction;
-        this.idMember = idMember;
+        this.IdFunction = idFunction;
+        this.IdMember = idMember;
     }
 
     public int getIdFunction() {
-        return idFunction;
+        return IdFunction;
     }
 
     public void setIdFunction(int idFunction) {
-        this.idFunction = idFunction;
+        this.IdFunction = idFunction;
     }
 
     public int getIdMember() {
-        return idMember;
+        return IdMember;
     }
 
     public void setIdMember(int idMember) {
-        this.idMember = idMember;
+        this.IdMember = idMember;
     }
 
 }

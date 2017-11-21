@@ -9,27 +9,27 @@ package Tabelas;
  *
  * @author smf_1
  */
-public class StudentMemberFunction {
-    private int idStudent;
+public class StudentClass {
+    private int IdStudent;
     private int IdFunction;
     private int IdMember;
-    private int idClass;
-    private int status;
+    private int IdClass;
+    private int Status;
 
-    public StudentMemberFunction(int idStudent, int IdFunction, int IdMember, int idClass, int status) {
-        this.idStudent = idStudent;
+    public StudentClass(int IdStudent, int IdFunction, int IdMember, int IdClass, int Status) {
+        this.IdStudent = IdStudent;
         this.IdFunction = IdFunction;
         this.IdMember = IdMember;
-        this.idClass = idClass;
-        this.status = status;
+        this.IdClass = IdClass;
+        this.Status = Status;
     }
 
     public int getIdStudent() {
-        return idStudent;
+        return IdStudent;
     }
 
-    public void setIdStudent(int idStudent) {
-        this.idStudent = idStudent;
+    public void setIdStudent(int IdStudent) {
+        this.IdStudent = IdStudent;
     }
 
     public int getIdFunction() {
@@ -49,19 +49,24 @@ public class StudentMemberFunction {
     }
 
     public int getIdClass() {
-        return idClass;
+        return IdClass;
     }
 
-    public void setIdClass(int idClass) {
-        this.idClass = idClass;
+    public void setIdClass(int IdClass) {
+        this.IdClass = IdClass;
     }
 
     public int getStatus() {
-        return status;
+        return Status;
     }
 
-    public void setStatus(int status) {
-        this.status = status;
+    public void setStatus(int Status) {
+        this.Status = Status;
     }
-    
+
+
+
+
+
+
 }

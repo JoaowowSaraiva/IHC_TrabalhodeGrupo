@@ -12,6 +12,7 @@ import java.sql.SQLData;
  * @author smf_1
  */
 public class Concert {
+    private int IdConcert;
     private int Local;
     private SQLData DataHora;
     private double Payment;
@@ -19,11 +20,20 @@ public class Concert {
     private int Vehicles;
     private int Fatura;
 
-    public Concert(int Local, SQLData DataHora, int Status, int Fatura) {
+    public Concert(int IdConcert,int Local, SQLData DataHora, int Status, int Fatura) {
+        this.IdConcert=IdConcert;
         this.Local = Local;
         this.DataHora = DataHora;
         this.Status = Status;
         this.Fatura = Fatura;
+    }
+
+    public int getIdConcert() {
+        return IdConcert;
+    }
+
+    public void setIdConcert(int IdConcert) {
+        this.IdConcert = IdConcert;
     }
     
     

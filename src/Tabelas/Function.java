@@ -10,29 +10,29 @@ package Tabelas;
  * @author smf_1
  */
 public class Function {
-    int idFunction;
-    String name;
+    int IdFunction;
+    String Name;
 
     public Function(int idFunction, String name) {
-        this.idFunction = idFunction;
-        this.name = name;
+        this.IdFunction = idFunction;
+        this.Name = name;
     }
 
     
     public int getIdFunction() {
-        return idFunction;
+        return IdFunction;
     }
 
     public void setIdFunction(int idFunction) {
-        this.idFunction = idFunction;
+        this.IdFunction = idFunction;
     }
 
     public String getName() {
-        return name;
+        return Name;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.Name = name;
     }
     
     

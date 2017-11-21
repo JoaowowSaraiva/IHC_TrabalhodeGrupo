@@ -10,22 +10,22 @@ package Tabelas;
  * @author smf_1
  */
 public class Student {
-    private int idStudent;
+    private int IdStudent;
     private String FirstName;
     private String LastName;
 
     public Student(int idStudent, String FirstName, String LastName) {
-        this.idStudent = idStudent;
+        this.IdStudent = idStudent;
         this.FirstName = FirstName;
         this.LastName = LastName;
     }
 
     public int getIdStudent() {
-        return idStudent;
+        return IdStudent;
     }
 
     public void setIdStudent(int idStudent) {
-        this.idStudent = idStudent;
+        this.IdStudent = idStudent;
     }
 
     public String getFirstName() {
