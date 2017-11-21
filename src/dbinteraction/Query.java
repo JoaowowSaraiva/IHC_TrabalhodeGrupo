@@ -31,12 +31,8 @@ public class Query {
         //Statement stm=null;
              
         //stm = conn.con.createStatement();
-
-        
         ResultSet rs = conn.pst.executeQuery();
         //ResultSet rs = stm.executeQuery(query);
-        
-
         while(rs.next()){
             String x1 = rs.getString("FirstName");
             System.out.println(x1+ "\n");           
