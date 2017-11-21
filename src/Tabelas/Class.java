@@ -12,20 +12,20 @@ import java.sql.SQLData;
  * @author smf_1
  */
 public class Class {
-    private int idClass;
+    private int IdClass;
     private SQLData Date;
 
     public Class(int idClass, SQLData Date) {
-        this.idClass = idClass;
+        this.IdClass = idClass;
         this.Date = Date;
     }
 
     public int getIdClass() {
-        return idClass;
+        return IdClass;
     }
 
     public void setIdClass(int idClass) {
-        this.idClass = idClass;
+        this.IdClass = idClass;
     }
 
     public SQLData getDate() {
