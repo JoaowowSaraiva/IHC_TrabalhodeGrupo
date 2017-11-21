@@ -6,12 +6,17 @@
 package trabalhogrupo;
 
 import dbinteraction.Query;
+import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 import trabalhogrupo.ConnectDB.Connect;
 
 /**
@@ -23,22 +28,39 @@ public class FXMLDocumentController implements Initializable {
     
     Connect con;
     
+    
     @FXML
     private void handleButtonAction(ActionEvent event) throws SQLException {
         
        
         con.conexion();
-        
         Query q = new Query();
-        
+       
         q.teste();
-        
-        
+ 
     }
-    
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         con=new Connect();    }    
 
     
 }
+
+
+
+
+    /**
+    @FXML
+    private void funcaoMudaActivity (ActionEvent event) throws IOException{
+            Parent root = FXMLLoader.load(getClass().getResource("TestActivity.fxml"));
+            Stage stage = new Stage();              
+        
+            Scene scene = new Scene(root);
+            
+            stage.setScene(scene);
+            stage.show();
+    }
+    
+  **/  
+    
