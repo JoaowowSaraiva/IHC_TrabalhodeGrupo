@@ -11,17 +11,18 @@
 <?import javafx.scene.layout.*?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="trabalhogrupo.MembrosController">
-   <left>
-      <ListView fx:id="list" prefHeight="400.0" prefWidth="282.0" BorderPane.alignment="CENTER">
-         <padding>
-            <Insets bottom="10.0" left="10.0" />
-         </padding>
+   <top>
+      <Label text="Membros" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="27.0" />
+         </font>
          <BorderPane.margin>
-            <Insets bottom="10.0" left="10.0" />
-         </BorderPane.margin></ListView>
-   </left>
-   <center>
-      <GridPane BorderPane.alignment="CENTER">
+            <Insets top="20.0" />
+         </BorderPane.margin>
+      </Label>
+   </top>
+   <right>
+      <GridPane prefHeight="341.0" prefWidth="322.0" BorderPane.alignment="CENTER">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
         </columnConstraints>
@@ -45,15 +46,15 @@
             </BorderPane>
          </children>
       </GridPane>
-   </center>
-   <top>
-      <Label text="Membros" BorderPane.alignment="CENTER">
-         <font>
-            <Font size="27.0" />
-         </font>
+   </right>
+   <center>
+      <ListView fx:id="list" prefHeight="331.0" prefWidth="368.0" BorderPane.alignment="CENTER">
+         <padding>
+            <Insets bottom="10.0" left="10.0" />
+         </padding>
          <BorderPane.margin>
-            <Insets top="20.0" />
+            <Insets bottom="10.0" left="10.0" />
          </BorderPane.margin>
-      </Label>
-   </top>
+      </ListView>
+   </center>
 </BorderPane>
