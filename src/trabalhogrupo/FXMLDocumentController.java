@@ -45,15 +45,11 @@ public class FXMLDocumentController implements Initializable {
         con=new Connect();    }    
 
     
-}
 
 
-
-
-    /**
     @FXML
     private void funcaoMudaActivity (ActionEvent event) throws IOException{
-            Parent root = FXMLLoader.load(getClass().getResource("TestActivity.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("membros.fxml"));
             Stage stage = new Stage();              
         
             Scene scene = new Scene(root);
@@ -61,6 +57,5 @@ public class FXMLDocumentController implements Initializable {
             stage.setScene(scene);
             stage.show();
     }
-    
-  **/  
-    
+
+}  

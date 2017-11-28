@@ -8,7 +8,10 @@ package dbinteraction;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 import trabalhogrupo.ConnectDB.Connect;
+import trabalhogrupo.MembrosController.HBOXCell;
 
 /**
  *
@@ -39,6 +42,27 @@ public class Query {
         }        
         return result;
         
+    }
+    
+    public List<String> selectNames () throws SQLException{
+         conn.conexion();
+        
+        List<String> list1 = new ArrayList();
+        String query = "Select * From Member";
+        
+        conn.pst=conn.con.prepareStatement(query);
+        ResultSet rs = conn.pst.executeQuery();
+        
+        while(rs.next()){
+            String x1 = rs.getString("FirstName");
+            String x2=rs.getString("LastName");
+            list1.add(x1+" "+x2);
+            //System.out.println(x1);
+        }
+        
+        
+        
+        return list1;
     }
     
 }
