@@ -62,7 +62,8 @@ public class MembrosController implements Initializable {
             
             label.setText(labelText);
             HBox.setHgrow(label, Priority.ALWAYS);
-            
+            label.setMaxWidth(Double.MAX_VALUE);
+
             button.setText(buttonText);
         
             this.getChildren().addAll(label, button);
