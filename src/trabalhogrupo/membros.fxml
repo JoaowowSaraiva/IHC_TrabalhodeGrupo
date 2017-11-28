@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
 <?import java.lang.*?>
 <?import java.net.*?>
 <?import java.util.*?>
@@ -9,7 +12,13 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="trabalhogrupo.MembrosController">
    <left>
-      <ListView fx:id="list" prefHeight="400.0" prefWidth="282.0" BorderPane.alignment="CENTER" />
+      <ListView fx:id="list" prefHeight="400.0" prefWidth="282.0" BorderPane.alignment="CENTER">
+         <padding>
+            <Insets bottom="10.0" left="10.0" />
+         </padding>
+         <BorderPane.margin>
+            <Insets bottom="10.0" left="10.0" />
+         </BorderPane.margin></ListView>
    </left>
    <center>
       <GridPane BorderPane.alignment="CENTER">
@@ -24,9 +33,27 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button mnemonicParsing="false" text="Inserir Novo Membro" GridPane.rowIndex="1" />
-            <Button mnemonicParsing="false" text="Dados Estatisticos de Presenças em Atuações" GridPane.rowIndex="3" />
+            <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+               <center>
+                  <Button mnemonicParsing="false" text="Inserir Novo Membro" BorderPane.alignment="CENTER" />
+               </center>
+            </BorderPane>
+            <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="3">
+               <center>
+                  <Button mnemonicParsing="false" text="Dados Estatisticos de Presenças em Atuações" BorderPane.alignment="CENTER" />
+               </center>
+            </BorderPane>
          </children>
       </GridPane>
    </center>
+   <top>
+      <Label text="Membros" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="27.0" />
+         </font>
+         <BorderPane.margin>
+            <Insets top="20.0" />
+         </BorderPane.margin>
+      </Label>
+   </top>
 </BorderPane>
