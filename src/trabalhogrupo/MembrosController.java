@@ -108,6 +108,7 @@ public class MembrosController implements Initializable {
             
             stage.setScene(scene);
             stage.setTitle("Adiciona Membro");
+            stage.setResizable(false);
             stage.show();
     }
      

@@ -41,7 +41,7 @@
                   </Label>
                </top>
                <center>
-                  <TextField BorderPane.alignment="CENTER">
+                  <TextField fx:id="first" BorderPane.alignment="CENTER">
                      <BorderPane.margin>
                         <Insets left="50.0" right="50.0" />
                      </BorderPane.margin>
@@ -57,7 +57,7 @@
                   </Label>
                </top>
                <center>
-                  <TextField BorderPane.alignment="CENTER">
+                  <TextField fx:id="last" BorderPane.alignment="CENTER">
                      <BorderPane.margin>
                         <Insets left="50.0" right="50.0" />
                      </BorderPane.margin>
@@ -73,7 +73,7 @@
                   </Label>
                </top>
                <center>
-                  <DatePicker prefHeight="25.0" prefWidth="174.0" BorderPane.alignment="CENTER" />
+                  <DatePicker fx:id="date" prefHeight="25.0" prefWidth="174.0" BorderPane.alignment="CENTER" />
                </center>
             </BorderPane>
             <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="3">
