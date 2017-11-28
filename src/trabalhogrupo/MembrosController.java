@@ -24,6 +24,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -38,6 +39,8 @@ public class MembrosController implements Initializable {
     
     @FXML
     ListView<HBOXCell> list = new ListView<HBOXCell>();
+    @FXML
+    Button close;
     
     
     @Override
@@ -92,6 +95,13 @@ public class MembrosController implements Initializable {
         list.setItems(items);
                 
     }
+    @FXML
+    private void closeButtonAction(){
+    // get a handle to the stage
+    Stage stage = (Stage) close.getScene().getWindow();
+    // do what you have to do
+    stage.close();
+}
     
     
 }
