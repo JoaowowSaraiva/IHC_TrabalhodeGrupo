@@ -36,7 +36,7 @@
          <children>
             <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
                <center>
-                  <Button mnemonicParsing="false" prefHeight="28.0" prefWidth="130.0" text="Inserir Novo Membro" BorderPane.alignment="CENTER" />
+                  <Button mnemonicParsing="false" onAction="#adicionaMembroactivity" prefHeight="28.0" prefWidth="130.0" text="Inserir Novo Membro" BorderPane.alignment="CENTER" />
                </center>
             </BorderPane>
             <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="3">

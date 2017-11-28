@@ -5,10 +5,23 @@
  */
 package dbinteraction;
 
+import java.sql.SQLException;
+import trabalhogrupo.ConnectDB.Connect;
+
 /**
  *
  * @author Joao Saraiva
  */
 public class Inserts {
-    
+    Connect conn = new Connect();
+
+    public Inserts() {
+    }
+    public void inserirmembro(String Fname,String Lname) throws SQLException{
+        conn.conexion();
+        String insert="INSERT INTO `CONCERTINAS`.`Member` (`FirstName`,`LastName`,`Birthday`) VALUES(?,?,?,?)";
+        conn.pst=conn.con.prepareStatement(insert);
+       
+        
+    }
 }
