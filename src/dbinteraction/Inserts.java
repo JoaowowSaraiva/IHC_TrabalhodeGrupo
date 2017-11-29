@@ -21,7 +21,7 @@ public class Inserts {
     }
     public void inserirmembro(String Fname,String Lname, String data) throws SQLException{
         conn.conexion();
-        String insert="INSERT INTO Member(FirstName,LastName,Birthday)VALUES(?,?,?,?)";
+        String insert="INSERT INTO Member(FirstName,LastName,Birthday)VALUES(?,?,?)";
         conn.pst=conn.con.prepareStatement(insert);
         System.out.println("dps statment\n");
         conn.pst.setString(1,Fname);
