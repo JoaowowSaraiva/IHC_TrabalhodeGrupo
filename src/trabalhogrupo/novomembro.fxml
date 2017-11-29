@@ -97,7 +97,7 @@
                      <children>
                         <BorderPane prefHeight="200.0" prefWidth="200.0">
                            <center>
-                              <Button fx:id="close" mnemonicParsing="false" onAction="#closeButtonAction" text="Cancelar" BorderPane.alignment="CENTER" />
+                              <Button fx:id="close" mnemonicParsing="false" onAction="#Membrosactivity" text="Cancelar" BorderPane.alignment="CENTER" />
                            </center>
                         </BorderPane>
                         <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">

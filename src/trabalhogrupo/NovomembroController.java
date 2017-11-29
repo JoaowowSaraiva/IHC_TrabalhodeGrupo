@@ -7,6 +7,7 @@ package trabalhogrupo;
 
 import dbinteraction.Inserts;
 import dbinteraction.Query;
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Date;
 import java.sql.SQLException;
@@ -14,7 +15,10 @@ import java.time.LocalDate;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
@@ -44,6 +48,18 @@ public class NovomembroController implements Initializable {
     @FXML
     Button close;
     
+    @FXML
+     private void Membrosactivity (ActionEvent event) throws IOException{
+            Parent root = FXMLLoader.load(getClass().getResource("membros.fxml"));
+            Stage stage = new Stage();              
+        
+            Scene scene = new Scene(root);
+            closeButtonAction();
+            stage.setScene(scene);
+            stage.setTitle("Membros");
+            stage.setResizable(false);
+            stage.show();
+    }
     @FXML
     private void closeButtonAction(){
     // get a handle to the stage

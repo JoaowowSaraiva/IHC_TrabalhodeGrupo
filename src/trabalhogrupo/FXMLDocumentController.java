@@ -50,7 +50,7 @@ public class FXMLDocumentController implements Initializable {
     private void funcaoMudaActivity (ActionEvent event) throws IOException{
             Parent root = FXMLLoader.load(getClass().getResource("membros.fxml"));
             Stage stage = new Stage();              
-        
+            
             Scene scene = new Scene(root);
             
             stage.setScene(scene);
