@@ -5,7 +5,7 @@
  */
 package dbinteraction;
 
-import java.sql.Date;
+
 import java.sql.SQLException;
 import java.util.concurrent.ExecutionException;
 import trabalhogrupo.ConnectDB.Connect;

@@ -5,6 +5,9 @@
  */
 package dbinteraction;
 
+
+
+import Tabelas.MembroNPresencas;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -42,6 +45,25 @@ public class Query {
         return 0;
         
     }
+    public List<MembroNPresencas> presencas() throws SQLException{
+        conn.conexion();
+        
+        List<MembroNPresencas> lista=new ArrayList();
+        String query="SELECT FirstName,LastName, count(*) as conta FROM CONCERTINAS.Member_Concert,CONCERTINAS.Member\n" +
+                        "where Member_Concert.IdMember=Member.IdMembro group by(Member.IdMembro);";
+        conn.pst=conn.con.prepareStatement(query);
+        ResultSet rs=conn.pst.executeQuery();
+        while(rs.next()){
+            
+            String nome=rs.getString("FirstName")+" "+rs.getNString("LastName");
+            int i=rs.getInt("conta");
+            MembroNPresencas mp=new MembroNPresencas(nome, i);
+            lista.add(mp);
+            
+        }
+    
+        return lista;
+    } 
     
     public List<String> selectNames () throws SQLException{
          conn.conexion();
