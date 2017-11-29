@@ -49,7 +49,7 @@ public class NovomembroController implements Initializable {
     Button close;
     
     @FXML
-     private void Membrosactivity (ActionEvent event) throws IOException{
+     private void Membrosactivity () throws IOException{
             Parent root = FXMLLoader.load(getClass().getResource("membros.fxml"));
             Stage stage = new Stage();              
         
@@ -68,7 +68,7 @@ public class NovomembroController implements Initializable {
     stage.close();
 }
     @FXML
-    private void adicionaMembro(ActionEvent e) throws SQLException{
+    private void adicionaMembro(ActionEvent e) throws SQLException, IOException{
         Query q = new Query();
         
         if(first.getText().equals("")){
@@ -99,6 +99,7 @@ public class NovomembroController implements Initializable {
         int id=q.maxIdMembro()+1;
         Inserts I=new Inserts();
         I.inserirmembro(first.getText(), last.getText(),data1);
+        Membrosactivity();
        
     }
     
