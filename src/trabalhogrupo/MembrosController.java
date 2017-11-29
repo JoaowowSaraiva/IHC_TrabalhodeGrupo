@@ -61,10 +61,12 @@ public class MembrosController implements Initializable {
     public static class HBOXCell extends HBox {
         
         Label label = new Label();
+        Label label1=new Label();
         Button button = new Button();
+        Button button2 = new Button();
         
         
-        HBOXCell(String labelText, String buttonText){
+        HBOXCell(String labelText, String buttonText,String buttonText2,String espaco){
             super();
             
             label.setText(labelText);
@@ -72,8 +74,11 @@ public class MembrosController implements Initializable {
             label.setMaxWidth(Double.MAX_VALUE);
 
             button.setText(buttonText);
+            label1.setText(espaco);
+            button2.setText(buttonText2);
+            
         
-            this.getChildren().addAll(label, button);
+            this.getChildren().addAll(label, button,label1,button2);
         }
       
               
@@ -89,7 +94,7 @@ public class MembrosController implements Initializable {
 
         List<HBOXCell> list1 = new ArrayList();
         for (int i = 0; i < names.size(); i++) {
-            list1.add(new HBOXCell (names.get(i), "Mais Info"));
+            list1.add(new HBOXCell (names.get(i), "Mais Info","Editar","  "));
         }
         
         
@@ -106,6 +111,17 @@ public class MembrosController implements Initializable {
         
             Scene scene = new Scene(root);
             closeButtonAction();
+            stage.setScene(scene);
+            stage.setTitle("Adiciona Membro");
+            stage.setResizable(false);
+            stage.show();
+    }
+     @FXML
+     private void estatistica (ActionEvent event) throws IOException{
+            Parent root = FXMLLoader.load(getClass().getResource("Membrosatats.fxml"));
+            Stage stage = new Stage();              
+        
+            Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.setTitle("Adiciona Membro");
             stage.setResizable(false);
