@@ -5,7 +5,9 @@
  */
 package dbinteraction;
 
+import java.sql.Date;
 import java.sql.SQLException;
+import java.util.concurrent.ExecutionException;
 import trabalhogrupo.ConnectDB.Connect;
 
 /**
@@ -17,11 +19,20 @@ public class Inserts {
 
     public Inserts() {
     }
-    public void inserirmembro(String Fname,String Lname) throws SQLException{
+    public void inserirmembro(String Fname,String Lname, String data) throws SQLException{
         conn.conexion();
-        String insert="INSERT INTO `CONCERTINAS`.`Member` (`FirstName`,`LastName`,`Birthday`) VALUES(?,?,?,?)";
+        String insert="INSERT INTO Member(FirstName,LastName,Birthday)VALUES(?,?,?,?)";
         conn.pst=conn.con.prepareStatement(insert);
-       
+        System.out.println("dps statment\n");
+        conn.pst.setString(1,Fname);
+        System.out.println("nome\n");
+        conn.pst.setString(2,Lname);
+        System.out.println("Ultimo\n");
+        conn.pst.setString(3,data);
+        System.out.println("data\n");
         
+        conn.pst.execute();
+        System.out.println("Execute");
+                
     }
 }

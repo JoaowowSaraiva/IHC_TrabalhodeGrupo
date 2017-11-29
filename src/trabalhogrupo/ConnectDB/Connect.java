@@ -26,7 +26,7 @@ public class Connect {
             try {
             
             con=DriverManager.getConnection("jdbc:mysql://dbconcertinas.csf0273oa3yc.us-east-2.rds.amazonaws.com:3306/CONCERTINAS","admin","sergiojoaoihc");
-           JOptionPane.showMessageDialog(null, "Conncetado com sucesso");
+           //JOptionPane.showMessageDialog(null, "Conncetado com sucesso");
         } catch (SQLException e) {
           JOptionPane.showMessageDialog(null,"Erro de conexao");
         } 

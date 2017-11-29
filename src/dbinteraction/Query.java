@@ -24,11 +24,11 @@ public class Query {
     public Query() {
     }
     
-    public String teste () throws SQLException{
+    public int maxIdMembro() throws SQLException{
        conn.conexion();
         
         String result = new String();
-        String query= "Select * From Member";
+        String query= "SELECT Max(IdMembro) FROM Member";
 
         conn.pst=conn.con.prepareStatement(query);
         //Statement stm=null;
@@ -37,10 +37,9 @@ public class Query {
         ResultSet rs = conn.pst.executeQuery();
         //ResultSet rs = stm.executeQuery(query);
         while(rs.next()){
-            String x1 = rs.getString("FirstName");
-            System.out.println(x1+ "\n");           
+            return(rs.getInt(1));
         }        
-        return result;
+        return 0;
         
     }
     

@@ -36,8 +36,7 @@ public class FXMLDocumentController implements Initializable {
         con.conexion();
         Query q = new Query();
        
-        q.teste();
- 
+         
     }
 
     @Override
