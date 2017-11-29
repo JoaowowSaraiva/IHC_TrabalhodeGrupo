@@ -124,7 +124,9 @@ public class MembrosController implements Initializable {
             Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.setTitle("Adiciona Membro");
-            stage.setResizable(false);
+            stage.setMinHeight(800);
+            stage.setMinWidth(1000);
+            
             stage.show();
     }
      
