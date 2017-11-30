@@ -66,19 +66,19 @@ public class MembrosController implements Initializable {
         Button button2 = new Button();
         
         
-        HBOXCell(String labelText, String buttonText,String buttonText2,String espaco){
+        HBOXCell(String labelText/*, String buttonText,String buttonText2,String espaco*/){
             super();
             
             label.setText(labelText);
             HBox.setHgrow(label, Priority.ALWAYS);
             label.setMaxWidth(Double.MAX_VALUE);
 
-            button.setText(buttonText);
-            label1.setText(espaco);
-            button2.setText(buttonText2);
+           // button.setText(buttonText);
+           //label1.setText(espaco);
+           // button2.setText(buttonText2);
             
         
-            this.getChildren().addAll(label, button,label1,button2);
+            this.getChildren().addAll(label/*, button,label1,button2*/);
         }
       
               
@@ -94,7 +94,7 @@ public class MembrosController implements Initializable {
 
         List<HBOXCell> list1 = new ArrayList();
         for (int i = 0; i < names.size(); i++) {
-            list1.add(new HBOXCell (names.get(i), "Mais Info","Editar","  "));
+            list1.add(new HBOXCell (names.get(i)/*, "Mais Info","Editar","  "*/));
         }
         
         

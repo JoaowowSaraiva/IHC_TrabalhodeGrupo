@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import javafx.geometry.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
@@ -24,27 +25,30 @@
          <children>
             <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
                <center>
-                  <Button mnemonicParsing="false" onAction="#funcaoMudaActivity" prefHeight="30.0" prefWidth="120.0" text="Membros" BorderPane.alignment="CENTER" />
+                  <Button mnemonicParsing="false" onAction="#funcaoMudaActivity" prefHeight="30.0" prefWidth="175.0" text="Membros" BorderPane.alignment="CENTER" />
                </center>
             </BorderPane>
             <BorderPane prefHeight="200.0" prefWidth="200.0">
                <center>
-                  <Label text="Grupo de Concertinas do Reboleiro" BorderPane.alignment="CENTER" />
+                  <Label text="Grupo de Concertinas do Reboleiro" BorderPane.alignment="CENTER">
+                     <font>
+                        <Font size="20.0" />
+                     </font></Label>
                </center>
             </BorderPane>
             <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
                <center>
-                  <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="120.0" text="Concertos" BorderPane.alignment="CENTER" />
+                  <Button mnemonicParsing="false" onAction="#ActivityConcertos" prefHeight="30.0" prefWidth="173.0" text="Concertos" BorderPane.alignment="CENTER" />
                </center>
             </BorderPane>
             <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="3">
                <center>
-                  <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="120.0" text="Veiculos" BorderPane.alignment="CENTER" />
+                  <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="178.0" text="Veiculos" BorderPane.alignment="CENTER" />
                </center>
             </BorderPane>
             <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="4">
                <center>
-                  <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="164.0" text="Pagamentos?Estatisticos" BorderPane.alignment="CENTER" />
+                  <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="179.0" text="Pagamentos" BorderPane.alignment="CENTER" />
                </center>
             </BorderPane>
          </children>

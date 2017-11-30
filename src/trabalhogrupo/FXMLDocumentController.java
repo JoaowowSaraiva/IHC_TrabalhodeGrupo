@@ -56,5 +56,15 @@ public class FXMLDocumentController implements Initializable {
             stage.setScene(scene);
             stage.show();
     }
+    @FXML
+    private void ActivityConcertos (ActionEvent event) throws IOException{
+            Parent root = FXMLLoader.load(getClass().getResource("concertos.fxml"));
+            Stage stage = new Stage();              
+            
+            Scene scene = new Scene(root);
+            
+            stage.setScene(scene);
+            stage.show();
+    }
 
 }  
