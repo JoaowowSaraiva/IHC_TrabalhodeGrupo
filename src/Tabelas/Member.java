@@ -13,6 +13,10 @@ public class Member {
     private int IdMember;
     private String FirstName;
     private String LastName;
+    
+    public Member(){
+        
+    }
 
     public Member(int idMember, String FirstName, String LastName) {
         this.IdMember = idMember;

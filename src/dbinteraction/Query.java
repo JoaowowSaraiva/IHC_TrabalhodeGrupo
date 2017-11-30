@@ -7,15 +7,13 @@ package dbinteraction;
 
 
 
+import Tabelas.Member;
 import Tabelas.MembroNPresencas;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import trabalhogrupo.ConnectDB.Connect;
-import trabalhogrupo.MembrosController.HBOXCell;
-
 /**
  *
  * @author Joao Saraiva
@@ -84,6 +82,24 @@ public class Query {
         
         
         return list1;
+    }
+    
+    public Member getMoreInfoFromName(String[] fullname) throws SQLException{
+        conn.conexion();
+        Member oM = new Member();
+        String query = "Select * From Member Where FirstName=" + '"' +fullname[0] + '"' + " AND LastName=" +'"' + fullname[1] + '"';
+        
+        conn.pst=conn.con.prepareStatement(query);
+        ResultSet rs = conn.pst.executeQuery();
+        
+        while(rs.next()){
+            String x1 = rs.getString("FirstName");
+            String x2 = rs.getString("LastName");
+            
+            System.out.println("TEste: " + x1 + x2);
+        }        
+        
+        return oM;
     }
     
 }

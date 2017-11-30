@@ -79,6 +79,14 @@ public class MembrosController implements Initializable {
             
         
             this.getChildren().addAll(label/*, button,label1,button2*/);
+            
+        }
+        
+        @Override
+        public String toString(){
+            
+           return label.getText();           
+            
         }
       
               
@@ -102,7 +110,7 @@ public class MembrosController implements Initializable {
         //ListView<HBOXCell> list = new ListView<HBOXCell>();
         ObservableList<HBOXCell> items = FXCollections.observableArrayList(list1);
         list.setItems(items);
-                
+        
     }
      @FXML
      private void adicionaMembroactivity (ActionEvent event) throws IOException{
@@ -137,6 +145,25 @@ public class MembrosController implements Initializable {
     // do what you have to do
     stage.close();
 }
+    
+    @FXML
+    private void maisInfo(ActionEvent event) throws SQLException{
+        
+      HBOXCell hboxC = list.getSelectionModel().getSelectedItem();
+      Query q = new Query();
+      //hboxC.toString();
+    
+        System.out.println( hboxC.toString());
+        String fullName = hboxC.toString();
+        
+        String[] parts = fullName.split(" ");
+        String firstname = parts [0];
+        String lastname = parts[1];
+        
+        
+        System.out.println("Firstname: " + firstname + "Lastname: " + lastname);
+        q.getMoreInfoFromName(parts);
+    }
     
     
 }
