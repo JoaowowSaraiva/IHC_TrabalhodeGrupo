@@ -9,7 +9,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="557.0" prefWidth="818.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="trabalhogrupo.ConcertosController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="608.0" prefWidth="818.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="trabalhogrupo.ConcertosController">
    <top>
       <Label text="Concertos" BorderPane.alignment="CENTER">
          <font>
@@ -39,14 +39,6 @@
                     </items>
                   </SplitPane>
                </right>
-               <bottom>
-                  <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="0.0" prefWidth="437.0" BorderPane.alignment="CENTER">
-                    <items>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" />
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" />
-                    </items>
-                  </SplitPane>
-               </bottom>
                <top>
                   <Label text="Atuações Efetuadas" BorderPane.alignment="CENTER">
                      <font>
@@ -55,8 +47,39 @@
                   </Label>
                </top>
                <center>
-                  <ListView fx:id="list1" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+                  <ListView fx:id="liste" prefHeight="260.0" prefWidth="401.0" BorderPane.alignment="CENTER" />
                </center>
+               <bottom>
+                  <BorderPane prefHeight="125.0" prefWidth="409.0" BorderPane.alignment="CENTER">
+                     <right>
+                        <SplitPane dividerPositions="0.29797979797979796" prefHeight="104.0" prefWidth="0.0" BorderPane.alignment="CENTER">
+                          <items>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" />
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" />
+                          </items>
+                        </SplitPane>
+                     </right>
+                     <bottom>
+                        <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="0.0" prefWidth="409.0" BorderPane.alignment="CENTER">
+                          <items>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" />
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" />
+                          </items>
+                        </SplitPane>
+                     </bottom>
+                     <center>
+                        <GridPane prefHeight="99.0" prefWidth="401.0" BorderPane.alignment="CENTER">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                        </GridPane>
+                     </center>
+                  </BorderPane>
+               </bottom>
             </BorderPane>
             <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
                <left>
@@ -67,14 +90,6 @@
                     </items>
                   </SplitPane>
                </left>
-               <bottom>
-                  <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="0.0" prefWidth="437.0" BorderPane.alignment="CENTER">
-                    <items>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" />
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" />
-                    </items>
-                  </SplitPane>
-               </bottom>
                <top>
                   <Label text="Atuações com estado pendente" BorderPane.alignment="CENTER">
                      <font>
@@ -83,14 +98,47 @@
                   </Label>
                </top>
                <center>
-                  <ListView fx:id="list2" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+                  <ListView fx:id="listd" prefHeight="140.0" prefWidth="401.0" BorderPane.alignment="CENTER" />
                </center>
+               <bottom>
+                  <BorderPane prefHeight="125.0" prefWidth="409.0" BorderPane.alignment="CENTER">
+                     <left>
+                        <SplitPane dividerPositions="0.29797979797979796" prefHeight="104.0" prefWidth="0.0" BorderPane.alignment="CENTER">
+                          <items>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" />
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" />
+                          </items>
+                        </SplitPane>
+                     </left>
+                     <bottom>
+                        <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="0.0" prefWidth="409.0" BorderPane.alignment="CENTER">
+                          <items>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" />
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" />
+                          </items>
+                        </SplitPane>
+                     </bottom>
+                     <center>
+                        <GridPane prefHeight="21.0" prefWidth="401.0" BorderPane.alignment="CENTER">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                        </GridPane>
+                     </center>
+                  </BorderPane>
+               </bottom>
             </BorderPane>
          </children>
       </GridPane>
    </center>
    <bottom>
-      <GridPane prefHeight="188.0" prefWidth="818.0" BorderPane.alignment="CENTER">
+      <GridPane prefHeight="138.0" prefWidth="818.0" BorderPane.alignment="CENTER">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="420.0" minWidth="10.0" prefWidth="407.0" />
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="438.0" minWidth="10.0" prefWidth="411.0" />
@@ -114,7 +162,7 @@
             </BorderPane>
             <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <center>
-                  <Button mnemonicParsing="false" prefHeight="42.0" prefWidth="150.0" text="Fechar" BorderPane.alignment="CENTER">
+                  <Button fx:id="close" mnemonicParsing="false" onAction="#closeButtonAction" prefHeight="42.0" prefWidth="150.0" text="Fechar" BorderPane.alignment="CENTER">
                      <BorderPane.margin>
                         <Insets bottom="20.0" />
                      </BorderPane.margin>
