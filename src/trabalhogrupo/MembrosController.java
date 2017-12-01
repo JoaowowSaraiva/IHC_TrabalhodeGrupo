@@ -211,6 +211,7 @@ public class MembrosController implements Initializable {
         Parent root=(Parent) loader.load();
         EditarMembroController setControler=loader.getController();
         setControler.editar(m);
+        closeButtonAction();
         Stage stage=new Stage();
         stage.setScene(new Scene(root));
         stage.show();

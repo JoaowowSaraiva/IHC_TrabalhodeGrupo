@@ -71,12 +71,12 @@
                      <children>
                         <BorderPane prefHeight="200.0" prefWidth="200.0">
                            <center>
-                              <Button fx:id="close" mnemonicParsing="false" prefHeight="42.0" prefWidth="88.0" text="Cancelar" BorderPane.alignment="CENTER" />
+                              <Button fx:id="close" mnemonicParsing="false" onAction="#Mactivity" prefHeight="42.0" prefWidth="88.0" text="Cancelar" BorderPane.alignment="CENTER" />
                            </center>
                         </BorderPane>
                         <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
                            <center>
-                              <Button mnemonicParsing="false" prefHeight="43.0" prefWidth="88.0" text="Editar" BorderPane.alignment="CENTER" />
+                              <Button mnemonicParsing="false" onAction="#EditarMembro" prefHeight="43.0" prefWidth="88.0" text="Editar" BorderPane.alignment="CENTER" />
                            </center>
                         </BorderPane>
                      </children>
@@ -89,6 +89,9 @@
                      </rowConstraints>
                   </GridPane>
                </center>
+               <top>
+                  <Label fx:id="idhide" BorderPane.alignment="CENTER" />
+               </top>
             </BorderPane>
          </children>
          <columnConstraints>
