@@ -19,6 +19,8 @@ public class Updates {
     }
     
     public void updateIdMembro(String id,String nome,String apelido,String data) throws SQLException{
+            conn.conexion();
+            
            String update="UPDATE Member SET FirstName=?,LastName=?,Birthday=? WHERE IdMembro=?";
            conn.pst=conn.con.prepareStatement(update);
            conn.pst.setString(1, nome);
