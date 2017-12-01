@@ -5,6 +5,7 @@
  */
 package trabalhogrupo;
 
+import Tabelas.Member;
 import dbinteraction.Query;
 import java.io.IOException;
 import java.net.URL;
@@ -29,6 +30,8 @@ import javafx.scene.control.ListView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.stage.Stage;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
 /**
  * FXML Controller class
@@ -46,6 +49,8 @@ public class MembrosController implements Initializable {
     @FXML
     Button close;
     
+    @FXML
+    Label mensagemerro;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -147,11 +152,16 @@ public class MembrosController implements Initializable {
 }
     
     @FXML
-    private void maisInfo(ActionEvent event) throws SQLException{
-        
+    private void maisInfo(ActionEvent event) throws SQLException, IOException{
+       Member m=new Member();       
       HBOXCell hboxC = list.getSelectionModel().getSelectedItem();
       Query q = new Query();
       //hboxC.toString();
+      if(hboxC==null){
+          mensagemerro.setText("Selecione um membro!");
+          return;
+      }
+       mensagemerro.setText("");
     
         System.out.println( hboxC.toString());
         String fullName = hboxC.toString();
@@ -161,10 +171,51 @@ public class MembrosController implements Initializable {
         String lastname = parts[1];
         
         
-        System.out.println("Firstname: " + firstname + "Lastname: " + lastname);
-        q.getMoreInfoFromName(parts);
+        
+        m=q.getMoreInfoFromName(parts);
+        //System.out.println("Firstname: " + m.getFirstName() + " Lastname: " + m.getLastName());
+        FXMLLoader loader=new FXMLLoader(getClass().getResource("Membromaisinfo.fxml"));
+        Parent root=(Parent) loader.load();
+        MembromaisinfoController setControler=loader.getController();
+        setControler.recebeMembro(m);
+        Stage stage=new Stage();
+        stage.setScene(new Scene(root));
+        stage.show();
+                
+    
     }
+    @FXML
+    private void editar(ActionEvent event) throws SQLException, IOException{
+       Member m=new Member();       
+      HBOXCell hboxC = list.getSelectionModel().getSelectedItem();
+      Query q = new Query();
+      //hboxC.toString();
+      if(hboxC==null){
+          mensagemerro.setText("Selecione um membro!");
+          return;
+      }
+       mensagemerro.setText("");
     
+        System.out.println( hboxC.toString());
+        String fullName = hboxC.toString();
+        
+        String[] parts = fullName.split(" ");
+        String firstname = parts [0];
+        String lastname = parts[1];
+        
+        
+        
+        m=q.getMoreInfoFromName(parts);
+        //System.out.println("Firstname: " + m.getFirstName() + " Lastname: " + m.getLastName());
+        FXMLLoader loader=new FXMLLoader(getClass().getResource("editarMembro.fxml"));
+        Parent root=(Parent) loader.load();
+        EditarMembroController setControler=loader.getController();
+        setControler.editar(m);
+        Stage stage=new Stage();
+        stage.setScene(new Scene(root));
+        stage.show();
+                
     
+    }
 }
 

@@ -5,6 +5,8 @@
  */
 package Tabelas;
 
+import java.time.LocalDate;
+
 /**
  *
  * @author Joao Saraiva
@@ -13,15 +15,23 @@ public class Member {
     private int IdMember;
     private String FirstName;
     private String LastName;
+    private String Birthday;
     
-    public Member(){
-        
+    public Member(){     
     }
-
-    public Member(int idMember, String FirstName, String LastName) {
-        this.IdMember = idMember;
+    public Member(int IdMember, String FirstName, String LastName, String Birthday) {
+        this.IdMember = IdMember;
         this.FirstName = FirstName;
         this.LastName = LastName;
+        this.Birthday = Birthday;
+    }
+
+    public String getBirthday() {
+        return Birthday;
+    }
+
+    public void setBirthday(String Birthday) {
+        this.Birthday = Birthday;
     }
 
     public int getIdMember() {

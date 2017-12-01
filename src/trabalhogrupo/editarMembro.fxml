@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="373.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="trabalhogrupo.EditarMembroController">
+   <center>
+      <GridPane BorderPane.alignment="CENTER">
+         <children>
+            <BorderPane prefHeight="200.0" prefWidth="200.0">
+               <bottom>
+                  <Label fx:id="firste" BorderPane.alignment="CENTER" />
+               </bottom>
+               <center>
+                  <TextField fx:id="first" BorderPane.alignment="CENTER">
+                     <BorderPane.margin>
+                        <Insets left="50.0" right="50.0" />
+                     </BorderPane.margin>
+                  </TextField>
+               </center>
+               <top>
+                  <Label text="Nome:" BorderPane.alignment="CENTER">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+               </top>
+            </BorderPane>
+            <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+               <bottom>
+                  <Label fx:id="laste" BorderPane.alignment="CENTER" />
+               </bottom>
+               <center>
+                  <TextField fx:id="last" BorderPane.alignment="CENTER">
+                     <BorderPane.margin>
+                        <Insets left="50.0" right="50.0" />
+                     </BorderPane.margin>
+                  </TextField>
+               </center>
+               <top>
+                  <Label text="Ultimo nome:" BorderPane.alignment="CENTER">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+               </top>
+            </BorderPane>
+            <BorderPane prefHeight="109.0" prefWidth="373.0" GridPane.rowIndex="2">
+               <bottom>
+                  <Label fx:id="datae" BorderPane.alignment="CENTER" />
+               </bottom>
+               <center>
+                  <DatePicker fx:id="data" prefHeight="25.0" prefWidth="201.0" BorderPane.alignment="CENTER" />
+               </center>
+               <top>
+                  <Label text="Data de nascimento" BorderPane.alignment="CENTER">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+               </top>
+            </BorderPane>
+            <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="3">
+               <center>
+                  <GridPane BorderPane.alignment="CENTER">
+                     <children>
+                        <BorderPane prefHeight="200.0" prefWidth="200.0">
+                           <center>
+                              <Button fx:id="close" mnemonicParsing="false" prefHeight="42.0" prefWidth="88.0" text="Cancelar" BorderPane.alignment="CENTER" />
+                           </center>
+                        </BorderPane>
+                        <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                           <center>
+                              <Button mnemonicParsing="false" prefHeight="43.0" prefWidth="88.0" text="Editar" BorderPane.alignment="CENTER" />
+                           </center>
+                        </BorderPane>
+                     </children>
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                  </GridPane>
+               </center>
+            </BorderPane>
+         </children>
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+      </GridPane>
+   </center>
+   <top>
+      <Label text="Editar Membro" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="24.0" />
+         </font>
+         <BorderPane.margin>
+            <Insets bottom="20.0" top="20.0" />
+         </BorderPane.margin>
+      </Label>
+   </top>
+</BorderPane>

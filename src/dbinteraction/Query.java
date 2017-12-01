@@ -9,6 +9,7 @@ package dbinteraction;
 
 import Tabelas.Member;
 import Tabelas.MembroNPresencas;
+import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -86,17 +87,21 @@ public class Query {
     
     public Member getMoreInfoFromName(String[] fullname) throws SQLException{
         conn.conexion();
-        Member oM = new Member();
+        
         String query = "Select * From Member Where FirstName=" + '"' +fullname[0] + '"' + " AND LastName=" +'"' + fullname[1] + '"';
         
         conn.pst=conn.con.prepareStatement(query);
         ResultSet rs = conn.pst.executeQuery();
-        
+        Member oM=null; 
         while(rs.next()){
             String x1 = rs.getString("FirstName");
             String x2 = rs.getString("LastName");
+            Date d1 = rs.getDate("Birthday");
+            String x3 = d1.toString();
+            int x4 = rs.getInt("IdMembro");
             
-            System.out.println("TEste: " + x1 + x2);
+            //System.out.println("TEste: " + x1+" "+ x2+" "+x3+" id:"+x4);
+            oM = new Member(x4,x1,x2,x3);
         }        
         
         return oM;
