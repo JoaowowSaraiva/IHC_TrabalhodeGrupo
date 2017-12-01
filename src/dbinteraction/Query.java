@@ -160,4 +160,22 @@ public class Query {
         return oM;
     }
     
+    
+   public List<String> selectVeiculo () throws SQLException{
+       conn.conexion();
+       List<String> list1 = new ArrayList();
+       String query = "Select * From Vehicles";
+       
+       conn.pst=conn.con.prepareStatement(query);
+       ResultSet rs = conn.pst.executeQuery();
+       
+       while(rs.next()){
+           String matricula = rs.getString("NumberPlate");
+           list1.add(matricula);
+       }
+       
+       return list1;       
+   }
+
+        
 }

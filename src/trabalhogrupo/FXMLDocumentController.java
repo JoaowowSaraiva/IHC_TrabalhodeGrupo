@@ -66,5 +66,16 @@ public class FXMLDocumentController implements Initializable {
             stage.setScene(scene);
             stage.show();
     }
+    
+    @FXML
+    private void ActivityVeiculos (ActionEvent event) throws IOException{
+            Parent root = FXMLLoader.load(getClass().getResource("Veiculos_layout.fxml"));
+            Stage stage = new Stage();              
+            
+            Scene scene = new Scene(root);
+            
+            stage.setScene(scene);
+            stage.show();
+    }
 
 }  
