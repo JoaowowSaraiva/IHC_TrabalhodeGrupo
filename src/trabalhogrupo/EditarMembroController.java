@@ -127,7 +127,7 @@ public class EditarMembroController implements Initializable {
         
         
         Updates U=new Updates();
-        
+        System.out.println(idhide.getText()+first.getText()+last.getText()+data1);
         U.updateIdMembro(idhide.getText(),first.getText(), last.getText(),data1);
         Mactivity();
        

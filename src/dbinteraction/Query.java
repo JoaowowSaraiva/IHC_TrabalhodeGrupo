@@ -84,6 +84,38 @@ public class Query {
         
         return list1;
     }
+    public List<String>selectLocalConcerto(int id) throws SQLException{
+        conn.conexion();
+        List<String> list1=new ArrayList();
+        String query="SELECT Concert.Local,Concert.DateHour\n" +
+                     "FROM CONCERTINAS.Member_Concert,CONCERTINAS.Member,CONCERTINAS.Concert\n" +
+                     "where Member_Concert.IdMember=Member.IdMembro and Concert.IdConcert=Member_Concert.IdConcert and Member.IdMembro="+id+" order by Datehour DESC";
+        conn.pst=conn.con.prepareStatement(query);
+        ResultSet rs = conn.pst.executeQuery();
+        while(rs.next()){
+            String x1=rs.getString("Local");
+            list1.add(x1);
+        }
+        return list1;
+        
+    }
+    public List<String>selectDataConcerto(int id) throws SQLException{
+        conn.conexion();
+        List<String> list1=new ArrayList();
+        String query="SELECT Concert.Local,Concert.DateHour\n" +
+                     "FROM CONCERTINAS.Member_Concert,CONCERTINAS.Member,CONCERTINAS.Concert\n" +
+                     "where Member_Concert.IdMember=Member.IdMembro and Concert.IdConcert=Member_Concert.IdConcert and Member.IdMembro="+id+" order by Datehour DESC";
+        conn.pst=conn.con.prepareStatement(query);
+        ResultSet rs = conn.pst.executeQuery();
+        while(rs.next()){
+            
+            Date d1=rs.getDate("DateHour");
+     
+            list1.add(d1.toString());
+        }
+        return list1;
+        
+    }
     
     public Member getMoreInfoFromName(String[] fullname) throws SQLException{
         conn.conexion();

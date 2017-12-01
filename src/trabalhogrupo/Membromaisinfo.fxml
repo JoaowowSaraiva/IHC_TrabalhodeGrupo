@@ -8,7 +8,6 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="309.0" prefWidth="625.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="trabalhogrupo.MembromaisinfoController">
    <center>
       <GridPane BorderPane.alignment="CENTER">
@@ -75,7 +74,7 @@
       </Label>
    </top>
    <bottom>
-      <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="113.0" text="Fechar" BorderPane.alignment="CENTER">
+      <Button fx:id="close" mnemonicParsing="false" onAction="#closeButtonAction" prefHeight="30.0" prefWidth="113.0" text="Fechar" BorderPane.alignment="CENTER">
          <BorderPane.margin>
             <Insets bottom="10.0" top="10.0" />
          </BorderPane.margin>
