@@ -84,6 +84,27 @@ public class Query {
         
         return list1;
     }
+    public List<String>selectConcerto(int status) throws SQLException{
+        conn.conexion();
+        List<String> list1=new ArrayList();
+        String query="SELECT Concert.Local,Concert.DateHour,Concert.Payment\n" +
+                     "FROM CONCERTINAS.Concert\n" +
+                     "where Concert.status="+status+" order by Datehour DESC";
+        conn.pst=conn.con.prepareStatement(query);
+        ResultSet rs = conn.pst.executeQuery();
+        while(rs.next()){
+            String x1=rs.getString("Local");
+            String x2=rs.getString("Payment");
+            Date d1=rs.getDate("DateHour");
+            String x3=d1.toString();
+            String x=String.format("%s|%s€|%s",x1,x2,x3);
+            
+            
+            list1.add(x);
+        }
+        return list1;
+        
+    }
     public List<String>selectLocalConcerto(int id) throws SQLException{
         conn.conexion();
         List<String> list1=new ArrayList();
