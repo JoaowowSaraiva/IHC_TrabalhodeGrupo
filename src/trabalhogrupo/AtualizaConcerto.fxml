@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="608.0" prefWidth="810.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <left>
+     
+      
+   </left>
+   <left>
+      <BorderPane prefHeight="608.0" prefWidth="475.0" BorderPane.alignment="CENTER">
+         <center>
+            <GridPane BorderPane.alignment="CENTER">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+                     <center>
+                        <Label prefWidth="64.0" text="Local:" BorderPane.alignment="CENTER" />
+                     </center>
+                     <bottom>
+                        <Label text="Label" BorderPane.alignment="CENTER" />
+                     </bottom>
+                  </BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <center>
+                        <TextField BorderPane.alignment="CENTER" />
+                     </center>
+                     <bottom>
+                        <Label text="Label" BorderPane.alignment="CENTER" />
+                     </bottom></BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
+                     <center>
+                        <Label prefWidth="64.0" text="Concelho:" BorderPane.alignment="CENTER" />
+                     </center>
+                     <bottom>
+                        <Label text="Label" BorderPane.alignment="CENTER" />
+                     </bottom>
+                  </BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <center>
+                        <TextField BorderPane.alignment="CENTER" />
+                     </center>
+                     <bottom>
+                        <Label text="Label" BorderPane.alignment="CENTER" />
+                     </bottom></BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="3">
+                     <center>
+                        <Label prefWidth="64.0" text="Data:" BorderPane.alignment="CENTER" />
+                     </center>
+                     <bottom>
+                        <Label text="Label" BorderPane.alignment="CENTER" />
+                     </bottom>
+                  </BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <center>
+                        <DatePicker prefHeight="25.0" prefWidth="318.0" BorderPane.alignment="CENTER" />
+                     </center>
+                     <bottom>
+                        <Label text="Label" BorderPane.alignment="CENTER" />
+                     </bottom></BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="4">
+                     <center>
+                        <Label prefWidth="64.0" text="Hora:" BorderPane.alignment="CENTER" />
+                     </center>
+                     <bottom>
+                        <Label text="Label" BorderPane.alignment="CENTER" />
+                     </bottom>
+                  </BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                     <left>
+                        <ComboBox prefHeight="25.0" prefWidth="113.0" BorderPane.alignment="CENTER" />
+                     </left>
+                     <right>
+                        <ComboBox prefHeight="25.0" prefWidth="114.0" BorderPane.alignment="CENTER" />
+                     </right>
+                     <center>
+                        <Label text="H" BorderPane.alignment="CENTER" />
+                     </center>
+                     <bottom>
+                        <Label text="Label" BorderPane.alignment="CENTER" />
+                     </bottom></BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="5">
+                     <center>
+                        <Label prefWidth="64.0" text="Duração:" BorderPane.alignment="CENTER" />
+                     </center>
+                     <bottom>
+                        <Label text="Label" BorderPane.alignment="CENTER" />
+                     </bottom>
+                  </BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                     <center>
+                        <ComboBox prefHeight="25.0" prefWidth="304.0" BorderPane.alignment="CENTER" />
+                     </center>
+                     <bottom>
+                        <Label text="Label" BorderPane.alignment="CENTER" />
+                     </bottom></BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="6">
+                     <center>
+                        <Label prefWidth="64.0" text="Fatura:" BorderPane.alignment="CENTER" />
+                     </center>
+                     <bottom>
+                        <Label text="Label" BorderPane.alignment="CENTER" />
+                     </bottom>
+                  </BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                     <center>
+                        <ComboBox prefHeight="25.0" prefWidth="339.0" BorderPane.alignment="CENTER" />
+                     </center>
+                     <bottom>
+                        <Label text="Label" BorderPane.alignment="CENTER" />
+                     </bottom></BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="7">
+                     <center>
+                        <Label prefWidth="64.0" text="Veiculo:" BorderPane.alignment="CENTER" />
+                     </center>
+                     <bottom>
+                        <Label text="Label" BorderPane.alignment="CENTER" />
+                     </bottom>
+                  </BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                     <center>
+                        <ComboBox prefHeight="25.0" prefWidth="241.0" BorderPane.alignment="CENTER" />
+                     </center>
+                     <bottom>
+                        <Label text="Label" BorderPane.alignment="CENTER" />
+                     </bottom></BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="8">
+                     <center>
+                        <Label text="Pagamento:" BorderPane.alignment="CENTER" />
+                     </center>
+                     <bottom>
+                        <Label text="Label" BorderPane.alignment="CENTER" />
+                     </bottom>
+                  </BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                     <center>
+                        <TextField BorderPane.alignment="CENTER" />
+                     </center>
+                     <bottom>
+                        <Label text="Label" BorderPane.alignment="CENTER" />
+                     </bottom></BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="9">
+                     <center>
+                        <Label BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+               </children>
+            </GridPane>
+         </center>
+      </BorderPane>
+   </left>
+   <right>
+      <BorderPane prefHeight="608.0" prefWidth="326.0" BorderPane.alignment="CENTER">
+         <center>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ComboBox layoutX="14.0" layoutY="43.0" prefHeight="25.0" prefWidth="223.0" />
+                  <Label layoutX="74.0" layoutY="14.0" text="Adicionar Membro a Atuação">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="246.0" layoutY="43.0" mnemonicParsing="false" text="Adicionar" />
+                  <ListView layoutX="17.0" layoutY="76.0" prefHeight="263.0" prefWidth="296.0" />
+                  <Button layoutX="89.0" layoutY="346.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="148.0" text="Remover" />
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+   </right>
+   <center>
+      <SplitPane dividerPositions="0.29797979797979796" prefHeight="608.0" prefWidth="0.0" BorderPane.alignment="CENTER">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" />
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="606.0" prefWidth="0.0" />
+        </items>
+      </SplitPane>
+   </center>
+   <bottom>
+      <BorderPane prefHeight="116.0" prefWidth="810.0" BorderPane.alignment="CENTER">
+         <center>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button layoutX="74.0" layoutY="33.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="143.0" text="Cancelar" />
+                  <Button layoutX="346.0" layoutY="33.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="119.0" text="Guardar" />
+                  <Button layoutX="590.0" layoutY="37.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="113.0" text="Concluir Atuação" />
+                  <SplitPane dividerPositions="0.5" layoutX="-1.0" layoutY="-4.0" orientation="VERTICAL" prefHeight="0.0" prefWidth="810.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" />
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" />
+                    </items>
+                  </SplitPane>
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+   </bottom>
+   <top>
+      <BorderPane prefHeight="90.0" prefWidth="810.0" BorderPane.alignment="CENTER">
+         <center>
+            <Label text="Adicionar Informações a Atuaçao" BorderPane.alignment="CENTER">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+         </center>
+      </BorderPane>
+   </top>
+</BorderPane>

@@ -151,7 +151,7 @@ public class MembrosController implements Initializable {
     Stage stage = (Stage) close.getScene().getWindow();
     // do what you have to do
     stage.close();
-}
+}  
     
     @FXML
     private void maisInfo(ActionEvent event) throws SQLException, IOException{

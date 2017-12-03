@@ -43,7 +43,7 @@
             </BorderPane>
             <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="3">
                <center>
-                  <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="178.0" text="Veiculos" BorderPane.alignment="CENTER" />
+                  <Button mnemonicParsing="false" onAction="#ActivityVeiculos" prefHeight="30.0" prefWidth="178.0" text="Veiculos" BorderPane.alignment="CENTER" />
                </center>
             </BorderPane>
             <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="4">

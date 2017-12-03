@@ -31,8 +31,7 @@ import javafx.stage.Stage;
  */
 public class VehiclesController implements Initializable {
   @FXML
-    ListView
-    <HBOXCell> list = new ListView<HBOXCell>();
+    ListView <HBOXCell> list = new ListView<HBOXCell>();
     
     @FXML
     Label nome;
@@ -100,8 +99,10 @@ public class VehiclesController implements Initializable {
         
         //ListView<HBOXCell> list = new ListView<HBOXCell>();
         ObservableList<HBOXCell> items = FXCollections.observableArrayList(list1);
-        list.setItems(items);
+        //list.setItems(items);
         
+        System.out.println( list.getItems().size());
     }
+    
 }
    
