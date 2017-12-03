@@ -95,8 +95,7 @@ public class NovomembroController implements Initializable {
         }
         LocalDate dat=data.getValue();
         String data1=dat.toString();
-        
-        int id=q.maxIdMembro()+1;
+
         Inserts I=new Inserts();
         I.inserirmembro(first.getText(), last.getText(),data1);
         Membrosactivity();

@@ -1,9 +1,11 @@
+package trabalhogrupo;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package trabalhogrupo;
+
 
 import Tabelas.Member;
 import dbinteraction.Query;

@@ -17,7 +17,6 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.HBox;
@@ -26,12 +25,12 @@ import javafx.scene.layout.Priority;
 /**
  * FXML Controller class
  *
- * @author Joao Saraiva
+ * @author smf_1
  */
-public class VeiculosController implements Initializable {
-
-    @FXML
-    ListView<HBOXCell> list = new ListView<HBOXCell>();
+public class VehiclesController implements Initializable {
+  @FXML
+    ListView
+    <HBOXCell> list = new ListView<HBOXCell>();
     
     @FXML
     Label nome;
@@ -94,3 +93,4 @@ public class VeiculosController implements Initializable {
         
     }
 }
+   

@@ -7,6 +7,7 @@ package dbinteraction;
 
 
 
+import Tabelas.Concert;
 import Tabelas.Member;
 import Tabelas.MembroNPresencas;
 import java.sql.Date;
@@ -26,11 +27,11 @@ public class Query {
     public Query() {
     }
     
-    public int maxIdMembro() throws SQLException{
+    public int maxIdConcerto() throws SQLException{
        conn.conexion();
         
         String result = new String();
-        String query= "SELECT Max(IdMembro) FROM Member";
+        String query= "SELECT Max(IdConcert) FROM Concert";
 
         conn.pst=conn.con.prepareStatement(query);
         //Statement stm=null;
@@ -44,6 +45,7 @@ public class Query {
         return 0;
         
     }
+    
     public List<MembroNPresencas> presencas() throws SQLException{
         conn.conexion();
         
@@ -153,29 +155,27 @@ public class Query {
             String x3 = d1.toString();
             int x4 = rs.getInt("IdMembro");
             
-            //System.out.println("TEste: " + x1+" "+ x2+" "+x3+" id:"+x4);
+            //System.out.println("TEste: " + x1+" "+ x2+" "+sx3+" id:"+x4);
             oM = new Member(x4,x1,x2,x3);
         }        
         
         return oM;
     }
     
-    
-   public List<String> selectVeiculo () throws SQLException{
-       conn.conexion();
-       List<String> list1 = new ArrayList();
-       String query = "Select * From Vehicles";
-       
-       conn.pst=conn.con.prepareStatement(query);
-       ResultSet rs = conn.pst.executeQuery();
-       
-       while(rs.next()){
-           String matricula = rs.getString("NumberPlate");
-           list1.add(matricula);
-       }
-       
-       return list1;       
-   }
+    public List<String> selectVeiculo () throws SQLException{
+          conn.conexion();
+          List<String> list1 = new ArrayList();
+          String query = "Select * From Vehicles";
 
-        
+          conn.pst=conn.con.prepareStatement(query);
+          ResultSet rs = conn.pst.executeQuery();
+
+          while(rs.next()){
+              String matricula = rs.getString("NumberPlate");
+              list1.add(matricula);
+          }
+
+          return list1;       
+      }
+
 }
