@@ -17,10 +17,12 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -34,6 +36,8 @@ public class VehiclesController implements Initializable {
     
     @FXML
     Label nome;
+    @FXML
+    Button close;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -71,6 +75,13 @@ public class VehiclesController implements Initializable {
       
               
     }
+    @FXML
+    private void closeButtonAction(){
+    // get a handle to the stage
+    Stage stage = (Stage) close.getScene().getWindow();
+    // do what you have to do
+    stage.close();
+}
     
     
     public void createContent() throws SQLException{
