@@ -13,6 +13,8 @@ import Tabelas.MembroNPresencas;
 import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Time;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 import trabalhogrupo.ConnectDB.Connect;
@@ -179,5 +181,51 @@ public class Query {
 
           return list1;       
       }
+     public String selectConcertoMais(int status) throws SQLException{
+        conn.conexion();
+       String x=null;
+        String query="SELECT *\n" +
+                     "FROM CONCERTINAS.Concert\n" +
+                     "where IdConcert="+status+" order by Datehour DESC";
+        conn.pst=conn.con.prepareStatement(query);
+        ResultSet rs = conn.pst.executeQuery();
+        while(rs.next()){
+            String x1=rs.getString("Local");
+                      
+            Timestamp t=rs.getTimestamp("DateHour");
+            String x3=t.toString();
+            
+             float dur=rs.getFloat("Duration");
+            String x4=String.valueOf(dur);
+            
+            double pay=rs.getDouble("Payment");
+         
+            String x5;
+            if(rs.wasNull()){
+            x5=" ";
+            
+            }else{
+              x5=String.valueOf(pay);
+            }
+            
+            int v=rs.getInt("IdVehicles");
+            String x7;
+            if(rs.wasNull()){
+            x7=" ";
+            
+            }else{
+             x7=String.valueOf(v);
+            }
+            int f=rs.getInt("Fatura");
+            String x8=String.valueOf(f);
+          
+             x=String.format("%s|%s|%s|%s|%s|%s",x1,x3,x4,x5,x7,x8);
+            
+            
+            
+        }
+        return x;
+        
+    }
 
 }

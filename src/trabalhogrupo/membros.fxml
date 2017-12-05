@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.shape.*?>
@@ -36,40 +37,61 @@
          <children>
             <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
                <center>
-                  <Button mnemonicParsing="false" onAction="#adicionaMembroactivity" prefHeight="69.0" prefWidth="258.0" text="Inserir Novo Membro" BorderPane.alignment="CENTER" />
+                  <Button mnemonicParsing="false" onAction="#adicionaMembroactivity" prefHeight="62.0" prefWidth="233.0" text="   Inserir Novo Membro          " BorderPane.alignment="CENTER">
+                     <graphic>
+                        <ImageView fitHeight="32.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icon/icons8-plus-40.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
                </center>
             </BorderPane>
             <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="3">
                <center>
-                  <Button mnemonicParsing="false" onAction="#estatistica" prefHeight="68.0" prefWidth="256.0" text="Dados Estatisticos de Presenças em Atuações" BorderPane.alignment="CENTER" />
+                  <Button mnemonicParsing="false" onAction="#estatistica" prefHeight="62.0" prefWidth="236.0" text="Presenças em Atuações         " BorderPane.alignment="CENTER">
+                     <graphic>
+                        <ImageView fitHeight="32.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icon/icons8-line-chart-40.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
                </center>
             </BorderPane>
          </children>
       </GridPane>
    </right>
    <bottom>
-      <Button fx:id="close" mnemonicParsing="false" onAction="#closeButtonAction" prefHeight="38.0" prefWidth="136.0" text="Fechar" BorderPane.alignment="CENTER">
+      <Button fx:id="close" mnemonicParsing="false" onAction="#closeButtonAction" prefHeight="38.0" prefWidth="136.0" text="Fechar          " BorderPane.alignment="CENTER">
          <BorderPane.margin>
             <Insets bottom="10.0" top="20.0" />
          </BorderPane.margin>
+         <graphic>
+            <ImageView fitHeight="32.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icon/icons8-door-opened-40.png" />
+               </image>
+            </ImageView>
+         </graphic>
       </Button>
    </bottom>
    <left>
       <BorderPane prefHeight="333.0" prefWidth="350.0" BorderPane.alignment="CENTER">
          <center>
-            <ListView fx:id="list" prefHeight="208.0" prefWidth="341.0" BorderPane.alignment="CENTER">
+            <ListView fx:id="list" prefHeight="230.0" prefWidth="345.0" BorderPane.alignment="CENTER">
                <padding>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </padding>
                <BorderPane.margin>
-                  <Insets left="5.0" />
+                  <Insets bottom="20.0" left="5.0" />
                </BorderPane.margin>
             </ListView>
          </center>
          <bottom>
             <BorderPane prefHeight="43.0" prefWidth="350.0" BorderPane.alignment="CENTER">
                <center>
-                  <GridPane BorderPane.alignment="CENTER">
+                  <GridPane prefHeight="46.0" prefWidth="350.0" BorderPane.alignment="CENTER">
                     <columnConstraints>
                       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -79,13 +101,30 @@
                     </rowConstraints>
                      <children>
                         <BorderPane prefHeight="200.0" prefWidth="200.0">
-                           <center>
-                              <Button mnemonicParsing="false" onAction="#maisInfo" text="Mais Informações" BorderPane.alignment="CENTER" />
-                           </center>
+                           <left>
+                              <Button mnemonicParsing="false" onAction="#maisInfo" prefHeight="40.0" prefWidth="171.0" text="Mais Informações     " BorderPane.alignment="CENTER">
+                                 <graphic>
+                                    <ImageView fitHeight="32.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../icon/icons8-info-40.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <BorderPane.margin>
+                                    <Insets left="5.0" />
+                                 </BorderPane.margin></Button>
+                           </left>
                         </BorderPane>
-                        <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                        <BorderPane prefHeight="40.0" prefWidth="150.0" GridPane.columnIndex="1">
                            <center>
-                              <Button mnemonicParsing="false" onAction="#editar" prefHeight="25.0" prefWidth="116.0" text="Editar" BorderPane.alignment="CENTER" />
+                              <Button mnemonicParsing="false" onAction="#editar" prefHeight="40.0" prefWidth="161.0" text="  Editar           " BorderPane.alignment="CENTER">
+                                 <graphic>
+                                    <ImageView fitHeight="32.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../icon/icons8-edit-40.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic></Button>
                            </center>
                         </BorderPane>
                      </children>

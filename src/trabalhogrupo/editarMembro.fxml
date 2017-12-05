@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
+<?import javafx.scene.image.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
@@ -71,12 +71,26 @@
                      <children>
                         <BorderPane prefHeight="200.0" prefWidth="200.0">
                            <center>
-                              <Button fx:id="close" mnemonicParsing="false" onAction="#Mactivity" prefHeight="42.0" prefWidth="88.0" text="Cancelar" BorderPane.alignment="CENTER" />
+                              <Button fx:id="close" mnemonicParsing="false" onAction="#Mactivity" prefHeight="42.0" prefWidth="120.0" text="Cancelar" BorderPane.alignment="CENTER" >
+                                <graphic>
+                                    <ImageView fitHeight="32.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../icon/icons8-cancel-50.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic></Button>
                            </center>
                         </BorderPane>
                         <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
                            <center>
-                              <Button mnemonicParsing="false" onAction="#EditarMembro" prefHeight="43.0" prefWidth="88.0" text="Editar" BorderPane.alignment="CENTER" />
+                              <Button mnemonicParsing="false" onAction="#EditarMembro" prefHeight="43.0" prefWidth="120.0" text="Editar" BorderPane.alignment="CENTER" >
+                                  <graphic>
+                                    <ImageView fitHeight="32.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../icon/icons8-approval-50.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic></Button>
                            </center>
                         </BorderPane>
                      </children>

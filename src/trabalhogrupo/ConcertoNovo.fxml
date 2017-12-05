@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
@@ -130,18 +131,8 @@
                </center>
             </BorderPane>
             <BorderPane prefHeight="77.0" prefWidth="234.0" GridPane.columnIndex="2" GridPane.rowIndex="4">
-               <right>
-                  <BorderPane prefHeight="77.0" prefWidth="114.0" BorderPane.alignment="CENTER">
-                     <left>
-                        <ComboBox fx:id="minuto" prefHeight="25.0" prefWidth="70.0" BorderPane.alignment="CENTER" />
-                     </left>
-                     <right>
-                        <Label prefHeight="17.0" prefWidth="38.0" text="M" BorderPane.alignment="CENTER" />
-                     </right>
-                  </BorderPane>
-               </right>
                <left>
-                  <ComboBox fx:id="hora" prefHeight="25.0" prefWidth="70.0" BorderPane.alignment="CENTER" />
+                  <ComboBox fx:id="hora" prefHeight="25.0" prefWidth="92.0" BorderPane.alignment="CENTER" />
                </left>
                <center>
                   <Label text="H" BorderPane.alignment="CENTER" />
@@ -149,6 +140,9 @@
                <bottom>
                   <Label fx:id="horaerro" BorderPane.alignment="CENTER" />
                </bottom>
+               <right>
+                  <ComboBox fx:id="minuto" prefHeight="25.0" prefWidth="88.0" BorderPane.alignment="CENTER" />
+               </right>
             </BorderPane>
             <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="5">
                <center>
@@ -193,12 +187,26 @@
                <children>
                   <BorderPane prefHeight="200.0" prefWidth="200.0">
                      <center>
-                        <Button fx:id="close" mnemonicParsing="false" onAction="#closeButtonAction" prefHeight="50.0" prefWidth="140.0" text="Cancelar" BorderPane.alignment="CENTER" />
+                        <Button fx:id="close" mnemonicParsing="false" onAction="#closeButtonAction" prefHeight="50.0" prefWidth="140.0" text="Cancelar   " BorderPane.alignment="CENTER">
+                           <graphic>
+                              <ImageView fitHeight="33.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../icon/icons8-cancel-50.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></Button>
                      </center>
                   </BorderPane>
                   <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
                      <center>
-                        <Button mnemonicParsing="false" onAction="#adicionaConcerto" prefHeight="50.0" prefWidth="140.0" text="Adicionar" BorderPane.alignment="CENTER" />
+                        <Button mnemonicParsing="false" onAction="#adicionaConcerto" prefHeight="50.0" prefWidth="140.0" text="Adicionar     " BorderPane.alignment="CENTER">
+                           <graphic>
+                              <ImageView fitHeight="33.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../icon/icons8-approval-50.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></Button>
                      </center>
                   </BorderPane>
                </children>

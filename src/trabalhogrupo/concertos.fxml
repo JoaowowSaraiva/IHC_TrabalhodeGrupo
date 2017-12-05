@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import java.lang.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
@@ -84,12 +85,26 @@
                            <children>
                               <BorderPane prefHeight="200.0" prefWidth="200.0">
                                  <center>
-                                    <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="148.0" text="Mais Informações" BorderPane.alignment="CENTER" />
+                                    <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="180.0" text="Mais Informações" BorderPane.alignment="CENTER">
+                                       <graphic>
+                                          <ImageView fitHeight="33.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../icon/icons8-info-40.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic></Button>
                                  </center>
                               </BorderPane>
                               <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
                                  <center>
-                                    <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="148.0" text="Editar" BorderPane.alignment="CENTER" />
+                                    <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="180.0" text="Editar" BorderPane.alignment="CENTER">
+                                       <graphic>
+                                          <ImageView fitHeight="33.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../icon/icons8-edit-40.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic></Button>
                                  </center>
                               </BorderPane>
                            </children>
@@ -150,12 +165,26 @@
                            <children>
                               <BorderPane prefHeight="200.0" prefWidth="200.0">
                                  <center>
-                                    <Button mnemonicParsing="false" onAction="#MostrarItinerario" prefWidth="148.0" text="Ver itinerários" BorderPane.alignment="CENTER" />
+                                    <Button mnemonicParsing="false" onAction="#MostrarItinerario" prefWidth="180.0" text="Ver itinerários" BorderPane.alignment="CENTER">
+                                       <graphic>
+                                          <ImageView fitHeight="33.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../icon/icons8-location-40.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic></Button>
                                  </center>
                               </BorderPane>
                               <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
                                  <center>
-                                    <Button mnemonicParsing="false" onAction="#AddInfo" prefHeight="25.0" prefWidth="148.0" text="Atualizar Informações" BorderPane.alignment="CENTER" />
+                                    <Button mnemonicParsing="false" onAction="#AddInfo" prefHeight="41.0" prefWidth="180.0" text="Atualizar Informações" BorderPane.alignment="CENTER">
+                                       <graphic>
+                                          <ImageView fitHeight="33.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../icon/icons8-add-property-40.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic></Button>
                                  </center>
                               </BorderPane>
                            </children>
@@ -181,12 +210,26 @@
                <children>
                   <BorderPane prefHeight="200.0" prefWidth="200.0">
                      <center>
-                        <Button mnemonicParsing="false" onAction="#adicionaConcertoactivity" prefHeight="50.0" prefWidth="150.0" text="Nova Atuação" BorderPane.alignment="CENTER" />
+                        <Button mnemonicParsing="false" onAction="#adicionaConcertoactivity" prefHeight="50.0" prefWidth="150.0" text="Nova Atuação" BorderPane.alignment="CENTER">
+                           <graphic>
+                              <ImageView fitHeight="33.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../icon/icons8-plus-40.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></Button>
                      </center>
                   </BorderPane>
                   <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
                      <center>
-                        <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Atuações por mes" BorderPane.alignment="CENTER" />
+                        <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Atuações por mes" BorderPane.alignment="CENTER">
+                           <graphic>
+                              <ImageView fitHeight="33.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../icon/icons8-line-chart-40.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></Button>
                      </center>
                   </BorderPane>
                </children>
@@ -195,7 +238,14 @@
          <bottom>
             <BorderPane prefHeight="54.0" prefWidth="818.0" BorderPane.alignment="CENTER">
                <center>
-                  <Button fx:id="close" mnemonicParsing="false" onAction="#closeButtonAction" prefHeight="40.0" prefWidth="120.0" text="Fechar" BorderPane.alignment="CENTER" />
+                  <Button fx:id="close" mnemonicParsing="false" onAction="#closeButtonAction" prefHeight="40.0" prefWidth="120.0" text="Fechar" BorderPane.alignment="CENTER">
+                     <graphic>
+                        <ImageView fitHeight="33.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icon/icons8-door-opened-40.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
                </center>
             </BorderPane>
          </bottom>

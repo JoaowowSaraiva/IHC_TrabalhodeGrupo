@@ -202,7 +202,7 @@ public class ConcertosController implements Initializable {
         String local = hboxC.toString();
 
         FXMLLoader loader=new FXMLLoader(getClass().getResource("AtualizaConcerto.fxml"));
-        Parent root=(Parent) loader.load();
+        Parent root=(Parent)loader.load();
         AtualizaConcertoController setControler=loader.getController();
         setControler.setidhide(local);
         Stage stage=new Stage();

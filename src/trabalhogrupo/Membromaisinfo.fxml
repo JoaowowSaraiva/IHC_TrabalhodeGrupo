@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
@@ -71,13 +72,23 @@
          <font>
             <Font size="21.0" />
          </font>
+         <BorderPane.margin>
+            <Insets bottom="20.0" />
+         </BorderPane.margin>
       </Label>
    </top>
    <bottom>
-      <Button fx:id="close" mnemonicParsing="false" onAction="#closeButtonAction" prefHeight="30.0" prefWidth="113.0" text="Fechar" BorderPane.alignment="CENTER">
+      <Button fx:id="close" mnemonicParsing="false" onAction="#closeButtonAction" prefHeight="30.0" prefWidth="113.0" text="Fechar  " BorderPane.alignment="CENTER">
          <BorderPane.margin>
             <Insets bottom="10.0" top="10.0" />
          </BorderPane.margin>
+         <graphic>
+            <ImageView fitHeight="33.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icon/icons8-door-opened-40.png" />
+               </image>
+            </ImageView>
+         </graphic>
       </Button>
    </bottom>
 </BorderPane>
