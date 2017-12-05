@@ -55,6 +55,7 @@ public class FXMLDocumentController implements Initializable {
             
             Scene scene = new Scene(root);
             
+            stage.setTitle("Membros - Grupo de Concertinas do Reboleiro");
             stage.setScene(scene);
             stage.show();
     }
@@ -65,6 +66,7 @@ public class FXMLDocumentController implements Initializable {
             
             Scene scene = new Scene(root);
             
+            stage.setTitle("Atuações - Grupo de Concertinas do Reboleiro");
             stage.setScene(scene);
             stage.show();
     }
@@ -75,6 +77,7 @@ public class FXMLDocumentController implements Initializable {
             
             Scene scene = new Scene(root);
             
+            stage.setTitle("Veiculos - Grupo de Concertinas do Reboleiro");
             stage.setScene(scene);
             stage.show();
     }

@@ -23,9 +23,7 @@ public class TrabalhoGrupo extends Application {
         
         Scene scene = new Scene(root);
         
-        System.out.println("teste");
-        
-        
+        stage.setTitle("Grupo de Concertinas do Reboleiro");
         stage.setScene(scene);
         stage.show();
     }
