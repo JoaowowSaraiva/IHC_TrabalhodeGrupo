@@ -10,7 +10,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="608.0" prefWidth="810.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="608.0" prefWidth="810.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="trabalhogrupo.AtualizaConcertoController">
    <left>
      
       
@@ -24,7 +24,6 @@
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
               </columnConstraints>
               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -53,35 +52,20 @@
                      </bottom></BorderPane>
                   <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
                      <center>
-                        <Label prefWidth="64.0" text="Concelho:" BorderPane.alignment="CENTER" />
-                     </center>
-                     <bottom>
-                        <Label BorderPane.alignment="CENTER" />
-                     </bottom>
-                  </BorderPane>
-                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                     <center>
-                        <TextField fx:id="concelho" BorderPane.alignment="CENTER" />
-                     </center>
-                     <bottom>
-                        <Label fx:id="concelhoe" BorderPane.alignment="CENTER" />
-                     </bottom></BorderPane>
-                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="3">
-                     <center>
                         <Label prefWidth="64.0" text="Data:" BorderPane.alignment="CENTER" />
                      </center>
                      <bottom>
                         <Label BorderPane.alignment="CENTER" />
                      </bottom>
                   </BorderPane>
-                  <BorderPane fx:id="concelhoe" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                  <BorderPane fx:id="concelhoe" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <center>
                         <DatePicker fx:id="data" prefHeight="25.0" prefWidth="318.0" BorderPane.alignment="CENTER" />
                      </center>
                      <bottom>
                         <Label fx:id="datae" BorderPane.alignment="CENTER" />
                      </bottom></BorderPane>
-                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="4">
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="3">
                      <center>
                         <Label prefWidth="64.0" text="Hora:" BorderPane.alignment="CENTER" />
                      </center>
@@ -89,7 +73,7 @@
                         <Label BorderPane.alignment="CENTER" />
                      </bottom>
                   </BorderPane>
-                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
                      <left>
                         <ComboBox fx:id="hora" prefHeight="25.0" prefWidth="113.0" BorderPane.alignment="CENTER" />
                      </left>
@@ -102,7 +86,7 @@
                      <bottom>
                         <Label fx:id="horae" BorderPane.alignment="CENTER" />
                      </bottom></BorderPane>
-                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="5">
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="4">
                      <center>
                         <Label prefWidth="64.0" text="Duração:" BorderPane.alignment="CENTER" />
                      </center>
@@ -110,14 +94,14 @@
                         <Label BorderPane.alignment="CENTER" />
                      </bottom>
                   </BorderPane>
-                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
                      <center>
                         <ComboBox fx:id="duracao" prefHeight="25.0" prefWidth="304.0" BorderPane.alignment="CENTER" />
                      </center>
                      <bottom>
                         <Label fx:id="duracaoe" BorderPane.alignment="CENTER" />
                      </bottom></BorderPane>
-                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="6">
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="5">
                      <center>
                         <Label prefWidth="64.0" text="Fatura:" BorderPane.alignment="CENTER" />
                      </center>
@@ -125,14 +109,14 @@
                         <Label BorderPane.alignment="CENTER" />
                      </bottom>
                   </BorderPane>
-                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
                      <center>
                         <ComboBox fx:id="fatura" prefHeight="25.0" prefWidth="339.0" BorderPane.alignment="CENTER" />
                      </center>
                      <bottom>
                         <Label fx:id="faturae" BorderPane.alignment="CENTER" />
                      </bottom></BorderPane>
-                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="7">
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="6">
                      <center>
                         <Label prefWidth="64.0" text="Veiculo:" BorderPane.alignment="CENTER" />
                      </center>
@@ -140,14 +124,14 @@
                         <Label BorderPane.alignment="CENTER" />
                      </bottom>
                   </BorderPane>
-                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
                      <center>
                         <ComboBox fx:id="veiculo" prefHeight="25.0" prefWidth="241.0" BorderPane.alignment="CENTER" />
                      </center>
                      <bottom>
                         <Label fx:id="veiculoe" BorderPane.alignment="CENTER" />
                      </bottom></BorderPane>
-                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="8">
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="7">
                      <center>
                         <Label text="Pagamento:" BorderPane.alignment="CENTER" />
                      </center>
@@ -155,19 +139,19 @@
                         <Label BorderPane.alignment="CENTER" />
                      </bottom>
                   </BorderPane>
-                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="7">
                      <center>
                         <TextField fx:id="pagamento" BorderPane.alignment="CENTER" />
                      </center>
                      <bottom>
                         <Label fx:id="pagamentoe" BorderPane.alignment="CENTER" />
                      </bottom></BorderPane>
-                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="9">
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="8">
                      <center>
                         <Label BorderPane.alignment="CENTER" />
                      </center>
                   </BorderPane>
-                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
                </children>
                <BorderPane.margin>
                   <Insets />
@@ -255,6 +239,7 @@
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" />
                     </items>
                   </SplitPane>
+                  <Label fx:id="idhide" layoutX="280.0" layoutY="58.0" />
                </children>
             </AnchorPane>
          </center>
@@ -263,7 +248,7 @@
    <top>
       <BorderPane prefHeight="90.0" prefWidth="810.0" BorderPane.alignment="CENTER">
          <center>
-            <Label text="Adicionar Informações a Atuaçao" BorderPane.alignment="CENTER">
+            <Label text="Adicionar Informações a Atuação" BorderPane.alignment="CENTER">
                <font>
                   <Font size="20.0" />
                </font>
