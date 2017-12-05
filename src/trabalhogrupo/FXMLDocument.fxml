@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.geometry.*?>
 <?import java.lang.*?>
@@ -25,7 +26,17 @@
          <children>
             <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
                <center>
-                  <Button mnemonicParsing="false" onAction="#funcaoMudaActivity" prefHeight="30.0" prefWidth="175.0" text="Membros" BorderPane.alignment="CENTER" />
+                  <Button mnemonicParsing="false" onAction="#funcaoMudaActivity" prefHeight="44.0" prefWidth="178.0" text="Membros    " BorderPane.alignment="CENTER">
+                     <graphic>
+                        <ImageView fitHeight="36.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icon/icons8-people-40.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets right="40.0" />
+                     </padding></Button>
                </center>
             </BorderPane>
             <BorderPane prefHeight="200.0" prefWidth="200.0">
@@ -38,18 +49,64 @@
             </BorderPane>
             <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
                <center>
-                  <Button mnemonicParsing="false" onAction="#ActivityConcertos" prefHeight="30.0" prefWidth="173.0" text="Concertos" BorderPane.alignment="CENTER" />
+                  <Button mnemonicParsing="false" onAction="#ActivityConcertos" prefHeight="44.0" prefWidth="178.0" text="Concertos    " BorderPane.alignment="CENTER">
+                     <graphic>
+                        <ImageView fitHeight="36.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icon/icons8-performance-40.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets right="40.0" />
+                     </padding></Button>
                </center>
             </BorderPane>
             <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="3">
                <center>
-                  <Button mnemonicParsing="false" onAction="#ActivityVeiculos" prefHeight="30.0" prefWidth="178.0" text="Veiculos" BorderPane.alignment="CENTER" />
+                  <Button mnemonicParsing="false" onAction="#ActivityVeiculos" prefHeight="44.0" prefWidth="178.0" text="Veiculos       " BorderPane.alignment="CENTER">
+                     <graphic>
+                        <ImageView fitHeight="36.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icon/icons8-car-40.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets right="40.0" />
+                     </padding></Button>
                </center>
             </BorderPane>
             <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="4">
                <center>
-                  <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="179.0" text="Pagamentos" BorderPane.alignment="CENTER" />
+                  <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="178.0" text="Pagamentos" BorderPane.alignment="CENTER">
+                     <graphic>
+                        <ImageView fitHeight="36.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icon/icons8-money-bag-40.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets right="40.0" />
+                     </padding></Button>
                </center>
+            </BorderPane>
+            <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="5">
+               <right>
+                  <Button fx:id="close" mnemonicParsing="false" onAction="#closeButtonAction" prefHeight="44.0" prefWidth="105.0" text="  Sair" BorderPane.alignment="CENTER">
+                     <graphic>
+                        <ImageView fitHeight="36.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icon/icons8-logout-rounded-up-40.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <BorderPane.margin>
+                        <Insets right="20.0" />
+                     </BorderPane.margin>
+                  </Button>
+               </right>
             </BorderPane>
          </children>
       </GridPane>

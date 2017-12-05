@@ -16,6 +16,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.stage.Stage;
 import trabalhogrupo.ConnectDB.Connect;
 
@@ -27,7 +28,8 @@ public class FXMLDocumentController implements Initializable {
     
     
     Connect con;
-    
+    @FXML
+    Button close;
     
     @FXML
     private void handleButtonAction(ActionEvent event) throws SQLException {
@@ -76,5 +78,13 @@ public class FXMLDocumentController implements Initializable {
             stage.setScene(scene);
             stage.show();
     }
+    
+    @FXML
+    private void closeButtonAction(){
+    // get a handle to the stage
+    Stage stage = (Stage) close.getScene().getWindow();
+    // do what you have to do
+    stage.close();
+}
 
 }  
