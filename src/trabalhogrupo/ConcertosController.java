@@ -89,7 +89,7 @@ public class ConcertosController implements Initializable {
         @Override
         public String toString(){
             
-           return label3.getText();           
+           return label2.getText();           
             
         }
                      
@@ -201,14 +201,14 @@ public class ConcertosController implements Initializable {
         System.out.println( hboxC.toString());
         String local = hboxC.toString();
 
-        FXMLLoader loader=new FXMLLoader(getClass().getResource("Concertocaminho.fxml"));
+        FXMLLoader loader=new FXMLLoader(getClass().getResource("AtualizaConcerto.fxml"));
         Parent root=(Parent) loader.load();
-        ConcertocaminhoController setControler=loader.getController();
-        setControler.EnviaStringMapa(local);
+        AtualizaConcertoController setControler=loader.getController();
+        setControler.setidhide(local);
         Stage stage=new Stage();
         stage.setScene(new Scene(root));
         stage.show();
                 
-    
+   
     }
 }

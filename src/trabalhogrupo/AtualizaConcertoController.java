@@ -91,6 +91,7 @@ public class AtualizaConcertoController implements Initializable {
     public void setidhide(String value){
         idhide.setText(value);
         idhide.setVisible(false);
+        System.out.println(idhide.getText());
     }
     @Override
     public void initialize(URL url, ResourceBundle rb) {
