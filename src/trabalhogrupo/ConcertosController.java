@@ -92,6 +92,14 @@ public class ConcertosController implements Initializable {
            return label2.getText();           
             
         }
+       
+        public String toString2(){
+            
+           return label1.getText();           
+            
+        }
+        
+        
                      
     }
     @FXML
@@ -160,7 +168,8 @@ public class ConcertosController implements Initializable {
      
     
         System.out.println( hboxC.toString());
-        String local = hboxC.toString();
+        String local = hboxC.toString2();
+          System.out.println(local);
 
         FXMLLoader loader=new FXMLLoader(getClass().getResource("Concertocaminho.fxml"));
         Parent root=(Parent) loader.load();

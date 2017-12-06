@@ -10,10 +10,14 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.AbstractList;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -23,6 +27,9 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Priority;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -59,7 +66,7 @@ public class AtualizaConcertoController implements Initializable {
     private Label locale;
 
     @FXML
-    private ListView list;
+    ListView <AtualizaConcertoController.HBOXCell> list = new ListView<AtualizaConcertoController.HBOXCell>();
 
     @FXML
     private TextField local;
@@ -93,6 +100,8 @@ public class AtualizaConcertoController implements Initializable {
     
     @FXML
     private Label idhide;
+    
+    
     
     @FXML
     public void setidhide(String value) throws SQLException{
@@ -129,11 +138,65 @@ public class AtualizaConcertoController implements Initializable {
             int x=(Integer.parseInt(a[4]))-1;
             veiculo.getSelectionModel().select(x);
         }
+        List<String> nomeL=q.SelectNamesconcerto(Integer.parseInt(idhide.getText()));
+         List<AtualizaConcertoController.HBOXCell> list1 = new ArrayList();
+       List<String> nomesja=new ArrayList();
+        for(int j =0;j<nomeL.size();j++){
+            String []d=nomeL.get(j).split(" ");
+            list1.add(new AtualizaConcertoController.HBOXCell (d[0]+" "+d[1],d[2]));
+            nomesja.add(d[2]);
+        }      
         
         
+        //ListView<HBOXCell> list = new ListView<HBOXCell>();
+        ObservableList<AtualizaConcertoController.HBOXCell> items = FXCollections.observableArrayList(list1);
+        list.setItems(items);
+        int flag=0,pos=0;
+        List<String> nomec=q.selectNames2();
         
+        for(int i=0;i<nomec.size();i++){
+           String []xi=nomec.get(i).split(" ");
+           flag=0;
+            for(int p=0;p<nomesja.size();p++)
+                 if(nomesja.get(p).equals(xi[2]))
+                     flag=1;
+            
+            if(flag==0){
+            membros.getItems().add(pos,xi[0]+" "+xi[1]);
+            pos++;
+            }
+                     
+        }
         
     }
+    
+    
+    public static class HBOXCell extends HBox {
+        
+        Label label = new Label();
+        Label label2=new Label();
+        
+        
+        HBOXCell(String labelText,String id){
+            super();
+            
+            label.setText(labelText);
+            HBox.setHgrow(label, Priority.ALWAYS);
+            label.setMaxWidth(Double.MAX_VALUE);
+            label2.setText(id);
+            label2.setVisible(false);
+            this.getChildren().addAll(label,label2);
+            
+        }
+        
+        @Override
+        public String toString(){
+            
+           return label2.getText();           
+            
+        
+        }}
+        
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         Query q=new Query();
@@ -163,9 +226,16 @@ public class AtualizaConcertoController implements Initializable {
         
         
         
-    }    
-        
-        
+    }
     
-    
+    @FXML
+    private void closeButtonAction(){
+    // get a handle to the stage
+    Stage stage = (Stage) close.getScene().getWindow();
+    // do what you have to do
+    stage.close();
 }
+      
+              
+    }    
+

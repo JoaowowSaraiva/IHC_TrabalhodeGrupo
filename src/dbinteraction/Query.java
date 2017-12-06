@@ -83,6 +83,48 @@ public class Query {
             list1.add(x1+" "+x2);
             //System.out.println(x1);
         }
+      
+        return list1;
+    }
+    
+      public List<String> selectNames2 () throws SQLException{
+         conn.conexion();
+        
+        List<String> list1 = new ArrayList();
+        String query = "Select * From Member";
+        
+        conn.pst=conn.con.prepareStatement(query);
+        ResultSet rs = conn.pst.executeQuery();
+        
+        while(rs.next()){
+            String x1 = rs.getString("FirstName");
+            String x2=rs.getString("LastName");
+            String x0=rs.getString("IdMembro");
+            list1.add(x1+" "+x2+" "+x0);
+            //System.out.println(x1);
+        }
+        
+     
+        
+        
+        return list1;
+    }
+     public List<String> SelectNamesconcerto (int i) throws SQLException{
+         conn.conexion();
+        
+        List<String> list1 = new ArrayList();
+        String query = "SELECT IdMember,FirstName,LastName FROM CONCERTINAS.Member_Concert, CONCERTINAS.Member where Member_Concert.IdConcert="+i+" and Member.IdMembro=Member_Concert.IdMember;";
+        
+        conn.pst=conn.con.prepareStatement(query);
+        ResultSet rs = conn.pst.executeQuery();
+        
+        while(rs.next()){
+            String x0=rs.getString("IdMember");
+            String x1 = rs.getString("FirstName");
+            String x2=rs.getString("LastName");
+            list1.add(x1+" "+x2+" "+x0);
+            //System.out.println(x1);
+        }
         
         
         
@@ -227,5 +269,24 @@ public class Query {
         return x;
         
     }
+    public int getidFrom(String[] fullname) throws SQLException{
+        conn.conexion();
+        
+        String query = "Select * From Member Where FirstName=" + '"' +fullname[0] + '"' + " AND LastName=" +'"' + fullname[1] + '"';
+        
+        conn.pst=conn.con.prepareStatement(query);
+        ResultSet rs = conn.pst.executeQuery();
+         int x4=0;
+        while(rs.next()){
+            
+          x4= rs.getInt("IdMembro");
+            
+            //System.out.println("TEste: " + x1+" "+ x2+" "+sx3+" id:"+x4);
+           
+        }        
+        
+        return x4;
+    }
+    
 
 }
