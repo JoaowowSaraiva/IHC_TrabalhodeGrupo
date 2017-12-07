@@ -269,10 +269,10 @@ public class Query {
         return x;
         
     }
-    public int getidFrom(String[] fullname) throws SQLException{
+    public int getidFrom(String x,String y) throws SQLException{
         conn.conexion();
         
-        String query = "Select * From Member Where FirstName=" + '"' +fullname[0] + '"' + " AND LastName=" +'"' + fullname[1] + '"';
+        String query = "Select * From Member Where FirstName=" + '"' +x + '"' + " AND LastName=" +'"' + y + '"';
         
         conn.pst=conn.con.prepareStatement(query);
         ResultSet rs = conn.pst.executeQuery();

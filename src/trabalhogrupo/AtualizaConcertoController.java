@@ -101,7 +101,12 @@ public class AtualizaConcertoController implements Initializable {
     @FXML
     private Label idhide;
     
-    
+    @FXML
+    private Label adicionar;
+    @FXML
+    private Label remover;
+    @FXML
+    Label erroremove;
     
     @FXML
     public void setidhide(String value) throws SQLException{
@@ -235,7 +240,38 @@ public class AtualizaConcertoController implements Initializable {
     // do what you have to do
     stage.close();
 }
-      
+   @FXML 
+   public void adicionar() throws SQLException{
+       Query q=new Query();
+       int a=membros.getSelectionModel().getSelectedIndex();
+       
+       String x=membros.getSelectionModel().getSelectedItem().toString();
+       membros.getItems().remove(a);
+       String []name=x.split(" ");
+       int i=q.getidFrom(name[0],name[1]);
+       HBOXCell h=new AtualizaConcertoController.HBOXCell (x,String.valueOf(i));
+       list.getItems().add(list.getItems().size(),h);
+       String b=adicionar.getText();
+       adicionar.setText(String.valueOf(i)+" "+b);
+
+      }
+   @FXML 
+   public void remover() throws SQLException{
+         HBOXCell hboxC =(HBOXCell) list.getSelectionModel().getSelectedItem();
+         String x=hboxC.toString();
+         System.out.println(x);
+         if(x==null)
+         {
+             erroremove.setText("Escolha um Membro");
+             return;
+         }
+         erroremove.setText("");
+         int i=list.getSelectionModel().getSelectedIndex();
+         list.getItems().remove(i);
+         String b=remover.getText();
+         remover.setText(String.valueOf(x)+" "+b);
+         
+   }
               
     }    
 
