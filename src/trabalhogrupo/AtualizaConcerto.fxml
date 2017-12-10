@@ -165,7 +165,7 @@
          <center>
             <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <children>
-                  <ComboBox fx:id="membros" layoutX="17.0" layoutY="50.0" prefHeight="25.0" prefWidth="183.0" />
+                  <ComboBox fx:id="membros" layoutX="17.0" layoutY="44.0" prefHeight="36.0" prefWidth="183.0" />
                   <Label layoutX="74.0" layoutY="14.0" text="Adicionar Membro a Atuação">
                      <font>
                         <Font size="14.0" />
@@ -218,7 +218,7 @@
                            </image>
                         </ImageView>
                      </graphic></Button>
-                  <Button layoutX="346.0" layoutY="33.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Guardar">
+                  <Button layoutX="346.0" layoutY="33.0" mnemonicParsing="false" onAction="#guardar" prefHeight="50.0" prefWidth="150.0" text="Guardar">
                      <graphic>
                         <ImageView fitHeight="29.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -226,7 +226,7 @@
                            </image>
                         </ImageView>
                      </graphic></Button>
-                  <Button layoutX="591.0" layoutY="33.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Concluir Atuação">
+                  <Button layoutX="591.0" layoutY="33.0" mnemonicParsing="false" onAction="#concluir" prefHeight="50.0" prefWidth="150.0" text="Concluir Atuação">
                      <graphic>
                         <ImageView fitHeight="29.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
                            <image>

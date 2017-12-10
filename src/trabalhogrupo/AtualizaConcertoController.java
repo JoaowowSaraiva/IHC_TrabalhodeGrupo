@@ -5,7 +5,11 @@
  */
 package trabalhogrupo;
 
+import dbinteraction.Inserts;
 import dbinteraction.Query;
+import dbinteraction.Removes;
+import dbinteraction.Updates;
+import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.time.LocalDate;
@@ -19,7 +23,10 @@ import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
@@ -272,6 +279,153 @@ public class AtualizaConcertoController implements Initializable {
          remover.setText(String.valueOf(x)+" "+b);
          
    }
-              
-    }    
+   @FXML
+   public void guardar() throws SQLException, IOException{
+       Query q=new Query();
+       List<String> adi=new ArrayList();
+       List<String> rem=new ArrayList();
+       String r=remover.getText();
+       String []r1=r.split(" ");
+       for(int i=0;i<r1.length;i++){
+           rem.add(r1[i]);
+       }
+       String a=adicionar.getText();
+       String []a1=a.split(" ");
+       for(int j=0;j<a1.length;j++){
+           adi.add(a1[j]);
+       }
+       System.out.println("valores adicionar:");
+       for(int x=0;x<adi.size();x++){
+           System.out.println(adi.get(x));
+       }
+       System.out.println("valores a remover:");
+       for(int y=0;y<rem.size();y++){
+           System.out.println(rem.get(y));
+       }
+        String local1=local.getText();
+        LocalDate dat=data.getValue();
+        String data=dat.toString()+"T";
+        
+        String h=hora.getSelectionModel().getSelectedItem().toString();
+      
+        String m=min.getSelectionModel().getSelectedItem().toString();
+        data=data+h+":"+m+":00";
+        System.out.println(data);
+        
+        String dur=duracao.getSelectionModel().getSelectedItem().toString();
+        float x=(float) 0.0;
+        if(dur.equals("30")){
+            x=(float) 0.5;
+        }if(dur.equals("60")){
+            x=(float) 1.0;
+        }if(dur.equals("90")){
+            x=(float) 0.5;
+        }if(dur.equals("120")){
+            x=(float) 2.0;
+        }
+        System.out.println("duracao: "+x);
+        int fatura1=0;
+        if(fatura.equals("Sim")){
+            fatura1=1;
+        }
+        double p=0;
+        p=Double.parseDouble(pagamento.getText());
+        
+        int carro=q.selectVeiculoporid(veiculo.getSelectionModel().getSelectedItem().toString());
+        Updates U=new Updates();
+        Removes R=new Removes();
+        U.editConcerto(Integer.parseInt(idhide.getText()),local1, data, x,0,fatura1, p, carro);
+           if(adi!=null)
+            for(int k=0;k<adi.size();k++){
+                U.addelementosConcerto(Integer.valueOf(adi.get(k)),Integer.parseInt(idhide.getText()));
+        }
+           if(rem!=null)
+               R.ApagarMembro(rem,idhide.getText());
+        
+        
+           Concertosactivity();
+       
+   }
 
+
+      @FXML
+     private void Concertosactivity () throws IOException{
+            Parent root = FXMLLoader.load(getClass().getResource("concertos.fxml"));
+            Stage stage = new Stage();              
+        
+            Scene scene = new Scene(root);
+            closeButtonAction();
+            stage.setScene(scene);
+            stage.setTitle("Atuações - Grupo de Concertinas do Reboleiro");
+            stage.setResizable(false);
+            stage.show();
+    }
+        @FXML
+   public void concluir() throws SQLException, IOException{
+       Query q=new Query();
+       List<String> adi=new ArrayList();
+       List<String> rem=new ArrayList();
+       String r=remover.getText();
+       String []r1=r.split(" ");
+       for(int i=0;i<r1.length;i++){
+           rem.add(r1[i]);
+       }
+       String a=adicionar.getText();
+       String []a1=a.split(" ");
+       for(int j=0;j<a1.length;j++){
+           adi.add(a1[j]);
+       }
+       System.out.println("valores adicionar:");
+       for(int x=0;x<adi.size();x++){
+           System.out.println(adi.get(x));
+       }
+       System.out.println("valores a remover:");
+       for(int y=0;y<rem.size();y++){
+           System.out.println(rem.get(y));
+       }
+        String local1=local.getText();
+        LocalDate dat=data.getValue();
+        String data=dat.toString()+"T";
+        
+        String h=hora.getSelectionModel().getSelectedItem().toString();
+      
+        String m=min.getSelectionModel().getSelectedItem().toString();
+        data=data+h+":"+m+":00";
+        System.out.println(data);
+        
+        String dur=duracao.getSelectionModel().getSelectedItem().toString();
+        float x=(float) 0.0;
+        if(dur.equals("30")){
+            x=(float) 0.5;
+        }if(dur.equals("60")){
+            x=(float) 1.0;
+        }if(dur.equals("90")){
+            x=(float) 0.5;
+        }if(dur.equals("120")){
+            x=(float) 2.0;
+        }
+        System.out.println("duracao: "+x);
+        int fatura1=0;
+        if(fatura.equals("Sim")){
+            fatura1=1;
+        }
+        double p=0;
+        p=Double.parseDouble(pagamento.getText());
+        
+        int carro=q.selectVeiculoporid(veiculo.getSelectionModel().getSelectedItem().toString());
+        Updates U=new Updates();
+        Removes R=new Removes();
+        U.editConcerto(Integer.parseInt(idhide.getText()),local1, data, x,1,fatura1, p, carro);
+           if(adi!=null)
+            for(int k=0;k<adi.size();k++){
+                U.addelementosConcerto(Integer.valueOf(adi.get(k)),Integer.parseInt(idhide.getText()));
+        }
+           if(R!=null)
+               R.ApagarMembro(rem,idhide.getText());
+        
+        
+           Concertosactivity();
+       
+   }
+
+}

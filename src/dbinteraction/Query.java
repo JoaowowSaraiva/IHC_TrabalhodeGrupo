@@ -223,6 +223,21 @@ public class Query {
 
           return list1;       
       }
+    public int selectVeiculoporid(String number) throws SQLException{
+          conn.conexion();
+          List<String> list1 = new ArrayList();
+          String query = "Select * From Vehicles where NumberPlate=\""+number+"\"";
+
+          conn.pst=conn.con.prepareStatement(query);
+          ResultSet rs = conn.pst.executeQuery();
+
+          while(rs.next()){
+              int id = rs.getInt("IdVehicles");
+              return id;
+          }
+            return 0;
+          
+      }
      public String selectConcertoMais(int status) throws SQLException{
         conn.conexion();
        String x=null;

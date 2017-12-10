@@ -63,16 +63,18 @@ public class ConcertosController implements Initializable {
         Label label1 = new Label();
         Label label2 = new Label();
         Label label3 = new Label();
+        Label label4= new Label();
         
         
         
-        HBOXCell(String labelText,String labelText3,String labelId/*, String buttonText,String buttonText2,String espaco*/){
+        HBOXCell(String labelText,String labelText3,String labelId,String preco/*, String buttonText,String buttonText2,String espaco*/){
             super();
             
             label1.setText(labelText);
             HBox.setHgrow(label1, Priority.ALWAYS);
             label1.setMaxWidth(Double.MAX_VALUE);
           //  label2.setText(labelText2+"            ");
+          label4.setText(preco+"       ");
           label2.setText(labelId);
           label2.setVisible(false);
             
@@ -83,7 +85,7 @@ public class ConcertosController implements Initializable {
            // button2.setText(buttonText2);
             
         
-            this.getChildren().addAll(label1,label2,label3/*, button,label1,button2*/);
+            this.getChildren().addAll(label1,label4,label2,label3/*, button,label1,button2*/);
             
         }
         @Override
@@ -122,7 +124,7 @@ public class ConcertosController implements Initializable {
 
         List<HBOXCell> list1 = new ArrayList();
          if(Pconcertos.size()==0){
-             list1.add(new HBOXCell ("Sem Atuções para mostrar","",""/*, "Mais Info","Editar","  "*/));
+             list1.add(new HBOXCell ("Sem Atuções para mostrar","","",""/*, "Mais Info","Editar","  "*/));
              listd.setMouseTransparent(true);
         }
         for (int i = 0; i < Pconcertos.size(); i++) {
@@ -130,18 +132,21 @@ public class ConcertosController implements Initializable {
             String x=Pconcertos.get(i);
             System.out.println(Pconcertos.get(i));
             String[] a=x.split("[|]");
-            list1.add(new HBOXCell (a[0],a[2],a[3]/*, "Mais Info","Editar","  "*/));
+            list1.add(new HBOXCell (a[0],a[2],a[3],""/*, "Mais Info","Editar","  "*/));
         }
         
         
          List<HBOXCell> list2 = new ArrayList();
          if(Hconcertos.size()==0){
              liste.setMouseTransparent(true);
-             list2.add(new HBOXCell ("Sem Atuções para mostrar","",""/*, "Mais Info","Editar","  "*/));
+             list2.add(new HBOXCell ("Sem Atuções para mostrar","","",""/*, "Mais Info","Editar","  "*/));
         }
         for (int i = 0; i < Hconcertos.size(); i++) {
             liste.setMouseTransparent(false);
-            list2.add(new HBOXCell (Hconcertos.get(i),"",""/*, "Mais Info","Editar","  "*/));
+            String t=Hconcertos.get(i);
+            System.out.println(Pconcertos.get(i));
+            String[] n=t.split("[|]");
+            list2.add(new HBOXCell (n[0],n[2],n[3],n[1]/* "Mais Info","Editar","  "*/));
         }
         
         
@@ -215,8 +220,12 @@ public class ConcertosController implements Initializable {
         AtualizaConcertoController setControler=loader.getController();
         setControler.setidhide(local);
         Stage stage=new Stage();
-        stage.setScene(new Scene(root));
-        stage.show();
+        Scene scene = new Scene(root);
+        closeButtonAction();
+        stage.setScene(scene);
+            stage.setTitle("Adiciona Concerto");
+            stage.setResizable(false);
+            stage.show();
                 
    
     }

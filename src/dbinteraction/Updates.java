@@ -6,6 +6,7 @@
 package dbinteraction;
 
 import java.sql.SQLException;
+import java.util.List;
 import trabalhogrupo.ConnectDB.Connect;
 
 /**
@@ -35,4 +36,38 @@ public class Updates {
            System.out.println(Integer.parseInt(id));
            conn.pst.execute();
     }
+    public void editConcerto(int idConcerto,String Local,String data,float duracao,int status,int fatura,Double pagamento,int carro) throws SQLException{
+            conn.conexion();
+            
+            String update="UPDATE `CONCERTINAS`.`Concert` SET `Local` =?,`DateHour` =?,`Duration` =?,`Status`=?,`Payment` =?,`IdVehicles` =?,`Fatura` = ? WHERE `IdConcert` =?";
+            conn.pst=conn.con.prepareStatement(update);
+            conn.pst.setString(1,Local);
+            conn.pst.setString(2,data);
+            conn.pst.setFloat(3, duracao);
+            conn.pst.setInt(4,status);
+            conn.pst.setDouble(5,pagamento);
+            conn.pst.setInt(6, carro);
+            conn.pst.setInt(7,fatura);
+            conn.pst.setInt(8,idConcerto);
+            conn.pst.execute();
+            
+    }
+    public void addelementosConcerto(int membros,int idConcerto) throws SQLException{
+    conn.conexion();
+          
+                String addquery="INSERT INTO `CONCERTINAS`.`Member_Concert`(`IdMember`,`IdConcert`,`Status`)VALUES(?,?,?);";
+                 conn.pst=conn.con.prepareStatement(addquery);
+                 
+                 conn.pst.setInt(1,membros);
+                 conn.pst.setInt(2,idConcerto);
+                 System.out.println(idConcerto);
+                 conn.pst.setInt(3,0);
+            
+                 conn.pst.execute();
+            }     
+            
+    
+    
+    
+    
 }
