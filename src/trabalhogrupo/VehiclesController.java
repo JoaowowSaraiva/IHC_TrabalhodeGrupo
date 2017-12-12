@@ -99,7 +99,7 @@ public class VehiclesController implements Initializable {
         
         //ListView<HBOXCell> list = new ListView<HBOXCell>();
         ObservableList<HBOXCell> items = FXCollections.observableArrayList(list1);
-        //list.setItems(items);
+        list.setItems(items);
         
         System.out.println( list.getItems().size());
     }

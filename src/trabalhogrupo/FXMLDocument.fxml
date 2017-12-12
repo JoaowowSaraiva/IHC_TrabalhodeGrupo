@@ -26,7 +26,7 @@
          <children>
             <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
                <center>
-                  <Button mnemonicParsing="false" onAction="#funcaoMudaActivity" prefHeight="44.0" prefWidth="178.0" text="Membros    " BorderPane.alignment="CENTER">
+                  <Button mnemonicParsing="false" onAction="#funcaoMudaActivity" prefHeight="44.0" prefWidth="178.0" text=" Membros" BorderPane.alignment="CENTER">
                      <graphic>
                         <ImageView fitHeight="36.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -36,20 +36,23 @@
                      </graphic>
                      <padding>
                         <Insets right="40.0" />
-                     </padding></Button>
+                     </padding>
+                     <font>
+                        <Font name="Arial" size="13.0" />
+                     </font></Button>
                </center>
             </BorderPane>
             <BorderPane prefHeight="200.0" prefWidth="200.0">
                <center>
-                  <Label text="Grupo de Concertinas do Reboleiro" BorderPane.alignment="CENTER">
+                  <Label text="Grupo de Concertinas do Reboleiro" textAlignment="JUSTIFY" BorderPane.alignment="CENTER">
                      <font>
-                        <Font size="20.0" />
+                        <Font name="Arial Bold Italic" size="25.0" />
                      </font></Label>
                </center>
             </BorderPane>
             <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
                <center>
-                  <Button mnemonicParsing="false" onAction="#ActivityConcertos" prefHeight="44.0" prefWidth="178.0" text="Atuações    " BorderPane.alignment="CENTER">
+                  <Button mnemonicParsing="false" onAction="#ActivityConcertos" prefHeight="44.0" prefWidth="178.0" text=" Atuações" BorderPane.alignment="CENTER">
                      <graphic>
                         <ImageView fitHeight="36.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -59,12 +62,15 @@
                      </graphic>
                      <padding>
                         <Insets right="40.0" />
-                     </padding></Button>
+                     </padding>
+                     <font>
+                        <Font name="Arial" size="13.0" />
+                     </font></Button>
                </center>
             </BorderPane>
             <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="3">
                <center>
-                  <Button mnemonicParsing="false" onAction="#ActivityVeiculos" prefHeight="44.0" prefWidth="178.0" text="Veiculos       " BorderPane.alignment="CENTER">
+                  <Button mnemonicParsing="false" onAction="#ActivityVeiculos" prefHeight="44.0" prefWidth="178.0" text=" Veiculos" BorderPane.alignment="CENTER">
                      <graphic>
                         <ImageView fitHeight="36.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -74,12 +80,15 @@
                      </graphic>
                      <padding>
                         <Insets right="40.0" />
-                     </padding></Button>
+                     </padding>
+                     <font>
+                        <Font name="Arial" size="13.0" />
+                     </font></Button>
                </center>
             </BorderPane>
             <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="4">
                <center>
-                  <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="178.0" text="Pagamentos" BorderPane.alignment="CENTER">
+                  <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="178.0" text=" Pagamentos*" BorderPane.alignment="CENTER">
                      <graphic>
                         <ImageView fitHeight="36.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -89,12 +98,15 @@
                      </graphic>
                      <padding>
                         <Insets right="40.0" />
-                     </padding></Button>
+                     </padding>
+                     <font>
+                        <Font name="Arial" size="13.0" />
+                     </font></Button>
                </center>
             </BorderPane>
             <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="5">
                <right>
-                  <Button fx:id="close" mnemonicParsing="false" onAction="#closeButtonAction" prefHeight="44.0" prefWidth="105.0" text="  Sair" BorderPane.alignment="CENTER">
+                  <Button fx:id="close" mnemonicParsing="false" onAction="#closeButtonAction" prefHeight="44.0" prefWidth="105.0" text=" Sair" BorderPane.alignment="CENTER">
                      <graphic>
                         <ImageView fitHeight="36.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -105,6 +117,9 @@
                      <BorderPane.margin>
                         <Insets right="20.0" />
                      </BorderPane.margin>
+                     <font>
+                        <Font name="Arial" size="13.0" />
+                     </font>
                   </Button>
                </right>
             </BorderPane>

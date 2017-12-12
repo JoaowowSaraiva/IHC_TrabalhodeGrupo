@@ -127,7 +127,7 @@ public class MembrosController implements Initializable {
             Scene scene = new Scene(root);
             closeButtonAction();
             stage.setScene(scene);
-            stage.setTitle("Adiciona Membro");
+            stage.setTitle("Membros - Adiciona Membro");
             stage.setResizable(false);
             stage.show();
     }
@@ -138,9 +138,8 @@ public class MembrosController implements Initializable {
         
             Scene scene = new Scene(root);
             stage.setScene(scene);
-            stage.setTitle("Adiciona Membro");
-            stage.setMinHeight(800);
-            stage.setMinWidth(1000);
+            stage.setTitle("Membros - Grafico de Presença em Atuações");
+         
             
             stage.show();
     }
@@ -215,6 +214,8 @@ public class MembrosController implements Initializable {
         setControler.editar(m);
         closeButtonAction();
         Stage stage=new Stage();
+        
+        stage.setTitle("Membros - Adiciona Membro");
         stage.setScene(new Scene(root));
         stage.show();
                 

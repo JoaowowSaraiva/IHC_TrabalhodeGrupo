@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.chart.*?>
 <?import java.lang.*?>
@@ -8,14 +9,20 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="712.0" prefWidth="871.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="trabalhogrupo.MembrosatatsController">
+<BorderPane minHeight="480.0" minWidth="640.0" prefHeight="712.0" prefWidth="871.0" style="-fx-background-color: #e6f0ff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="trabalhogrupo.MembrosatatsController">
    <center>
-      <BarChart fx:id="grafico" prefHeight="473.0" prefWidth="638.0" BorderPane.alignment="CENTER">
+      <BarChart fx:id="grafico" barGap="3.0" categoryGap="8.0" minHeight="480.0" minWidth="640.0" prefHeight="400.0" prefWidth="600.0" title="Presença em Atuações" BorderPane.alignment="CENTER">
         <xAxis>
-          <CategoryAxis side="BOTTOM" />
+          <CategoryAxis prefHeight="63.0" prefWidth="774.0">
+               <tickLabelFont>
+                  <Font name="Arial Bold" size="10.0" />
+               </tickLabelFont></CategoryAxis>
         </xAxis>
         <yAxis>
-          <NumberAxis prefHeight="247.0" prefWidth="28.0" side="LEFT" />
+          <NumberAxis label="Nº Atuações" prefHeight="569.0" prefWidth="65.0">
+               <tickLabelFont>
+                  <Font name="Arial Bold" size="10.0" />
+               </tickLabelFont></NumberAxis>
         </yAxis>
       </BarChart>
    </center>
