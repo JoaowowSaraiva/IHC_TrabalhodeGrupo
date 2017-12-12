@@ -303,5 +303,17 @@ public class Query {
         return x4;
     }
     
+    public int getNumeroMembros(int id) throws SQLException{
+        conn.conexion();
+        String query="Select count(*) as total From CONCERTINAS.Member_Concert where IdConcert="+id;
+        conn.pst=conn.con.prepareStatement(query);
+        ResultSet rs=conn.pst.executeQuery();
+        int x=0;
+        while(rs.next()){
+            x=rs.getInt("total");
+            return x;
+        }
+        return x;
+    }
 
 }

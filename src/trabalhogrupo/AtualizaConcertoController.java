@@ -12,6 +12,7 @@ import dbinteraction.Updates;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.text.DecimalFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.AbstractList;
@@ -427,5 +428,24 @@ public class AtualizaConcertoController implements Initializable {
            Concertosactivity();
        
    }
+   
+   public void atribuirPagamentos() throws SQLException{
+       Query q=new Query();
+       Double paga=Double.parseDouble(pagamento.getText())/(q.getNumeroMembros(Integer.parseInt(idhide.getText()))+1);
+       
+       System.out.println(paga);
+       
+       DecimalFormat df= new DecimalFormat("#.000");
+       
+       String paga1=df.format(paga);
+       String []x=paga1.split(",");
+       paga1=x[0]+"."+x[1];
+       paga=Double.parseDouble(paga1);
+       
+       
+       
+       System.out.println(Math.round(paga));
+       
+    }
 
 }
