@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="184.0" prefWidth="306.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="trabalhogrupo.ErroFXMLController">
+   <children>
+      <Button layoutX="103.0" layoutY="136.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="101.0" text="Fechar">
+         <graphic>
+            <ImageView fitHeight="33.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icon/icons8-door-opened-40.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Label fx:id="erro2" layoutX="14.0" layoutY="35.0" prefHeight="20.0" prefWidth="179.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="65.0" fitWidth="64.0" layoutX="221.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icon/icons8-error-filled-40.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="erro3" layoutX="14.0" layoutY="59.0" prefHeight="20.0" prefWidth="179.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="erro5" layoutX="14.0" layoutY="108.0" prefHeight="20.0" prefWidth="179.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="erro4" layoutX="14.0" layoutY="82.0" prefHeight="20.0" prefWidth="179.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="erro1" layoutX="14.0" layoutY="14.0" prefHeight="20.0" prefWidth="179.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
