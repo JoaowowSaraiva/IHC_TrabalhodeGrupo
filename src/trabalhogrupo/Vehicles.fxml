@@ -37,11 +37,11 @@
                <children>
                   <BorderPane prefHeight="210.0" prefWidth="236.0">
                      <center>
-                        <Button mnemonicParsing="false" prefWidth="125.0" text="Editar           " BorderPane.alignment="CENTER">
+                        <Button mnemonicParsing="false" onAction="#adicionar" text="Adicionar Veiculo" BorderPane.alignment="CENTER">
                            <graphic>
                               <ImageView fitHeight="33.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../icon/icons8-edit-40.png" />
+                                    <Image url="@../icon/icons8-plus-40.png" />
                                  </image>
                               </ImageView>
                            </graphic></Button>
@@ -78,18 +78,6 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <BorderPane prefHeight="200.0" prefWidth="200.0">
-                     <center>
-                        <Button mnemonicParsing="false" text="Adicionar Veiculo" BorderPane.alignment="CENTER">
-                           <graphic>
-                              <ImageView fitHeight="33.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../icon/icons8-plus-40.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic></Button>
-                     </center>
-                  </BorderPane>
                   <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
                      <center>
                         <Button mnemonicParsing="false" text="Atuações Estatistica" BorderPane.alignment="CENTER">
@@ -97,6 +85,18 @@
                               <ImageView fitHeight="33.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../icon/icons8-line-chart-40.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></Button>
+                     </center>
+                  </BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0">
+                     <center>
+                        <Button mnemonicParsing="false" onAction="#editar" prefWidth="125.0" text="Editar           " BorderPane.alignment="CENTER">
+                           <graphic>
+                              <ImageView fitHeight="33.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../icon/icons8-edit-40.png" />
                                  </image>
                               </ImageView>
                            </graphic></Button>

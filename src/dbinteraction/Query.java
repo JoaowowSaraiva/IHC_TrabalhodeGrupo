@@ -47,6 +47,24 @@ public class Query {
         return 0;
         
     }
+    public int maxIdVeiculo() throws SQLException{
+       conn.conexion();
+        
+        String result = new String();
+        String query= "SELECT Max(IdVehicles) FROM CONCERTINAS.Vehicles";
+
+        conn.pst=conn.con.prepareStatement(query);
+        //Statement stm=null;
+             
+        //stm = conn.con.createStatement();
+        ResultSet rs = conn.pst.executeQuery();
+        //ResultSet rs = stm.executeQuery(query);
+        while(rs.next()){
+            return(rs.getInt(1));
+        }        
+        return 0;
+        
+    }
     
     public List<MembroNPresencas> presencas() throws SQLException{
         conn.conexion();
@@ -109,6 +127,24 @@ public class Query {
         
         return list1;
     }
+       public String selectNames3 (String id) throws SQLException{
+         conn.conexion();
+        
+        List<String> list1 = new ArrayList();
+        String query = "Select * From Member where IdMembro="+id;
+        
+        conn.pst=conn.con.prepareStatement(query);
+        ResultSet rs = conn.pst.executeQuery();
+        
+        while(rs.next()){
+            String x1 = rs.getString("FirstName");
+            String x2=rs.getString("LastName");
+            
+            return (x1+" "+x2);
+            //System.out.println(x1);
+        }
+        return null;
+    }
      public List<String> SelectNamesconcerto (int i) throws SQLException{
          conn.conexion();
         
@@ -168,6 +204,23 @@ public class Query {
         return list1;
         
     }
+    
+    public List<String> selectVeiculoeID () throws SQLException{
+          conn.conexion();
+          List<String> list1 = new ArrayList();
+          String query = "Select * From Vehicles";
+
+          conn.pst=conn.con.prepareStatement(query);
+          ResultSet rs = conn.pst.executeQuery();
+
+          while(rs.next()){
+              String matricula = rs.getString("NumberPlate");
+              int id=rs.getInt("IdVehicles");
+              list1.add(matricula+" "+id);
+          }
+
+          return list1;       
+      }
     public List<String>selectDataConcerto(int id) throws SQLException{
         conn.conexion();
         List<String> list1=new ArrayList();
@@ -223,6 +276,7 @@ public class Query {
 
           return list1;       
       }
+    
     public int selectVeiculoporid(String number) throws SQLException{
           conn.conexion();
           List<String> list1 = new ArrayList();
@@ -315,5 +369,21 @@ public class Query {
         }
         return x;
     }
+    public String selectVeiculoporid2(String id) throws SQLException{
+          conn.conexion();
+          List<String> list1 = new ArrayList();
+          String query = "Select * From Vehicles where IdVehicles="+id;
+
+          conn.pst=conn.con.prepareStatement(query);
+          ResultSet rs = conn.pst.executeQuery();
+
+          while(rs.next()){
+              int idm = rs.getInt("idMember");
+              String placa=rs.getString("NumberPlate")+" "+idm;
+              return placa;
+          }
+            return null;
+          
+      }
 
 }

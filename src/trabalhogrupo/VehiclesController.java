@@ -6,6 +6,7 @@
 package trabalhogrupo;
 
 import dbinteraction.Query;
+import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -16,7 +17,10 @@ import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
@@ -52,23 +56,25 @@ public class VehiclesController implements Initializable {
     public static class HBOXCell extends HBox {
         
         Label label = new Label();
+        Label Lid=new Label();
         
         
-        HBOXCell(String labelText){
+        HBOXCell(String labelText, String id){
             super();
             
             label.setText(labelText);
             HBox.setHgrow(label, Priority.ALWAYS);
             label.setMaxWidth(Double.MAX_VALUE);
-
-            this.getChildren().addAll(label);
+            Lid.setText(id);
+            Lid.setVisible(false);
+            this.getChildren().addAll(label,Lid);
             
         }
         
         @Override
         public String toString(){
             
-           return label.getText();           
+           return Lid.getText();           
             
         }
       
@@ -81,18 +87,79 @@ public class VehiclesController implements Initializable {
     // do what you have to do
     stage.close();
 }
+    @FXML
+    private void adicionar() throws IOException{
+        Parent root = FXMLLoader.load(getClass().getResource("addveiculo.fxml"));
+            Stage stage = new Stage();              
+        
+            Scene scene = new Scene(root);
+            closeButtonAction();
+            stage.setScene(scene);
+            stage.setTitle("Adicionar Veiculo");
+            stage.setResizable(false);
+            stage.show();
+    } 
+    
+     @FXML
+    void erro() throws IOException{
+        FXMLLoader loader=new FXMLLoader(getClass().getResource("erroFXML.fxml"));
+        Parent root=(Parent)loader.load();
+        ErroFXMLController setControler=loader.getController();
+        setControler.setERRO("Selecione um elemento da tabela dos veiculos!","", "", "", "");
+        Stage stage=new Stage();
+        Scene scene = new Scene(root);
+        
+        stage.setScene(scene);
+            stage.setTitle("Erro de seleção!");
+            stage.setResizable(false);
+            stage.setAlwaysOnTop(true);
+            stage.show();
+           
+            
+    }
+    
+    @FXML
+    private void editar() throws IOException, SQLException{
+        if(list.getSelectionModel().getSelectedItem()==null){
+            erro();
+            return;
+            
+        }
+        
+        String id=list.getSelectionModel().getSelectedItem().toString();
+        FXMLLoader loader=new FXMLLoader(getClass().getResource("editarveiculo.fxml"));
+        Parent root=(Parent)loader.load();
+        closeButtonAction();
+        EditarveiculoController setControler=loader.getController();
+        setControler.inicio(id);
+        closeButtonAction();
+        Stage stage=new Stage();
+        Scene scene = new Scene(root);
+        
+        stage.setScene(scene);
+            stage.setTitle("Grupo de Concertinas do Reboleiro - Editar Veiculo!");
+            stage.setResizable(false);
+            
+            stage.show();
+        
+        
+    }
+        
+            
+    
     
     
     public void createContent() throws SQLException{
         //borderpane
 
         Query q = new Query();
-        List<String> names = q.selectVeiculo();
+        List<String> names = q.selectVeiculoeID();
         
 
         List<HBOXCell> list1 = new ArrayList();
         for (int i = 0; i < names.size(); i++) {
-            list1.add(new HBOXCell (names.get(i)));
+            String []a=names.get(i).split(" ");
+            list1.add(new HBOXCell (a[0],a[1]));
         }
         
         

@@ -52,6 +52,19 @@ public class Updates {
             conn.pst.execute();
             
     }
+    
+    public void editVeiculo(String placa,int idM,int idV) throws SQLException{
+        conn.conexion();
+        String update="UPDATE `CONCERTINAS`.`Vehicles` SET `NumberPlate` = ?, `idMember` = ? WHERE `IdVehicles` = ?";
+        conn.pst=conn.con.prepareStatement(update);
+        
+        conn.pst.setString(1, placa);
+        conn.pst.setInt(2, idM);
+        conn.pst.setInt(3, idV);
+        
+        conn.pst.execute();
+        
+    }
     public void addelementosConcerto(int membros,int idConcerto) throws SQLException{
     conn.conexion();
           

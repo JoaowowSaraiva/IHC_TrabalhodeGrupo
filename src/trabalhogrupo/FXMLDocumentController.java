@@ -79,6 +79,7 @@ public class FXMLDocumentController implements Initializable {
             
             stage.setTitle("Veiculos - Grupo de Concertinas do Reboleiro");
             stage.setScene(scene);
+            stage.setResizable(false);
             stage.show();
     }
     

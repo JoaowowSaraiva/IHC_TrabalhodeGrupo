@@ -36,6 +36,18 @@ public class Inserts {
         System.out.println("Execute");
                 
     }
+    public void inserirVeiculo(int id,int idmembro,String mat) throws SQLException{
+        conn.conexion();
+        String insert="INSERT INTO `CONCERTINAS`.`Vehicles`(`IdVehicles`,`NumberPlate`,`idMember`,`Part`)VALUES(?,?,?,?)";
+        conn.pst=conn.con.prepareStatement(insert);
+        conn.pst.setInt(1,id);
+        conn.pst.setString(2, mat);
+        conn.pst.setInt(3, idmembro);
+        conn.pst.setInt(4,1);
+        
+        conn.pst.execute();
+    
+    }
     public void inserirConcerto(int id,String Local,String Data,float Duracao,int fatura) throws SQLException{
         conn.conexion();
         String insert="INSERT INTO `CONCERTINAS`.`Concert`(`IdConcert`,`Local`,`DateHour`,`Duration`,`Status`,`Fatura`) VALUES(?,?,?,?,?,?);";
