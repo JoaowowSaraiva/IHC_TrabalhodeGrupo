@@ -187,7 +187,7 @@
                <children>
                   <BorderPane prefHeight="200.0" prefWidth="200.0">
                      <center>
-                        <Button fx:id="close" mnemonicParsing="false" onAction="#closeButtonAction" prefHeight="50.0" prefWidth="140.0" text="Cancelar   " BorderPane.alignment="CENTER">
+                        <Button fx:id="close" mnemonicParsing="false" onAction="#Concertosactivity" prefHeight="50.0" prefWidth="140.0" text="Cancelar   " BorderPane.alignment="CENTER">
                            <graphic>
                               <ImageView fitHeight="33.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
                                  <image>

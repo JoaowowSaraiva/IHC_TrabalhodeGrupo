@@ -137,13 +137,13 @@ public class ConcertoNovoController implements Initializable {
     }
      @FXML
      private void Concertosactivity () throws IOException{
-            Parent root = FXMLLoader.load(getClass().getResource("membros.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("concertos.fxml"));
             Stage stage = new Stage();              
         
             Scene scene = new Scene(root);
             closeButtonAction();
             stage.setScene(scene);
-            stage.setTitle("Membros");
+            stage.setTitle("Atuações - Grupo de Concertinas do Reboleiro");
             stage.setResizable(false);
             stage.show();
     }

@@ -9,7 +9,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #e6f0ff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="trabalhogrupo.FXMLDocumentController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="497.0" prefWidth="701.0" style="-fx-background-color: #e6f0ff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="trabalhogrupo.FXMLDocumentController">
    <center>
       <GridPane BorderPane.alignment="CENTER">
         <columnConstraints>
@@ -88,7 +88,7 @@
             </BorderPane>
             <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="4">
                <center>
-                  <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="178.0" text=" Pagamentos*" BorderPane.alignment="CENTER">
+                  <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="178.0" text="Salários" BorderPane.alignment="CENTER">
                      <graphic>
                         <ImageView fitHeight="36.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
                            <image>

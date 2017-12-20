@@ -47,6 +47,24 @@ public class Query {
         return 0;
         
     }
+    public int donocarro(int id) throws SQLException{
+       conn.conexion();
+        
+        String result = new String();
+        String query= "SELECT `Vehicles`.`idMember` FROM `CONCERTINAS`.`Vehicles` where CONCERTINAS.Vehicles.IdVehicles="+id;
+
+        conn.pst=conn.con.prepareStatement(query);
+        //Statement stm=null;
+             
+        //stm = conn.con.createStatement();
+        ResultSet rs = conn.pst.executeQuery();
+        //ResultSet rs = stm.executeQuery(query);
+        while(rs.next()){
+            return(rs.getInt(1));
+        }        
+        return 0;
+        
+    }
     public int maxIdVeiculo() throws SQLException{
        conn.conexion();
         

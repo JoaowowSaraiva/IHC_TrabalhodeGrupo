@@ -85,7 +85,7 @@
                            <children>
                               <BorderPane prefHeight="200.0" prefWidth="200.0">
                                  <center>
-                                    <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="180.0" text="Mais Informações" BorderPane.alignment="CENTER">
+                                    <Button mnemonicParsing="false" onAction="#maisinfo" prefHeight="25.0" prefWidth="180.0" text="Mais Informações" BorderPane.alignment="CENTER">
                                        <graphic>
                                           <ImageView fitHeight="33.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
@@ -97,7 +97,7 @@
                               </BorderPane>
                               <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
                                  <center>
-                                    <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="180.0" text="Editar" BorderPane.alignment="CENTER">
+                                    <Button mnemonicParsing="false" onAction="#editar" prefHeight="25.0" prefWidth="180.0" text="Editar" BorderPane.alignment="CENTER">
                                        <graphic>
                                           <ImageView fitHeight="33.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
@@ -112,9 +112,9 @@
                      </center>
                   </BorderPane>
                </bottom>
-               <left>
+               <center>
                   <ListView fx:id="liste" prefHeight="260.0" prefWidth="401.0" BorderPane.alignment="CENTER" />
-               </left>
+               </center>
             </BorderPane>
             <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
                <left>

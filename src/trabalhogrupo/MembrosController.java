@@ -151,6 +151,23 @@ public class MembrosController implements Initializable {
     // do what you have to do
     stage.close();
 }  
+    @FXML
+    void erro() throws IOException{
+        FXMLLoader loader=new FXMLLoader(getClass().getResource("erroFXML.fxml"));
+        Parent root=(Parent)loader.load();
+        ErroFXMLController setControler=loader.getController();
+        setControler.setERRO("Selecione um elemento da tabela dos Membros!","", "", "", "");
+        Stage stage=new Stage();
+        Scene scene = new Scene(root);
+        
+        stage.setScene(scene);
+            stage.setTitle("Erro de seleção!");
+            stage.setResizable(false);
+            stage.setAlwaysOnTop(true);
+            stage.show();
+           
+            
+    }
     
     @FXML
     private void maisInfo(ActionEvent event) throws SQLException, IOException{
@@ -159,7 +176,7 @@ public class MembrosController implements Initializable {
       Query q = new Query();
       //hboxC.toString();
       if(hboxC==null){
-          mensagemerro.setText("Selecione um membro!");
+          erro();
           return;
       }
        mensagemerro.setText("");
@@ -181,6 +198,8 @@ public class MembrosController implements Initializable {
         setControler.recebeMembro(m);
         Stage stage=new Stage();
         stage.setScene(new Scene(root));
+        stage.setTitle("Membros - Mais informação");
+        stage.setResizable(false);
         stage.show();
                 
     
@@ -192,7 +211,7 @@ public class MembrosController implements Initializable {
       Query q = new Query();
       //hboxC.toString();
       if(hboxC==null){
-          mensagemerro.setText("Selecione um membro!");
+          erro();
           return;
       }
        mensagemerro.setText("");
@@ -215,8 +234,9 @@ public class MembrosController implements Initializable {
         closeButtonAction();
         Stage stage=new Stage();
         
-        stage.setTitle("Membros - Adiciona Membro");
+        stage.setTitle("Membros - Editar Membro");
         stage.setScene(new Scene(root));
+        stage.setResizable(false);
         stage.show();
                 
     

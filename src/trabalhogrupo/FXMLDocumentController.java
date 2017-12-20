@@ -57,6 +57,7 @@ public class FXMLDocumentController implements Initializable {
             
             stage.setTitle("Membros - Grupo de Concertinas do Reboleiro");
             stage.setScene(scene);
+            stage.setResizable(false);
             stage.show();
     }
     @FXML

@@ -141,7 +141,7 @@
                   </BorderPane>
                   <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="7">
                      <center>
-                        <TextField fx:id="pagamento" BorderPane.alignment="CENTER" />
+                        <TextField fx:id="pagamento" promptText="ex: 200, 250" BorderPane.alignment="CENTER" />
                      </center>
                      <bottom>
                         <Label fx:id="pagamentoe" BorderPane.alignment="CENTER" />
@@ -210,7 +210,7 @@
          <center>
             <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button fx:id="close" layoutX="92.0" layoutY="33.0" mnemonicParsing="false" onAction="#closeButtonAction" prefHeight="50.0" prefWidth="150.0" text="Cancelar">
+                  <Button fx:id="close" layoutX="92.0" layoutY="33.0" mnemonicParsing="false" onAction="#Concertosactivity" prefHeight="50.0" prefWidth="150.0" text="Cancelar">
                      <graphic>
                         <ImageView fitHeight="29.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
                            <image>

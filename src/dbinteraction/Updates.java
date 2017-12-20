@@ -78,6 +78,34 @@ public class Updates {
             
                  conn.pst.execute();
             }     
+    public void addelementosConcerto1(int membros,int idConcerto, double pagamento) throws SQLException{
+    conn.conexion();
+          
+                String addquery="INSERT INTO `CONCERTINAS`.`Member_Concert`(`IdMember`,`IdConcert`,`Status`,`Payment`)VALUES(?,?,?,?);";
+                 conn.pst=conn.con.prepareStatement(addquery);
+                 
+                 conn.pst.setInt(1,membros);
+                 conn.pst.setInt(2,idConcerto);
+                 System.out.println(idConcerto);
+                 conn.pst.setInt(3,0);
+                  conn.pst.setDouble(4, pagamento);
+            
+                 conn.pst.execute();
+            }     
+     public void atribuirpaga(int membro,int idConcerto, double pagamento) throws SQLException{
+    conn.conexion();
+          
+                String addquery="UPDATE `CONCERTINAS`.`Member_Concert` SET `Payment`=? WHERE `IdMember` =? AND `IdConcert` =?";
+                 conn.pst=conn.con.prepareStatement(addquery);
+                 conn.pst.setDouble(1, pagamento);
+                 conn.pst.setInt(2,membro);
+                 conn.pst.setInt(3, idConcerto);
+                           
+                 
+            
+                 
+                 conn.pst.execute();
+            }     
             
     
     

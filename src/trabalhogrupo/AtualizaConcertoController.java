@@ -120,6 +120,8 @@ public class AtualizaConcertoController implements Initializable {
     public void setidhide(String value) throws SQLException{
         idhide.setText(value);
         idhide.setVisible(false);
+        adicionar.setVisible(false);
+        remover.setVisible(false);
         System.out.println(idhide.getText());
          Query q=new Query();
         String r=q.selectConcertoMais(Integer.parseInt(idhide.getText()));
@@ -280,11 +282,96 @@ public class AtualizaConcertoController implements Initializable {
          remover.setText(String.valueOf(x)+" "+b);
          
    }
+   
+      @FXML
+    void erro() throws IOException{
+        FXMLLoader loader=new FXMLLoader(getClass().getResource("erroFXML.fxml"));
+        Parent root=(Parent)loader.load();
+        ErroFXMLController setControler=loader.getController();
+        setControler.setERRO("Elementos do formulário estão mal preenchidos!","Os elementos errados estão rodeados a vermelho!", "", "", "");
+        Stage stage=new Stage();
+        Scene scene = new Scene(root);
+        
+        stage.setScene(scene);
+            stage.setTitle("Erro no formulário");
+            stage.setResizable(false);
+            stage.setAlwaysOnTop(true);
+            stage.show();
+           
+            
+    }
+   
    @FXML
    public void guardar() throws SQLException, IOException{
        Query q=new Query();
        List<String> adi=new ArrayList();
        List<String> rem=new ArrayList();
+       
+       int flag=0;
+         String css="-fx-border-color:red";
+       if(local.getText().equals("")){
+           local.setStyle(css);
+           flag=1;
+       }else{
+           local.setStyle("");
+       }
+       if(data.getValue().equals(null)){
+           data.setStyle(css);
+           flag=1;
+       }else{
+           data.setStyle("");
+       }
+       if(hora.getSelectionModel().getSelectedItem()==null){
+           hora.setStyle(css);
+           flag=1;
+       }else{
+           hora.setStyle("");
+       }
+       if(min.getSelectionModel().getSelectedItem()==null){
+           min.setStyle(css);
+           flag=1;
+       }else{
+           min.setStyle("");
+       }
+       if(duracao.getSelectionModel().getSelectedItem()==null){
+           duracao.setStyle(css);
+           flag=1;
+       }else{
+           duracao.setStyle("");
+       }
+       if(fatura.getSelectionModel().getSelectedItem()==null){
+           fatura.setStyle(css);
+           flag=1;
+       }else{
+           fatura.setStyle("");
+       }
+       if(veiculo.getSelectionModel().getSelectedItem()==null){
+           veiculo.setStyle(css);
+           flag=1;
+       }else{
+           veiculo.setStyle("");
+       }
+       boolean numero;
+       try{
+        double valor=(Double.parseDouble(pagamento.getText()));
+        numero=true;
+       }catch(NumberFormatException e){
+           numero=false;
+       }
+       if(pagamento.getText().equals("") || numero==false){
+           pagamento.setStyle(css);
+           flag=1;
+       }else{
+           pagamento.setStyle("");
+       }
+       
+       if(flag==1){
+           erro();
+           return;
+       }
+       
+       
+       
        String r=remover.getText();
        String []r1=r.split(" ");
        for(int i=0;i<r1.length;i++){
@@ -336,13 +423,18 @@ public class AtualizaConcertoController implements Initializable {
         Updates U=new Updates();
         Removes R=new Removes();
         U.editConcerto(Integer.parseInt(idhide.getText()),local1, data, x,0,fatura1, p, carro);
-           if(adi!=null)
+           if(adi.size()!=0){
             for(int k=0;k<adi.size();k++){
-                U.addelementosConcerto(Integer.valueOf(adi.get(k)),Integer.parseInt(idhide.getText()));
-        }
-           if(rem!=null)
+                try{                U.addelementosConcerto(Integer.valueOf(adi.get(k)),Integer.parseInt(idhide.getText()));}
+                catch(Exception e){
+                
+                }
+        }}
+           if(adi.size()!=0){
+               try{
                R.ApagarMembro(rem,idhide.getText());
-        
+           }catch(Exception e){}
+           }
         
            Concertosactivity();
        
@@ -366,6 +458,75 @@ public class AtualizaConcertoController implements Initializable {
        Query q=new Query();
        List<String> adi=new ArrayList();
        List<String> rem=new ArrayList();
+        int flag=0;
+         String css="-fx-border-color:red";
+       if(local.getText().equals("")){
+           local.setStyle(css);
+           flag=1;
+       }else{
+           local.setStyle("");
+       }
+       if(data.getValue().equals(null)){
+           data.setStyle(css);
+           flag=1;
+       }else{
+           data.setStyle("");
+       }
+       if(hora.getSelectionModel().getSelectedItem()==null){
+           hora.setStyle(css);
+           flag=1;
+       }else{
+           hora.setStyle("");
+       }
+       if(min.getSelectionModel().getSelectedItem()==null){
+           min.setStyle(css);
+           flag=1;
+       }else{
+           min.setStyle("");
+       }
+       if(duracao.getSelectionModel().getSelectedItem()==null){
+           duracao.setStyle(css);
+           flag=1;
+       }else{
+           duracao.setStyle("");
+       }
+       if(fatura.getSelectionModel().getSelectedItem()==null){
+           fatura.setStyle(css);
+           flag=1;
+       }else{
+           fatura.setStyle("");
+       }
+       if(veiculo.getSelectionModel().getSelectedItem()==null){
+           veiculo.setStyle(css);
+           flag=1;
+       }else{
+           veiculo.setStyle("");
+       }
+       boolean numero;
+       try{
+        double valor=(Double.parseDouble(pagamento.getText()));
+        numero=true;
+       }catch(NumberFormatException e){
+           numero=false;
+       }
+       if(pagamento.getText().equals("") || numero==false){
+           pagamento.setStyle(css);
+           flag=1;
+       }else{
+           pagamento.setStyle("");
+       }
+       if(list.getItems().size()==0){
+           list.setStyle(css);
+           flag=1;
+       }else{
+           list.setStyle("");
+       }  
+       
+       
+       if(flag==1){
+           erro();
+           return;
+       }
        String r=remover.getText();
        String []r1=r.split(" ");
        for(int i=0;i<r1.length;i++){
@@ -417,35 +578,67 @@ public class AtualizaConcertoController implements Initializable {
         Updates U=new Updates();
         Removes R=new Removes();
         U.editConcerto(Integer.parseInt(idhide.getText()),local1, data, x,1,fatura1, p, carro);
-           if(adi!=null)
+        
+           if(adi.size()!=0){
             for(int k=0;k<adi.size();k++){
-                U.addelementosConcerto(Integer.valueOf(adi.get(k)),Integer.parseInt(idhide.getText()));
-        }
-           if(R!=null)
+                try{                U.addelementosConcerto(Integer.valueOf(adi.get(k)),Integer.parseInt(idhide.getText()));}
+                catch(Exception e){
+                
+                }
+        }}
+           if(adi.size()!=0){
+               try{
                R.ApagarMembro(rem,idhide.getText());
-        
-        
+           }catch(Exception e){}
+           }
+           
+           for(int aux=0;aux<list.getItems().size();aux++){
+               System.out.println(list.getItems().get(aux).toString());
+           }
+           calcularPagamentos(carro);
            Concertosactivity();
        
-   }
    
-   public void atribuirPagamentos() throws SQLException{
+   }
+   @FXML
+   public void calcularPagamentos(int id) throws SQLException{
        Query q=new Query();
-       Double paga=Double.parseDouble(pagamento.getText())/(q.getNumeroMembros(Integer.parseInt(idhide.getText()))+1);
+       Updates U=new Updates();
+       Double paga;
        
+       if(id==4){
+           paga=Double.parseDouble(pagamento.getText())/(q.getNumeroMembros(Integer.parseInt(idhide.getText())));
+       }else{
+       paga=Double.parseDouble(pagamento.getText())/(q.getNumeroMembros(Integer.parseInt(idhide.getText()))+1);
+       }
        System.out.println(paga);
        
-       DecimalFormat df= new DecimalFormat("#.000");
-       
-       String paga1=df.format(paga);
-       String []x=paga1.split(",");
-       paga1=x[0]+"."+x[1];
-       paga=Double.parseDouble(paga1);
-       
-       
-       
-       System.out.println(Math.round(paga));
-       
+       String paga1=paga.toString();
+       char []Num=paga1.toCharArray();
+       int x=0;
+       if(Num.length>=6){
+           if(Character.getNumericValue(Num[5])>=5){
+            x = Character.getNumericValue(Num[4])+1;
+           }else{x = Character.getNumericValue(Num[4]);}
+       }
+       String salario=""+Num[0]+Num[1]+"."+Num[3]+x;
+       System.out.println(Double.parseDouble(salario));
+       int aux2=q.donocarro(id);
+       int flag=0;
+        for(int aux=0;aux<list.getItems().size();aux++){
+               if(list.getItems().get(aux).toString().equals(aux2)){
+                   flag=1;
+                   U.atribuirpaga(Integer.parseInt(list.getItems().get(aux).toString()),Integer.parseInt(idhide.getText()),Double.parseDouble(salario)*2);
+               }else{
+                   U.atribuirpaga(Integer.parseInt(list.getItems().get(aux).toString()),Integer.parseInt(idhide.getText()),Double.parseDouble(salario));
+               }
+               
+                   
+           }
+        if(flag==0){
+                   U.addelementosConcerto1(aux2, Integer.parseInt(idhide.getText()),Double.parseDouble(salario));
+               }
+     
     }
 
 }

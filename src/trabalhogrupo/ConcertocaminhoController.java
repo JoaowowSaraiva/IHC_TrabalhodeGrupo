@@ -5,6 +5,11 @@
  */
 package trabalhogrupo;
 
+import com.sun.jndi.toolkit.url.Uri;
+import java.awt.Desktop;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
@@ -36,7 +41,7 @@ public class ConcertocaminhoController implements Initializable {
     stage.close();
 }
     
-    public void EnviaStringMapa(String a){
+    public void EnviaStringMapa(String a) throws IOException, URISyntaxException{
         String url="https://www.google.pt/maps/dir/Reboleiro/";
     
         String[] b=a.split(" ");
@@ -44,9 +49,12 @@ public class ConcertocaminhoController implements Initializable {
             if(i+1!=b.length)
                 url=url+b[i]+"+";
             else{
-                url=url+b[i];
+                url=url+b[i]+"/";
             }
-         map.getEngine().load(url);
+        Desktop d=Desktop.getDesktop();
+        d.browse(new URI(url));
+        map.getEngine().load(url);
+        
         
     }
     @Override

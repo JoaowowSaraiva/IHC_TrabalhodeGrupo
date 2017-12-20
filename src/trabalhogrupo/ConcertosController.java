@@ -6,7 +6,10 @@
 package trabalhogrupo;
 
 import dbinteraction.Query;
+import java.awt.Desktop;
 import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -111,7 +114,27 @@ public class ConcertosController implements Initializable {
     // do what you have to do
     stage.close();
 }
-  
+  @FXML
+    void erro(int i) throws IOException{
+        FXMLLoader loader=new FXMLLoader(getClass().getResource("erroFXML.fxml"));
+        Parent root=(Parent)loader.load();
+        ErroFXMLController setControler=loader.getController();
+        String x="direita";
+        if(i==0){
+            x="esquerda";
+        }
+        setControler.setERRO("Selecione um elemento da tabela da "+x+"!","", "", "", "");
+        Stage stage=new Stage();
+        Scene scene = new Scene(root);
+        
+        stage.setScene(scene);
+            stage.setTitle("Erro de seleção!");
+            stage.setResizable(false);
+            stage.setAlwaysOnTop(true);
+            stage.show();
+           
+            
+    }
 
     
     public void createContent() throws SQLException{
@@ -160,13 +183,13 @@ public class ConcertosController implements Initializable {
         
     }
       @FXML
-    private void MostrarItinerario(ActionEvent event) throws SQLException, IOException{
+    private void MostrarItinerario(ActionEvent event) throws SQLException, IOException, URISyntaxException{
        
       HBOXCell hboxC =(HBOXCell) listd.getSelectionModel().getSelectedItem();
       
       //hboxC.toString();
       if(hboxC==null){
-          mensagemerrod.setText("Selecione um membro!");
+          erro(1);
           return;
       }
        mensagemerrod.setText("");
@@ -176,13 +199,18 @@ public class ConcertosController implements Initializable {
         String local = hboxC.toString2();
           System.out.println(local);
 
-        FXMLLoader loader=new FXMLLoader(getClass().getResource("Concertocaminho.fxml"));
-        Parent root=(Parent) loader.load();
-        ConcertocaminhoController setControler=loader.getController();
-        setControler.EnviaStringMapa(local);
-        Stage stage=new Stage();
-        stage.setScene(new Scene(root));
-        stage.show();
+        String url="https://www.google.pt/maps/dir/Reboleiro/";
+    
+        String[] b=local.split(" ");
+        for(int i=0;i<b.length;i++)
+            if(i+1!=b.length)
+                url=url+b[i]+"+";
+            else{
+                url=url+b[i]+"/";
+            }
+        Desktop d=Desktop.getDesktop();
+        d.browse(new URI(url));
+        
                 
     
     }
@@ -206,10 +234,10 @@ public class ConcertosController implements Initializable {
       
       //hboxC.toString();
       if(hboxC==null){
-          mensagemerrod.setText("Selecione um membro!");
+          erro(1);
           return;
       }
-       mensagemerrod.setText("");
+    
      
     
         System.out.println( hboxC.toString());
@@ -228,5 +256,27 @@ public class ConcertosController implements Initializable {
             stage.show();
                 
    
+    }
+    @FXML
+    private void editar(ActionEvent event) throws SQLException, IOException{
+       
+      ConcertosController.HBOXCell hboxC =(ConcertosController.HBOXCell) liste.getSelectionModel().getSelectedItem();
+      
+      //hboxC.toString();
+      if(hboxC==null){
+          erro(0);
+          return;
+      }
+    }
+     @FXML
+    private void maisinfo(ActionEvent event) throws SQLException, IOException{
+       
+      ConcertosController.HBOXCell hboxC =(ConcertosController.HBOXCell) liste.getSelectionModel().getSelectedItem();
+      
+      //hboxC.toString();
+      if(hboxC==null){
+          erro(0);
+          return;
+      }
     }
 }

@@ -91,35 +91,57 @@ public class EditarMembroController implements Initializable {
             Scene scene = new Scene(root);
             closeButtonAction();
             stage.setScene(scene);
-            stage.setTitle("Editar Membro");
+            stage.setTitle("Membros - Grupo de Concertinas do Reboleiro");
             stage.setResizable(false);
             stage.show();
     }
+     
+      @FXML
+    void erro() throws IOException{
+        FXMLLoader loader=new FXMLLoader(getClass().getResource("erroFXML.fxml"));
+        Parent root=(Parent)loader.load();
+        ErroFXMLController setControler=loader.getController();
+        setControler.setERRO("Elementos do formulário estão mal preenchidos!","Os elementos errados estão rodeados a vermelho!", "", "", "");
+        Stage stage=new Stage();
+        Scene scene = new Scene(root);
+        
+        stage.setScene(scene);
+            stage.setTitle("Erro no formulário");
+            stage.setResizable(false);
+            stage.setAlwaysOnTop(true);
+            stage.show();
+           
+            
+    }
+    
     @FXML
     private void EditarMembro(ActionEvent e) throws SQLException, IOException{
         Query q = new Query();
-        
-        
+        int flag=0;
+         String css="-fx-border-color:red";
         if(first.getText().equals("")){
-            firste.setText("Preencha esta campo!");
+           first.setStyle(css);
+           flag=1;
             
         }else{
-            firste.setText("");
+            first.setStyle("");
         }
         
         if(last.getText().equals("")){
-            laste.setText("Preencha esta campo!");
-            
+            last.setStyle(css);
+            flag=1;
         }else{
-            laste.setText("");
+             last.setStyle("");
         }
         if(data.getValue()==null){
-            datae.setText("Preencha esta campo!");
+           data.setStyle(css);
+            flag=1;
         }else{
-            datae.setText("");
+           data.setStyle("");
         }
         
-        if(data.getValue()==null||last.getText().equals("")||first.getText().equals("")){
+        if(flag==1){
+            erro();
             return;
         }
         LocalDate dat=data.getValue();
