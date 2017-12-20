@@ -129,12 +129,13 @@ public class VehiclesController implements Initializable {
         String id=list.getSelectionModel().getSelectedItem().toString();
         FXMLLoader loader=new FXMLLoader(getClass().getResource("editarveiculo.fxml"));
         Parent root=(Parent)loader.load();
-        closeButtonAction();
+        
         EditarveiculoController setControler=loader.getController();
         setControler.inicio(id);
-        closeButtonAction();
+        
         Stage stage=new Stage();
         Scene scene = new Scene(root);
+        closeButtonAction();
         
         stage.setScene(scene);
             stage.setTitle("Grupo de Concertinas do Reboleiro - Editar Veiculo!");
@@ -144,7 +145,18 @@ public class VehiclesController implements Initializable {
         
         
     }
+    
+    public void estatistica() throws IOException{
+        Parent root = FXMLLoader.load(getClass().getResource("CarroAtuacao.fxml"));
+            Stage stage = new Stage();              
         
+            Scene scene = new Scene(root);
+            
+            stage.setScene(scene);
+            stage.setTitle("Grupo de Concertinas do Reboleiro - Estatistica");
+            
+            stage.show();
+    }
             
     
     

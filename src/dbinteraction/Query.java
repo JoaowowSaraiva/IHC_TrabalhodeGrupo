@@ -86,6 +86,24 @@ public class Query {
         return lista;
     } 
     
+    public List<String> CarrosAtuacoes() throws SQLException{
+        conn.conexion();
+        
+        List<String> lista=new ArrayList();
+        String query="SELECT Vehicles.NumberPlate, count(*) as total From CONCERTINAS.Vehicles,CONCERTINAS.Concert where Vehicles.IdVehicles=Concert.IdVehicles group by(Vehicles.IdVehicles);";
+        conn.pst=conn.con.prepareStatement(query);
+        ResultSet rs=conn.pst.executeQuery();
+        while(rs.next()){
+            String mp=rs.getString("NumberPlate")+" "+rs.getInt("total");
+         
+            
+            lista.add(mp);
+            
+        }
+    
+        return lista;
+    } 
+    
     public List<String> selectNames () throws SQLException{
          conn.conexion();
         

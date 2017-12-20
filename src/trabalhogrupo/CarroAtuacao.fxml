@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.chart.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="548.0" prefWidth="854.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="trabalhogrupo.CarroAtuacaoController">
+   <bottom>
+      <Button fx:id="close" mnemonicParsing="false" onAction="#closeButtonAction" prefHeight="41.0" prefWidth="114.0" text="Fechar" BorderPane.alignment="CENTER">
+         <graphic>
+            <ImageView fitHeight="33.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icon/icons8-door-opened-40.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <BorderPane.margin>
+            <Insets bottom="15.0" top="5.0" />
+         </BorderPane.margin>
+      </Button>
+   </bottom>
+   <center>
+      <PieChart fx:id="pie" prefHeight="479.0" prefWidth="854.0" title="Carros em Atuações" BorderPane.alignment="CENTER" />
+   </center>
+</BorderPane>
