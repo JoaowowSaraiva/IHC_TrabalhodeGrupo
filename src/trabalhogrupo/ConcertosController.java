@@ -247,9 +247,11 @@ public class ConcertosController implements Initializable {
         Parent root=(Parent)loader.load();
         AtualizaConcertoController setControler=loader.getController();
         setControler.setidhide(local);
+        
         Stage stage=new Stage();
-        Scene scene = new Scene(root);
         closeButtonAction();
+        Scene scene = new Scene(root);
+        
         stage.setScene(scene);
             stage.setTitle("Adiciona Concerto");
             stage.setResizable(false);
@@ -267,6 +269,24 @@ public class ConcertosController implements Initializable {
           erro(0);
           return;
       }
+      String local = hboxC.toString();
+
+        FXMLLoader loader=new FXMLLoader(getClass().getResource("EditConcerto.fxml"));
+        Parent root=(Parent)loader.load();
+        EditConcertoController setControler=loader.getController();
+        setControler.setidhide(local);
+        
+        Stage stage=new Stage();
+        closeButtonAction();
+        Scene scene = new Scene(root);
+        
+        stage.setScene(scene);
+            stage.setTitle("Editar Concerto - Grupo de Concertinas do Reboleiro");
+            stage.setResizable(false);
+            stage.show();
+                
+   
+    
     }
      @FXML
     private void maisinfo(ActionEvent event) throws SQLException, IOException{
@@ -278,5 +298,33 @@ public class ConcertosController implements Initializable {
           erro(0);
           return;
       }
+      String local = hboxC.toString();
+
+        FXMLLoader loader=new FXMLLoader(getClass().getResource("maisinfoatu.fxml"));
+        Parent root=(Parent)loader.load();
+        MaisinfoatuController setControler=loader.getController();
+        setControler.maisinformacao(local);
+        Stage stage=new Stage();
+        Scene scene = new Scene(root);
+       
+        stage.setScene(scene);
+            stage.setTitle("Mais informação - Grupo de Concertinas do Reboleiro");
+            stage.setResizable(false);
+            stage.show();
+                
+   
     }
-}
+    @FXML
+    private void stats(ActionEvent event) throws SQLException, IOException{
+        Parent root = FXMLLoader.load(getClass().getResource("concertostats.fxml"));
+            Stage stage = new Stage();              
+        
+            Scene scene = new Scene(root);
+           
+            stage.setScene(scene);
+            stage.setTitle("Estatistica - Grupo de Concertinas do Reboleiro");
+            
+            stage.show();
+    }
+    
+    }

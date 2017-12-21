@@ -5,17 +5,14 @@
  */
 package trabalhogrupo;
 
-import dbinteraction.Inserts;
 import dbinteraction.Query;
 import dbinteraction.Removes;
 import dbinteraction.Updates;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
-import java.text.DecimalFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.AbstractList;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -44,9 +41,9 @@ import javafx.stage.Stage;
  *
  * @author smf_1
  */
-public class AtualizaConcertoController implements Initializable {
+public class EditConcertoController implements Initializable {
 
-    @FXML
+        @FXML
     private Label veiculoe;
 
     @FXML
@@ -74,7 +71,7 @@ public class AtualizaConcertoController implements Initializable {
     private Label locale;
 
     @FXML
-    ListView <AtualizaConcertoController.HBOXCell> list = new ListView<AtualizaConcertoController.HBOXCell>();
+    ListView <EditConcertoController.HBOXCell> list = new ListView<EditConcertoController.HBOXCell>();
 
     @FXML
     private TextField local;
@@ -154,17 +151,17 @@ public class AtualizaConcertoController implements Initializable {
             veiculo.getSelectionModel().select(x);
         }
         List<String> nomeL=q.SelectNamesconcerto(Integer.parseInt(idhide.getText()));
-         List<AtualizaConcertoController.HBOXCell> list1 = new ArrayList();
+         List<EditConcertoController.HBOXCell> list1 = new ArrayList();
        List<String> nomesja=new ArrayList();
         for(int j =0;j<nomeL.size();j++){
             String []d=nomeL.get(j).split(" ");
-            list1.add(new AtualizaConcertoController.HBOXCell (d[0]+" "+d[1],d[2]));
+            list1.add(new EditConcertoController.HBOXCell (d[0]+" "+d[1],d[2]));
             nomesja.add(d[2]);
         }      
         
         
         //ListView<HBOXCell> list = new ListView<HBOXCell>();
-        ObservableList<AtualizaConcertoController.HBOXCell> items = FXCollections.observableArrayList(list1);
+        ObservableList<EditConcertoController.HBOXCell> items = FXCollections.observableArrayList(list1);
         list.setItems(items);
         int flag=0,pos=0;
         List<String> nomec=q.selectNames2();
@@ -259,7 +256,7 @@ public class AtualizaConcertoController implements Initializable {
        membros.getItems().remove(a);
        String []name=x.split(" ");
        int i=q.getidFrom(name[0],name[1]);
-       HBOXCell h=new AtualizaConcertoController.HBOXCell (x,String.valueOf(i));
+       HBOXCell h=new EditConcertoController.HBOXCell (x,String.valueOf(i));
        list.getItems().add(list.getItems().size(),h);
        String b=adicionar.getText();
        adicionar.setText(String.valueOf(i)+" "+b);
@@ -425,7 +422,7 @@ public class AtualizaConcertoController implements Initializable {
         int carro=q.selectVeiculoporid(veiculo.getSelectionModel().getSelectedItem().toString());
         Updates U=new Updates();
         Removes R=new Removes();
-        U.editConcerto(Integer.parseInt(idhide.getText()),local1, data, x,0,fatura1, p, carro);
+        U.editConcerto(Integer.parseInt(idhide.getText()),local1, data, x,1,fatura1, p, carro);
            if(adi.size()!=0){
             for(int k=0;k<adi.size();k++){
                 try{                U.addelementosConcerto(Integer.valueOf(adi.get(k)),Integer.parseInt(idhide.getText()));}
@@ -453,200 +450,9 @@ public class AtualizaConcertoController implements Initializable {
             closeButtonAction();
             stage.setScene(scene);
             stage.setTitle("Atuações - Grupo de Concertinas do Reboleiro");
-            stage.setResizable(false);
+            
             stage.show();
     }
-        @FXML
-   public void concluir() throws SQLException, IOException{
-       Query q=new Query();
-       List<String> adi=new ArrayList();
-       List<String> rem=new ArrayList();
-        int flag=0;
-         String css="-fx-border-color:red";
-       if(local.getText().equals("")){
-           local.setStyle(css);
-           flag=1;
-       }else{
-           local.setStyle("");
-       }
-       if(data.getValue().equals(null)){
-           data.setStyle(css);
-           flag=1;
-       }else{
-           data.setStyle("");
-       }
-       if(hora.getSelectionModel().getSelectedItem()==null){
-           hora.setStyle(css);
-           flag=1;
-       }else{
-           hora.setStyle("");
-       }
-       if(min.getSelectionModel().getSelectedItem()==null){
-           min.setStyle(css);
-           flag=1;
-       }else{
-           min.setStyle("");
-       }
-       if(duracao.getSelectionModel().getSelectedItem()==null){
-           duracao.setStyle(css);
-           flag=1;
-       }else{
-           duracao.setStyle("");
-       }
-       if(fatura.getSelectionModel().getSelectedItem()==null){
-           fatura.setStyle(css);
-           flag=1;
-       }else{
-           fatura.setStyle("");
-       }
-       if(veiculo.getSelectionModel().getSelectedItem()==null){
-           veiculo.setStyle(css);
-           flag=1;
-       }else{
-           veiculo.setStyle("");
-       }
-       boolean numero;
-       try{
-        double valor=(Double.parseDouble(pagamento.getText()));
-        numero=true;
-       }catch(NumberFormatException e){
-           numero=false;
-       }
-       if(pagamento.getText().equals("") || numero==false){
-           pagamento.setStyle(css);
-           flag=1;
-       }else{
-           pagamento.setStyle("");
-       }
-       if(list.getItems().size()==0){
-           list.setStyle(css);
-           flag=1;
-       }else{
-           list.setStyle("");
-       }  
-       
-       
-       if(flag==1){
-           erro();
-           return;
-       }
-       String r=remover.getText();
-       String []r1=r.split(" ");
-       for(int i=0;i<r1.length;i++){
-           rem.add(r1[i]);
-       }
-       String a=adicionar.getText();
-       String []a1=a.split(" ");
-       for(int j=0;j<a1.length;j++){
-           adi.add(a1[j]);
-       }
-       System.out.println("valores adicionar:");
-       for(int x=0;x<adi.size();x++){
-           System.out.println(adi.get(x));
-       }
-       System.out.println("valores a remover:");
-       for(int y=0;y<rem.size();y++){
-           System.out.println(rem.get(y));
-       }
-        String local1=local.getText();
-        LocalDate dat=data.getValue();
-        String data=dat.toString()+"T";
-        
-        String h=hora.getSelectionModel().getSelectedItem().toString();
-      
-        String m=min.getSelectionModel().getSelectedItem().toString();
-        data=data+h+":"+m+":00";
-        System.out.println(data);
-        
-        String dur=duracao.getSelectionModel().getSelectedItem().toString();
-        float x=(float) 0.0;
-        if(dur.equals("30")){
-            x=(float) 0.5;
-        }if(dur.equals("60")){
-            x=(float) 1.0;
-        }if(dur.equals("90")){
-            x=(float) 0.5;
-        }if(dur.equals("120")){
-            x=(float) 2.0;
-        }
-        System.out.println("duracao: "+x);
-        int fatura1=0;
-        if(fatura.equals("Sim")){
-            fatura1=1;
-        }
-        double p=0;
-        p=Double.parseDouble(pagamento.getText());
-        
-        int carro=q.selectVeiculoporid(veiculo.getSelectionModel().getSelectedItem().toString());
-        Updates U=new Updates();
-        Removes R=new Removes();
-        U.editConcerto(Integer.parseInt(idhide.getText()),local1, data, x,1,fatura1, p, carro);
-        
-           if(adi.size()!=0){
-            for(int k=0;k<adi.size();k++){
-                try{                U.addelementosConcerto(Integer.valueOf(adi.get(k)),Integer.parseInt(idhide.getText()));}
-                catch(Exception e){
-                
-                }
-        }}
-           if(adi.size()!=0){
-               try{
-               R.ApagarMembro(rem,idhide.getText());
-           }catch(Exception e){}
-           }
-           
-           for(int aux=0;aux<list.getItems().size();aux++){
-               System.out.println(list.getItems().get(aux).toString());
-           }
-           calcularPagamentos(carro);
-           Concertosactivity();
-       
-   
-   }
-   @FXML
-   public void calcularPagamentos(int id) throws SQLException{
-       Query q=new Query();
-       Updates U=new Updates();
-       Double paga;
-       
-       if(id==4){
-           paga=Double.parseDouble(pagamento.getText())/(q.getNumeroMembros(Integer.parseInt(idhide.getText())));
-       }else{
-       paga=Double.parseDouble(pagamento.getText())/(q.getNumeroMembros(Integer.parseInt(idhide.getText()))+1);
-       }
-       System.out.println(paga);
-       
-       String paga1=paga.toString();
-       char []Num=paga1.toCharArray();
-       int x=0;
-       if(Num.length>=6){
-           if(Character.getNumericValue(Num[5])>=5){
-            x = Character.getNumericValue(Num[4])+1;
-           }else{x = Character.getNumericValue(Num[4]);}
-       }
-       String salario=""+Num[0]+Num[1]+"."+Num[3]+x;
-       System.out.println(Double.parseDouble(salario));
-       int aux2=q.donocarro(id);
-       int flag=0;
-        for(int aux=0;aux<list.getItems().size();aux++){
-            System.out.println(aux2+"=="+list.getItems().get(aux).toString());
-               if(Integer.parseInt(list.getItems().get(aux).toString())==(aux2)){
-                   flag=1;
-                   Double paf=Double.parseDouble(salario)*2;
-                   U.atribuirpaga(Integer.parseInt(list.getItems().get(aux).toString()),Integer.parseInt(idhide.getText()),paf);
-               }else{
-                   U.atribuirpaga(Integer.parseInt(list.getItems().get(aux).toString()),Integer.parseInt(idhide.getText()),Double.parseDouble(salario));
-               }
-               
-                   
-           }
-        if(flag==0){
-            try{
-                   U.addelementosConcerto1(aux2, Integer.parseInt(idhide.getText()),Double.parseDouble(salario));
-                }catch(Exception e){}
-        
-        }
-     
-    }
 
+    
 }

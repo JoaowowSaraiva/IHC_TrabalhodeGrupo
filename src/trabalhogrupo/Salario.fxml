@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="453.0" prefWidth="683.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TableView fx:id="tabela" layoutX="28.0" layoutY="74.0" prefHeight="305.0" prefWidth="228.0">
+        <columns>
+          <TableColumn fx:id="n" prefWidth="113.0" text="Nome" />
+          <TableColumn fx:id="tot" prefWidth="114.0" text="Total a receber" />
+        </columns>
+      </TableView>
+      <ListView fx:id="list" layoutX="434.0" layoutY="74.0" prefHeight="305.0" prefWidth="228.0" />
+      <Button layoutX="277.0" layoutY="192.0" mnemonicParsing="false" text="Ver Detalhes &gt;&gt;">
+         <graphic>
+            <ImageView fitHeight="33.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icon/icons8-info-40.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Label layoutX="324.0" layoutY="24.0" text="Salário" />
+      <Button layoutX="282.0" layoutY="398.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="121.0" text="Fechar">
+         <graphic>
+            <ImageView fx:id="close" fitHeight="33.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icon/icons8-door-opened-40.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+   </children>
+</AnchorPane>

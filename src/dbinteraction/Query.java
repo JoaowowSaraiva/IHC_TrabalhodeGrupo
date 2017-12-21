@@ -185,7 +185,7 @@ public class Query {
          conn.conexion();
         
         List<String> list1 = new ArrayList();
-        String query = "SELECT IdMember,FirstName,LastName FROM CONCERTINAS.Member_Concert, CONCERTINAS.Member where Member_Concert.IdConcert="+i+" and Member.IdMembro=Member_Concert.IdMember;";
+        String query = "SELECT IdMember,FirstName,LastName,Payment FROM CONCERTINAS.Member_Concert, CONCERTINAS.Member where Member_Concert.IdConcert="+i+" and Member.IdMembro=Member_Concert.IdMember;";
         
         conn.pst=conn.con.prepareStatement(query);
         ResultSet rs = conn.pst.executeQuery();
@@ -194,7 +194,8 @@ public class Query {
             String x0=rs.getString("IdMember");
             String x1 = rs.getString("FirstName");
             String x2=rs.getString("LastName");
-            list1.add(x1+" "+x2+" "+x0);
+            String x3=rs.getString("Payment");
+            list1.add(x1+" "+x2+" "+x0+" "+x3);
             //System.out.println(x1);
         }
         
@@ -437,5 +438,24 @@ public class Query {
             return null;
           
       }
+    
+    public int  veratuacaomes(int id) throws SQLException{
+          conn.conexion();
+          List<String> list1 = new ArrayList();
+          String query = "Select count(*) as total \n" +
+                         "From CONCERTINAS.Concert where month(Concert.DateHour)="+id+" group by month(Concert.DateHour);";
+
+          conn.pst=conn.con.prepareStatement(query);
+          ResultSet rs = conn.pst.executeQuery();
+
+          while(rs.next()){
+             
+              int placa=rs.getInt("total");
+              return placa;
+          }
+            return 0;
+          
+      }
+    
 
 }

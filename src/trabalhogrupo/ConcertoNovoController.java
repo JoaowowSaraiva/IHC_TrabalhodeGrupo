@@ -74,7 +74,26 @@ public class ConcertoNovoController implements Initializable {
     @FXML
     private Label dataerro;
   
+     @FXML
+    void erro() throws IOException{
+        FXMLLoader loader=new FXMLLoader(getClass().getResource("erroFXML.fxml"));
+        Parent root=(Parent)loader.load();
+        ErroFXMLController setControler=loader.getController();
+        setControler.setERRO("Elementos do formulário estão mal preenchidos!","Os elementos errados estão rodeados a vermelho!", "", "", "");
+        Stage stage=new Stage();
+        Scene scene = new Scene(root);
+        
+        stage.setScene(scene);
+            stage.setTitle("Erro no formulário");
+            stage.setResizable(false);
+            stage.setAlwaysOnTop(true);
+            stage.show();
+           
+            
+    }
+   
     @Override
+    
     public void initialize(URL url, ResourceBundle rb) {
     for(int j=0;j<24;j++){
         String x;
@@ -101,6 +120,59 @@ public class ConcertoNovoController implements Initializable {
     @FXML
     private void adicionaConcerto() throws SQLException, IOException{
         Query q=new Query();
+        int flag=0;
+        String aux;
+         String css="-fx-border-color:red";
+       if(local.getText().equals("")){
+           local.setStyle(css);
+           flag=1;
+       }else{
+           local.setStyle("");
+       }
+       try{
+           aux=data.getValue().toString();
+           data.setStyle("");
+       }catch(Exception e){
+       data.setStyle(css);
+           flag=1;
+       }
+       if(concelho.getText().equals("")){
+           concelho.setStyle(css);
+           flag=1;
+       }else{
+           concelho.setStyle("");
+       }
+          
+       if(hora.getSelectionModel().getSelectedItem()==null){
+           hora.setStyle(css);
+           flag=1;
+       }else{
+           hora.setStyle("");
+       }
+       if(minuto.getSelectionModel().getSelectedItem()==null){
+           minuto.setStyle(css);
+           flag=1;
+       }else{
+           minuto.setStyle("");
+       }
+       if(duracao.getSelectionModel().getSelectedItem()==null){
+           duracao.setStyle(css);
+           flag=1;
+       }else{
+           duracao.setStyle("");
+       }
+       if(fatura.getSelectionModel().getSelectedItem()==null){
+           fatura.setStyle(css);
+           flag=1;
+       }else{
+           fatura.setStyle("");
+       }
+             
+       if(flag==1){
+           erro();
+           return;
+       }
+       
         int i=q.maxIdConcerto()+1;
         String local1=local.getText()+" "+concelho.getText();
         System.out.println(local1);

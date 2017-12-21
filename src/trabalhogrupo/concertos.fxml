@@ -222,7 +222,7 @@
                   </BorderPane>
                   <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
                      <center>
-                        <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Atuações por mes" BorderPane.alignment="CENTER">
+                        <Button mnemonicParsing="false" onAction="#stats" prefHeight="50.0" prefWidth="150.0" text="Atuações por mes" BorderPane.alignment="CENTER">
                            <graphic>
                               <ImageView fitHeight="33.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
