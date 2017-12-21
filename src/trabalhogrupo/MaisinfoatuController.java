@@ -55,11 +55,33 @@ public class MaisinfoatuController implements Initializable {
     stage.close();
 }
    @FXML
-   public void maisinformacao(String local) throws SQLException{
+   public void maisinformacao(String id) throws SQLException{
        Query q=new Query();
-       String r=q.selectConcertoMais(Integer.parseInt(local));
+       String r=q.selectConcertoMais(Integer.parseInt(id));
         String[] a=r.split("[|]");
-       
+        local.setText(a[0]);
+        datahora.setText(a[1]);
+        if(a[2].equals(0.5)){
+            duracao.setText("30 min");
+        }
+        if(a[2].equals(1.0)){
+            duracao.setText("60 min");
+        }
+        if(a[2].equals(1.5)){
+            duracao.setText("90 min");
+        }
+        if(a[2].equals(2.0)){
+            duracao.setText("120 min");
+        }
+        pagamento.setText(a[3]);
+        if(a[5].equals(1)){
+            fatura.setText("Sim");
+        }
+        if(a[5].equals(0)){
+            fatura.setText("Não");
+        }
+        veiculo.setText(q.selectVeiculoporid3(a[4]));
+        
    }
    
     @Override

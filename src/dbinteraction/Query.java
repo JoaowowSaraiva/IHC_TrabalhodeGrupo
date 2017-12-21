@@ -421,5 +421,21 @@ public class Query {
             return null;
           
       }
+    public String selectVeiculoporid3(String id) throws SQLException{
+          conn.conexion();
+          List<String> list1 = new ArrayList();
+          String query = "Select * From Vehicles where IdVehicles="+id;
+
+          conn.pst=conn.con.prepareStatement(query);
+          ResultSet rs = conn.pst.executeQuery();
+
+          while(rs.next()){
+             
+              String placa=rs.getString("NumberPlate");
+              return placa;
+          }
+            return null;
+          
+      }
 
 }
