@@ -10,6 +10,7 @@ package dbinteraction;
 import Tabelas.Concert;
 import Tabelas.Member;
 import Tabelas.MembroNPresencas;
+import Tabelas.TabelaS;
 import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -456,6 +457,39 @@ public class Query {
             return 0;
           
       }
-    
+       public List<TabelaS> pagamento() throws SQLException{
+          conn.conexion();
+          List<TabelaS> list1 = new ArrayList();
+          
+          String query = "SELECT Member.IdMembro,Member.FirstName,Member.LastName, round(sum(Member_Concert.Payment),2) as total FROM CONCERTINAS.Member, CONCERTINAS.Member_Concert, CONCERTINAS.Concert where Member.IdMembro=Member_Concert.IdMember and Member_Concert.IdConcert=Concert.IdConcert and Concert.Status=1 and Member_Concert.Status=0 group by(IdMember)";
+
+          conn.pst=conn.con.prepareStatement(query);
+          ResultSet rs = conn.pst.executeQuery();
+          
+
+          while(rs.next()){
+             TabelaS aux=new TabelaS(rs.getInt("IdMembro"),rs.getString("FirstName")+" "+rs.getString("LastName"),rs.getDouble("total"));
+             list1.add(aux);
+            
+          }
+            return list1;
+          
+      }
+        public List<String> VerAtuacoesPaga(int id) throws SQLException{
+          conn.conexion();
+          List<String> list1 = new ArrayList();
+          String query = "Select Concert.Local,Member_Concert.Payment From CONCERTINAS.Concert,CONCERTINAS.Member_Concert,CONCERTINAS.Member where Concert.IdConcert=Member_Concert.IdConcert and Member_Concert.IdMember=Member.IdMembro and Concert.Status=1 and Member_Concert.Status=0 and idMember="+id;
+
+          conn.pst=conn.con.prepareStatement(query);
+          ResultSet rs = conn.pst.executeQuery();
+
+          while(rs.next()){
+              String local = rs.getString("Local")+"|"+"Payment";
+              list1.add(local);
+          }
+          return list1;
+        }
+
+         
 
 }

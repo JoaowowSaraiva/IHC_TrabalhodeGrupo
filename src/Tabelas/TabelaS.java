@@ -43,6 +43,8 @@ public class TabelaS {
     public void setSal(double sal) {
         this.sal = sal;
     }
-    
+    public String toString(){
+        return(""+getId());
+    }
     
 }

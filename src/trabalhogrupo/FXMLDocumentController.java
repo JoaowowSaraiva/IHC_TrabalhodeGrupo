@@ -83,6 +83,18 @@ public class FXMLDocumentController implements Initializable {
             stage.setResizable(false);
             stage.show();
     }
+     @FXML
+    private void ActivitySalario (ActionEvent event) throws IOException{
+            Parent root = FXMLLoader.load(getClass().getResource("Salario.fxml"));
+            Stage stage = new Stage();              
+            
+            Scene scene = new Scene(root);
+            
+            stage.setTitle("Salário - Grupo de Concertinas do Reboleiro");
+            stage.setScene(scene);
+            stage.setResizable(false);
+            stage.show();
+    }
     
     @FXML
     private void closeButtonAction(){

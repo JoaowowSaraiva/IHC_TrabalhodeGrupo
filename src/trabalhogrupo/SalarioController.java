@@ -5,9 +5,33 @@
  */
 package trabalhogrupo;
 
+import Tabelas.TabelaS;
+import dbinteraction.Query;
+import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Observable;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Priority;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -16,9 +40,109 @@ import javafx.fxml.Initializable;
  */
 public class SalarioController implements Initializable {
     
+    @FXML
+    private TableView<TabelaS> tabela;
+
+    @FXML
+    private TableColumn<TabelaS,Double> tot;
+
+    @FXML
+    private ListView<SalarioController.HBOXCell> list;
+
+    @FXML
+    private Button close;
+
+    @FXML
+    private TableColumn<TabelaS, String> n;
+    
+    private List<TabelaS> listaS=new ArrayList();
+    
+    private ObservableList<TabelaS> obsList;
+    
+     @FXML
+    private void closeButtonAction(){
+    // get a handle to the stage
+    Stage stage = (Stage) close.getScene().getWindow();
+    // do what you have to do
+    stage.close();
+}
+    @FXML
+    void erro() throws IOException{
+        FXMLLoader loader=new FXMLLoader(getClass().getResource("erroFXML.fxml"));
+        Parent root=(Parent)loader.load();
+        ErroFXMLController setControler=loader.getController();
+        setControler.setERRO("Selecione um elemento na tabela!","", "", "", "");
+        Stage stage=new Stage();
+        Scene scene = new Scene(root);
+        
+        stage.setScene(scene);
+            stage.setTitle("Erro de seleção");
+            stage.setResizable(false);
+            stage.setAlwaysOnTop(true);
+            stage.show();
+           
+            
+    }
+     public static class HBOXCell extends HBox {
+        
+        Label label = new Label();
+        Label label2=new Label();
+        
+        
+        HBOXCell(String labelText,String id){
+            super();
+            
+            label.setText(labelText);
+            HBox.setHgrow(label, Priority.ALWAYS);
+            label.setMaxWidth(Double.MAX_VALUE);
+            label2.setText(id);
+            label2.setVisible(false);
+            this.getChildren().addAll(label,label2);
+            
+        }
+        
+        @Override
+        public String toString(){
+            
+           return label2.getText();           
+            
+        
+        }}
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+      n.setCellValueFactory(new PropertyValueFactory<>("nome"));
+      tot.setCellValueFactory(new PropertyValueFactory<>("sal"));
+        Query q=new Query();
+        try {
+            listaS=q.pagamento();
+            obsList=FXCollections.observableArrayList(listaS);
+            tabela.setItems(obsList);
+        } catch (SQLException ex) {
+            Logger.getLogger(SalarioController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+      
     }    
+    
+    public void detalhes() throws IOException{
+        Query q=new Query();
+        try{
+            int i=tabela.getSelectionModel().getSelectedItem().getId();
+            List<String> nomeL=q.VerAtuacoesPaga(i);
+            List<SalarioController.HBOXCell> list1 = new ArrayList();
+            
+            for(int j =0;j<nomeL.size();j++){
+                String []d=nomeL.get(j).split("[|]");
+                list1.add(new SalarioController.HBOXCell (d[0],d[1]));
+                
+            }     
+            ObservableList<SalarioController.HBOXCell> items = FXCollections.observableArrayList(list1);
+            list.setItems(items);
+        }catch(Exception e){
+            erro();
+        }
+    
+    }
     
 }

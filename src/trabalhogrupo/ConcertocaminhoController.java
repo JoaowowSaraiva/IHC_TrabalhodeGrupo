@@ -5,7 +5,7 @@
  */
 package trabalhogrupo;
 
-import com.sun.jndi.toolkit.url.Uri;
+
 import java.awt.Desktop;
 import java.io.IOException;
 import java.net.URI;

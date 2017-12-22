@@ -88,7 +88,7 @@
             </BorderPane>
             <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="4">
                <center>
-                  <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="178.0" text="Salários" BorderPane.alignment="CENTER">
+                  <Button mnemonicParsing="false" onAction="#ActivitySalario" prefHeight="44.0" prefWidth="178.0" text="Salários" BorderPane.alignment="CENTER">
                      <graphic>
                         <ImageView fitHeight="36.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
                            <image>
