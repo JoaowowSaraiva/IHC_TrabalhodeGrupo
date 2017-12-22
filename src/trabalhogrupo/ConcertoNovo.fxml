@@ -164,7 +164,7 @@
       </GridPane>
    </center>
    <top>
-      <Label prefHeight="56.0" prefWidth="119.0" text="Nova Atuaçao" BorderPane.alignment="CENTER">
+      <Label prefHeight="56.0" prefWidth="119.0" text="Nova Atuação" BorderPane.alignment="CENTER">
          <font>
             <Font size="19.0" />
          </font>

@@ -453,7 +453,7 @@ public class AtualizaConcertoController implements Initializable {
             closeButtonAction();
             stage.setScene(scene);
             stage.setTitle("Atuações - Grupo de Concertinas do Reboleiro");
-            stage.setResizable(false);
+           
             stage.show();
     }
         @FXML

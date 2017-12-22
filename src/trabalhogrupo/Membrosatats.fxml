@@ -9,23 +9,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane minHeight="480.0" minWidth="640.0" prefHeight="712.0" prefWidth="871.0" style="-fx-background-color: #e6f0ff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="trabalhogrupo.MembrosatatsController">
-   <center>
-      <BarChart fx:id="grafico" barGap="3.0" categoryGap="8.0" minHeight="480.0" minWidth="640.0" prefHeight="400.0" prefWidth="600.0" title="Presença em Atuações" BorderPane.alignment="CENTER">
-        <xAxis>
-          <CategoryAxis prefHeight="63.0" prefWidth="774.0">
-               <tickLabelFont>
-                  <Font name="Arial Bold" size="10.0" />
-               </tickLabelFont></CategoryAxis>
-        </xAxis>
-        <yAxis>
-          <NumberAxis label="Nº Atuações" prefHeight="569.0" prefWidth="65.0">
-               <tickLabelFont>
-                  <Font name="Arial Bold" size="10.0" />
-               </tickLabelFont></NumberAxis>
-        </yAxis>
-      </BarChart>
-   </center>
+<BorderPane minHeight="480.0" minWidth="640.0" prefHeight="712.0" prefWidth="1063.0" style="-fx-background-color: #e6f0ff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="trabalhogrupo.MembrosatatsController">
    <bottom>
       <BorderPane prefHeight="56.0" prefWidth="638.0" BorderPane.alignment="CENTER">
          <center>
@@ -40,4 +24,20 @@
          </center>
       </BorderPane>
    </bottom>
+   <top>
+      <BarChart fx:id="grafico" barGap="3.0" categoryGap="8.0" legendVisible="false" minHeight="480.0" minWidth="640.0" prefHeight="639.0" prefWidth="871.0" title="Presença em Atuações" BorderPane.alignment="CENTER">
+        <xAxis>
+          <CategoryAxis prefHeight="63.0" prefWidth="774.0">
+               <tickLabelFont>
+                  <Font name="Arial Bold" size="10.0" />
+               </tickLabelFont></CategoryAxis>
+        </xAxis>
+        <yAxis>
+          <NumberAxis label="Nº Atuações" prefHeight="569.0" prefWidth="65.0">
+               <tickLabelFont>
+                  <Font name="Arial Bold" size="10.0" />
+               </tickLabelFont></NumberAxis>
+        </yAxis>
+      </BarChart>
+   </top>
 </BorderPane>

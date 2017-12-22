@@ -9,9 +9,9 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="572.0" prefWidth="872.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="trabalhogrupo.ConcertostatsController">
+<BorderPane focusTraversable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="572.0" prefWidth="872.0" style="-fx-background-color: #e6f0ff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="trabalhogrupo.ConcertostatsController">
    <center>
-      <LineChart fx:id="grafico" legendVisible="false" title="Atuação por mês" BorderPane.alignment="CENTER">
+      <LineChart fx:id="grafico" focusTraversable="true" legendVisible="false" title="Atuação por mês" BorderPane.alignment="CENTER">
         <xAxis>
           <CategoryAxis label="Mês" fx:id="x" />
         </xAxis>

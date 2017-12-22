@@ -7,12 +7,14 @@ package trabalhogrupo;
 
 import Tabelas.TabelaS;
 import dbinteraction.Query;
+import dbinteraction.Updates;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Observable;
+import java.util.Optional;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -23,7 +25,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TableColumn;
@@ -54,6 +58,8 @@ public class SalarioController implements Initializable {
 
     @FXML
     private TableColumn<TabelaS, String> n;
+    @FXML
+    private Label nome;
     
     private List<TabelaS> listaS=new ArrayList();
     
@@ -96,7 +102,7 @@ public class SalarioController implements Initializable {
             HBox.setHgrow(label, Priority.ALWAYS);
             label.setMaxWidth(Double.MAX_VALUE);
             label2.setText(id);
-            label2.setVisible(false);
+            
             this.getChildren().addAll(label,label2);
             
         }
@@ -109,9 +115,8 @@ public class SalarioController implements Initializable {
         
         }}
     
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-      n.setCellValueFactory(new PropertyValueFactory<>("nome"));
+     public void atribuir(){
+     n.setCellValueFactory(new PropertyValueFactory<>("nome"));
       tot.setCellValueFactory(new PropertyValueFactory<>("sal"));
         Query q=new Query();
         try {
@@ -121,7 +126,10 @@ public class SalarioController implements Initializable {
         } catch (SQLException ex) {
             Logger.getLogger(SalarioController.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+        }
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+      atribuir();
       
     }    
     
@@ -138,11 +146,39 @@ public class SalarioController implements Initializable {
                 
             }     
             ObservableList<SalarioController.HBOXCell> items = FXCollections.observableArrayList(list1);
+            String aux2=nome.getText();
+            nome.setText("Pagamento: "+tabela.getSelectionModel().getSelectedItem().getNome());
             list.setItems(items);
         }catch(Exception e){
             erro();
         }
     
+    }
+    
+    public void pagar() throws IOException, SQLException{
+            Updates U=new Updates();
+            TabelaS aux=tabela.getSelectionModel().getSelectedItem();
+            if(aux==null){
+                erro();
+                return;
+                
+            }
+            int i=tabela.getSelectionModel().getSelectedItem().getId();
+          
+        
+                
+                Alert alert=new Alert(Alert.AlertType.CONFIRMATION);
+                alert.setTitle("Confirmação de Pagamento");
+                alert.setHeaderText(null);
+                alert.setContentText("Tem a certeza de efetuar o pagamento a "+aux.getNome()+"?");
+                Optional<ButtonType> action=alert.showAndWait();
+
+                    if(action.get()== ButtonType.OK){
+                           U.pagamento(i);
+                           atribuir();
+                    }
+       
+        
     }
     
 }

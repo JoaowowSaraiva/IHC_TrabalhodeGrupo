@@ -484,7 +484,7 @@ public class Query {
           ResultSet rs = conn.pst.executeQuery();
 
           while(rs.next()){
-              String local = rs.getString("Local")+"|"+"Payment";
+              String local = rs.getString("Local")+"|"+rs.getDouble("Payment")+"€";
               list1.add(local);
           }
           return list1;

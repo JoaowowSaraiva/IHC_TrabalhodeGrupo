@@ -8,7 +8,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="184.0" prefWidth="438.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="trabalhogrupo.ErroFXMLController">
+<AnchorPane id="AnchorPane" prefHeight="184.0" prefWidth="438.0" style="-fx-background-color: #e6f0ff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="trabalhogrupo.ErroFXMLController">
    <children>
       <Button fx:id="close" layoutX="169.0" layoutY="137.0" mnemonicParsing="false" onAction="#closeButtonAction" prefHeight="34.0" prefWidth="101.0" text="Fechar">
          <graphic>

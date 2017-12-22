@@ -8,11 +8,11 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="343.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="trabalhogrupo.AddveiculoController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="343.0" style="-fx-background-color: #e6f0ff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="trabalhogrupo.AddveiculoController">
    <children>
-      <Label layoutX="110.0" layoutY="21.0" text="Adicionar Veículo">
+      <Label layoutX="95.0" layoutY="14.0" text="Adicionar Veículo">
          <font>
-            <Font size="16.0" />
+            <Font size="20.0" />
          </font>
       </Label>
       <Label layoutX="147.0" layoutY="89.0" text="Matricula" />

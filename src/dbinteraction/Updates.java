@@ -100,9 +100,20 @@ public class Updates {
                  conn.pst.setDouble(1, pagamento);
                  conn.pst.setInt(2,membro);
                  conn.pst.setInt(3, idConcerto);
-                           
+               
                  
+                 conn.pst.execute();
+            }     
             
+          public void pagamento(int membro) throws SQLException{
+            conn.conexion();
+          
+                String addquery="UPDATE `CONCERTINAS`.`Member_Concert` SET `Status`=? WHERE `IdMember` =?";
+                 conn.pst=conn.con.prepareStatement(addquery);
+                 
+                 conn.pst.setInt(1,1);
+                 conn.pst.setInt(2, membro);
+               
                  
                  conn.pst.execute();
             }     

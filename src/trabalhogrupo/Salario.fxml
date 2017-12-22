@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import javafx.scene.image.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
@@ -7,8 +8,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="453.0" prefWidth="683.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="trabalhogrupo.SalarioController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="453.0" prefWidth="683.0" style="-fx-background-color: #e6f0ff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="trabalhogrupo.SalarioController">
    <children>
       <TableView fx:id="tabela" layoutX="28.0" layoutY="74.0" prefHeight="305.0" prefWidth="228.0">
         <columns>
@@ -26,7 +26,10 @@
             </ImageView>
          </graphic>
       </Button>
-      <Label layoutX="324.0" layoutY="24.0" text="Salário" />
+      <Label layoutX="313.0" layoutY="20.0" text="Salário">
+         <font>
+            <Font size="20.0" />
+         </font></Label>
       <Button fx:id="close" layoutX="282.0" layoutY="398.0" mnemonicParsing="false" onAction="#closeButtonAction" prefHeight="41.0" prefWidth="121.0" text="Fechar">
          <graphic>
             <ImageView fitHeight="33.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
@@ -36,7 +39,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button layoutX="273.0" layoutY="227.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="140.0" text="Pagamento">
+      <Button layoutX="272.0" layoutY="243.0" mnemonicParsing="false" onAction="#pagar" prefHeight="41.0" prefWidth="140.0" text="Pagamento">
          <graphic>
             <ImageView fitHeight="33.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -45,5 +48,6 @@
             </ImageView>
          </graphic>
       </Button>
+      <Label fx:id="nome" alignment="CENTER" layoutX="433.0" layoutY="57.0" prefHeight="17.0" prefWidth="228.0" text="Pagamento:" />
    </children>
 </AnchorPane>
