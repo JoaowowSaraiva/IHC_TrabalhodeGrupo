@@ -108,7 +108,7 @@ public class Updates {
           public void pagamento(int membro) throws SQLException{
             conn.conexion();
           
-                String addquery="UPDATE `CONCERTINAS`.`Member_Concert` SET `Status`=? WHERE `IdMember` =?";
+                String addquery="UPDATE `CONCERTINAS`.`Member_Concert` SET `Status`=? WHERE `IdMember` =? and !isnull(Payment)";
                  conn.pst=conn.con.prepareStatement(addquery);
                  
                  conn.pst.setInt(1,1);
@@ -116,7 +116,19 @@ public class Updates {
                
                  
                  conn.pst.execute();
-            }     
+            }   
+          public void SetNULLPaga(int concerto) throws SQLException{
+            conn.conexion();
+          
+                String addquery="UPDATE `CONCERTINAS`.`Member_Concert` SET `Payment`=NULL WHERE IdConcert=?";
+                 conn.pst=conn.con.prepareStatement(addquery);
+                 
+                
+                 conn.pst.setInt(1, concerto);
+               
+                 
+                 conn.pst.execute();
+            }   
             
     
     

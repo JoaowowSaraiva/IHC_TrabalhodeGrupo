@@ -298,13 +298,12 @@ public class EditConcertoController implements Initializable {
             
     }
    
-   @FXML
+     @FXML
    public void guardar() throws SQLException, IOException{
        Query q=new Query();
        List<String> adi=new ArrayList();
        List<String> rem=new ArrayList();
-       String auxx;
-       int flag=0;
+        int flag=0;
          String css="-fx-border-color:red";
        if(local.getText().equals("")){
            local.setStyle(css);
@@ -312,15 +311,12 @@ public class EditConcertoController implements Initializable {
        }else{
            local.setStyle("");
        }
-       
-        try{
-           auxx=data.getValue().toString();
-           data.setStyle("");
-       }catch(Exception e){
-       data.setStyle(css);
+       if(data.getValue().equals(null)){
+           data.setStyle(css);
            flag=1;
+       }else{
+           data.setStyle("");
        }
-          
        if(hora.getSelectionModel().getSelectedItem()==null){
            hora.setStyle(css);
            flag=1;
@@ -364,14 +360,18 @@ public class EditConcertoController implements Initializable {
        }else{
            pagamento.setStyle("");
        }
+       if(list.getItems().size()==0){
+           list.setStyle(css);
+           flag=1;
+       }else{
+           list.setStyle("");
+       }  
+       
        
        if(flag==1){
            erro();
            return;
        }
-       
-       
-       
        String r=remover.getText();
        String []r1=r.split(" ");
        for(int i=0;i<r1.length;i++){
@@ -423,6 +423,7 @@ public class EditConcertoController implements Initializable {
         Updates U=new Updates();
         Removes R=new Removes();
         U.editConcerto(Integer.parseInt(idhide.getText()),local1, data, x,1,fatura1, p, carro);
+        
            if(adi.size()!=0){
             for(int k=0;k<adi.size();k++){
                 try{                U.addelementosConcerto(Integer.valueOf(adi.get(k)),Integer.parseInt(idhide.getText()));}
@@ -435,11 +436,60 @@ public class EditConcertoController implements Initializable {
                R.ApagarMembro(rem,idhide.getText());
            }catch(Exception e){}
            }
-        
+           
+           for(int aux=0;aux<list.getItems().size();aux++){
+               System.out.println(list.getItems().get(aux).toString());
+           }
+           calcularPagamentos(carro);
            Concertosactivity();
        
+   
    }
-
+    @FXML
+   public void calcularPagamentos(int id) throws SQLException{
+       Query q=new Query();
+       Updates U=new Updates();
+       Double paga;
+       U.SetNULLPaga(Integer.parseInt(idhide.getText()));
+       if(id==4){
+           paga=Double.parseDouble(pagamento.getText())/(q.getNumeroMembros(Integer.parseInt(idhide.getText())));
+       }else{
+       paga=Double.parseDouble(pagamento.getText())/(q.getNumeroMembros(Integer.parseInt(idhide.getText()))+1);
+       }
+       System.out.println(paga);
+       
+       String paga1=paga.toString();
+       char []Num=paga1.toCharArray();
+       int x=0;
+       if(Num.length>=6){
+           if(Character.getNumericValue(Num[5])>=5){
+            x = Character.getNumericValue(Num[4])+1;
+           }else{x = Character.getNumericValue(Num[4]);}
+       }
+       String salario=""+Num[0]+Num[1]+"."+Num[3]+x;
+       System.out.println(Double.parseDouble(salario));
+       int aux2=q.donocarro(id);
+       int flag=0;
+        for(int aux=0;aux<list.getItems().size();aux++){
+            System.out.println(aux2+"=="+list.getItems().get(aux).toString());
+               if(Integer.parseInt(list.getItems().get(aux).toString())==(aux2)){
+                   flag=1;
+                   Double paf=Double.parseDouble(salario)*2;
+                   U.atribuirpaga(Integer.parseInt(list.getItems().get(aux).toString()),Integer.parseInt(idhide.getText()),paf);
+               }else{
+                   U.atribuirpaga(Integer.parseInt(list.getItems().get(aux).toString()),Integer.parseInt(idhide.getText()),Double.parseDouble(salario));
+               }
+               
+                   
+           }
+        if(flag==0){
+            try{
+                   U.addelementosConcerto1(aux2, Integer.parseInt(idhide.getText()),Double.parseDouble(salario));
+                }catch(Exception e){}
+        
+        }
+     
+    }
 
       @FXML
      private void Concertosactivity () throws IOException{

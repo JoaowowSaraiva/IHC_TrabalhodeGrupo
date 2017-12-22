@@ -176,6 +176,7 @@ public class SalarioController implements Initializable {
                     if(action.get()== ButtonType.OK){
                            U.pagamento(i);
                            atribuir();
+                           
                     }
        
         
